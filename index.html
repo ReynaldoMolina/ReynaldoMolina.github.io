@@ -5,6 +5,54 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reynaldo Molina</title>
+    <script>
+        function aleatorio(min, max){
+            return Math.floor(Math.random() * (max - min + 1) + min)
+        }
+
+        function eleccion(jugada) {
+            let resultado = ""
+            if(jugada == 1) {
+                resultado = "Piedra 🥌"
+            }
+            else if(jugada == 2) {
+                resultado = "Elejiste 🧻"
+            }
+            else if(jugada == 3) {
+                resultado = "Elejiste ✂️"
+            }
+            else {
+                resultado = "Mal elegido"
+            }
+            return resultado
+        }
+
+        //1 es piedra, 2 es papel y 3 es tijera
+        let jugador = 0
+        let pc = aleatorio(1, 3)
+
+        jugador = prompt("Elije 1 para piedra, 2 para papel, 3 para tijera")
+        alert("PC elegió: " + eleccion(pc))
+        alert("Elegiste: " + eleccion(jugador))
+
+        //combate
+        if (pc == jugador) {
+            alert("Empate 😡")
+        }
+        else if (jugador == 1 && pc == 3){
+            alert("Ganaste 😎")
+        }
+        else if (jugador == 2 && pc == 1) {
+            alert("Ganaste 😎")
+        }
+        else if (jugador == 3 && pc == 2) {
+            alert("Ganaste 😎")
+        }
+        else {
+            alert("Perdiste 🥲")
+        }
+        
+    </script>
 </head>
 <body>
     <h1>Primero intento de crear una página en GitHub</h1>
