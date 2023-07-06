@@ -6,11 +6,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reynaldo Molina</title>
     <script src="codigo.js"></script>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Primer intento de crear una página en GitHub</h1>
-    <p>Algún día va a tener aquí un opción para generar un versículo aleatorio de la Biblia.</p>
-    <p>Por ahora solo hay un jueguito de piedra, papel o tijera.</p>
-    <p>Para volver a jugar hay que recargar la página.</p>
+    <section id="cabecera">
+        <h1>Reynaldo Molina GitHub Page</h1>
+    </section>
+    
+    <section id="versiculo-aleatorio">
+        <h3>Versículo aleatorio de la Biblia.</h3>
+        <p>Próximamente</p>
+    </section>
+
+    <hr class="solid">
+
+    <section id="piedra-papel">
+        <h3>Piedra, papel o tijera.</h3>
+        <p>Gana el mejor de 3</p>
+
+        <div id="botones">
+            <button id="boton-piedra" class="juego">Piedra 🪨</button>
+            <button id="boton-papel" class="juego">Papel 🧻</button>
+            <button id="boton-tijera" class="juego">Tijera ✂️</button>
+        </div>
+
+        <div id="eleccion">
+            <p>Jugador - <span id="seleccion-jugador"></span> vs <span id="seleccion-pc"></span> - PC</p>
+        </div>
+
+        <div id="resultado-jugada">
+            <p><span id="resultado">Elige una opción</span></p>
+        </div>
+
+        <div id="vidas">
+            <p>Jugador <span id="puntos-jugador">0</span> - <span id="puntos-pc">0</span> PC</p>
+            <p></p>
+        </div>
+
+        <button id="boton-reiniciar">Reiniciar</button>
+    </section>
+
 </body>
 </html>
