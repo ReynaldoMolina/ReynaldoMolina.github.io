@@ -57,9 +57,12 @@ function combate() {
     }
     else {
         nombreJugada()
-        spanResultado.innerHTML = "Perdiste"
+        spanResultado.innerHTML = "Ganaste. Tramposo"
+        puntosJugador++
+        spanPuntosJugador.innerHTML = puntosJugador
+        /*spanResultado.innerHTML = "Perdiste"
         puntosPc++
-        spanPuntosPc.innerHTML = puntosPc
+        spanPuntosPc.innerHTML = puntosPc*/
     }
     partida++
     verificarPartida()
