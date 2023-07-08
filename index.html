@@ -22,7 +22,7 @@
 
     <section id="piedra-papel">
         <h3>Piedra, papel o tijera.</h3>
-        <p>Gana el mejor de 3</p>
+        <p>Gana el mejor de 5</p>
 
         <div id="botones">
             <button id="boton-piedra" class="juego">Piedra 🪨</button>
@@ -30,17 +30,22 @@
             <button id="boton-tijera" class="juego">Tijera ✂️</button>
         </div>
 
-        <div id="eleccion">
-            <p>Jugador - <span id="seleccion-jugador"></span> vs <span id="seleccion-pc"></span> - PC</p>
+        <div class="puntaje">
+            <div id="div-jugador">
+                <p>Jugador</p>
+                <p><span id="puntos-jugador">0</span></p>
+                <p><span id="seleccion-jugador">-</span>
+            </div>
+
+            <div id="div-pc">
+                <p>PC</p>
+                <p><span id="puntos-pc">0</span></p>
+                <p><span id="seleccion-pc">-</span></p>
+            </div>
         </div>
 
         <div id="resultado-jugada">
             <p><span id="resultado">Elige una opción</span></p>
-        </div>
-
-        <div id="vidas">
-            <p>Jugador <span id="puntos-jugador">0</span> - <span id="puntos-pc">0</span> PC</p>
-            <p></p>
         </div>
 
         <button id="boton-reiniciar">Reiniciar</button>

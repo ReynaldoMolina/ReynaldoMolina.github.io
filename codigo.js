@@ -91,17 +91,17 @@ function nombreJugada() {
 }
 
 function verificarPartida() {
-    if (partida == 3) {
+    if (partida == 5) {
         let spanResultado = document.getElementById("resultado")
 
         if (puntosJugador > puntosPc) {
-            spanResultado.innerHTML = "Se acabó el juego: GANASTE"
+            spanResultado.innerHTML = "Game Over: GANASTE"
         }
         else if (puntosJugador < puntosPc) {
-            spanResultado.innerHTML = "Se acabó el juego: PERDISTE"
+            spanResultado.innerHTML = "Game Over: PERDISTE"
         }
         else {
-            spanResultado.innerHTML = "Se acabó el juego: EMPATE"
+            spanResultado.innerHTML = "Game Over: EMPATE"
         }
         let botonPiedra = document.getElementById("boton-piedra")
         botonPiedra.disabled = true

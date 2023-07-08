@@ -7,8 +7,55 @@ body {
 }
 
 #cabecera {
-    background-color: #A2FF86;
+    background-color: #4FC0D0;
     color: black;
-    height: 40px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#versiculo-aleatorio {
     text-align: center;
+}
+
+#piedra-papel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.juego {
+    height: 60px;
+    width: 115px;
+    background: #A2FF86;
+    border-radius: 10px;
+    font-family: 'Poppins', sans-serif;
+}
+
+#resultado-jugada {
+    background: lightblue;
+    border-radius: 10px;
+    height: 75px;
+    width: 150px;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.puntaje {
+    display: grid;
+    grid-template-columns: 150px 150px;
+    text-align: center;
+}
+
+#boton-reiniciar {
+    font-family: 'Poppins', sans-serif;
+    height: 30px;
+    width: 115px;
+    background: #FFD0D0;
+    border-radius: 10px;
+    margin: 10px;
 }
