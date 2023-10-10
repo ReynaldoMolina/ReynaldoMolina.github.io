@@ -33,6 +33,14 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
+.juego:hover {
+    background-color: yellow;
+}
+
+.juego:focus {
+    background-color: orange;
+}
+
 #resultado-jugada {
     background: lightblue;
     border-radius: 10px;
@@ -49,6 +57,14 @@ body {
     display: grid;
     grid-template-columns: 150px 150px;
     text-align: center;
+}
+
+a {
+    color: white;
+}
+
+a:hover {
+    color: yellow;
 }
 
 #boton-reiniciar {
