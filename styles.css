@@ -15,6 +15,13 @@ body {
     align-items: center;
 }
 
+#contador-dinero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 #versiculo-aleatorio {
     text-align: center;
 }
