@@ -2,13 +2,13 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #164B60;
+    background-color: #212121;
     color: white;
 }
 
 #cabecera {
-    background-color: #4FC0D0;
-    color: black;
+    background-color: #5E5E5E;
+    color: white;
     height: 50px;
     display: flex;
     justify-content: center;
