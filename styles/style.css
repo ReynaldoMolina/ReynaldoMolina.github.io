@@ -126,6 +126,32 @@ a:hover {
     font-size: 1.4rem;
 }
 
+.tabla1 {
+    display: flex;
+    justify-content: center;
+}
+
 table {
+    font-size: 1.3rem;
     border: 1px solid white;
+    border-collapse: collapse;
+    max-width: 600px;
+}
+
+th, td {
+    border: 1px solid gray;
+    width: 70px;
+}
+
+input {
+    width: 50px;
+    background-color: gray;
+    border: 0;
+    appearance: textfield;
+    color: white;
+    text-align: center;
+}
+
+input:focus {
+    outline: 0;
 }

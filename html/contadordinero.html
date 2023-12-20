@@ -5,13 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reynaldo Molina</title>
-    <script src="/js/contadortest.js"></script>
+    <script src="/js/contador.js"></script>
     <link rel="stylesheet" href="/styles/style.css">
 </head>
 <body>
     <header class="header">
         <div class="header-logo">
-            <a href="./index.html">
+            <a href="/index.html">
                 <h4>Reynaldo Molina GitHub Page</h4>
             </a>
         </div>
@@ -41,116 +41,115 @@
             <h2>Contador de dinero</h2>
         </div>
         <div class="info">
-            <h3>Tipo de cambio</h3>
+            <h4>Tipo de cambio</h4>
             <input type="number" id="tipo-de-cambio">
         </div>
-        <table>
-            <tr>
-                <th>Billete</th>
-                <th>Cantidad</th>
-                <th>Total</th>
-            </tr>
-            <tr>
-                <th>$100</th>
-                <th><input type="number" id="cantidad-dolar-cien"></th>
-                <th><span id="subtotal-dolar-cien">-</span></th>
-            </tr>
-<!--
-            <tr>
-                <th>$50</th>
-                <th><input type="number" id="cantidad-dolar-cincuente"></th>
-                <th><span id="subtotal-dolar-cincuenta">-</span></th>
-            </tr>
-            <tr>
-                <th>$20</th>
-                <th><input type="number" id="cantidad-dolar-venite"></th>
-                <th><span id="subtotal-dolar-veinte">-</span></th>
-            </tr>
-            <tr>
-                <th>$10</th>
-                <th><input type="number" id="cantidad-dolar-diez"></th>
-                <th><span id="subtotal-dolar-diez">-</span></th>
-            </tr>
-            <tr>
-                <th>$5</th>
-                <th><input type="number" id="cantidad-dolar-cinco"></th>
-                <th><span id="subtotal-dolar-cinco">-</span></th>
-            </tr>
-            <tr>
-                <th>$1</th>
-                <th><input type="number" id="cantidad-dolar-uno"></th>
-                <th><span id="subtotal-dolar-uno">-</span></th>
-            </tr>
--->
-            <tr>
-                <th>1000</th>
-                <th><input type="number" id="cantidad-cordoba-mil"></th>
-                <th><span id="subtotal-cordoba-mil">-</span></th>
-            </tr>
-<!--        <tr>
-                <th>500</th>
-                <th><input type="number" id="cantidad-cordoba-quinientos"></th>
-                <th><span id="subtotal-cordoba-quinientos">-</span></th>
-            </tr>
-            <tr>
-                <th>200</th>
-                <th><input type="number" id="cantidad-cordoba-doscientos"></th>
-                <th><span id="subtotal-cordoba-doscientos">-</span></th>
-            </tr>
-            <tr>
-                <th>100</th>
-                <th><input type="number" id="cantidad-cordoba-cien"></th>
-                <th><span id="subtotal-cordoba-cien">-</span></th>
-            </tr>
-            <tr>
-                <th>50</th>
-                <th><input type="number" id="cantidad-cordoba-cincuenta"></th>
-                <th><span id="subtotal-cordoba-cincuenta">-</span></th>
-            </tr>
-            <tr>
-                <th>20</th>
-                <th><input type="number" id="cantidad-cordoba-veinte"></th>
-                <th><span id="subtotal-cordoba-veinte">-</span></th>
-            </tr>
-            <tr>
-                <th>10</th>
-                <th><input type="number" id="cantidad-cordoba-diez"></th>
-                <th><span id="subtotal-cordoba-diez">-</span></th>
-            </tr>
-            <tr>
-                <th>5</th>
-                <th><input type="number" id="cantidad-cordoba-cinco"></th>
-                <th><span id="subtotal-cordoba-cinco">-</span></th>
-            </tr>
-            <tr>
-                <th>1</th>
-                <th><input type="number" id="cantidad-cordoba-uno"></th>
-                <th><span id="subtotal-cordoba-uno">-</span></th>
-            </tr>
-            <tr>
-                <th>0.50</th>
-                <th><input type="number" id="cantidad-cordoba-cincuenta-centavos"></th>
-                <th><span id="subtotal-cordoba-cincuenta-centavos">-</span></th>
-            </tr>
-            <tr>
-                <th>0.25</th>
-                <th><input type="number" id="cantidad-cordoba-veinticinco-centavos"></th>
-                <th><span id="subtotal-cordoba-veinticinco-centavos">-</span></th>
-            </tr>
-            <tr>
-                <th>0.10</th>
-                <th><input type="number" id="cantidad-cordoba-diez-centavos"></th>
-                <th><span id="subtotal-cordoba-diez-centavos">-</span></th>
-            </tr>
-        -->
-            <tr>
-                <th>Total</th>
-                <th><button id="boton-calcular">Calcular</button></th>
-                <th><span id="total-cordoba">-</span></th>
-            </tr>
-        </table>
+        <div class="tabla1">
+            <table>
+                <tr>
+                    <th>Billete</th>
+                    <th>Cantidad</th>
+                    <th>Total</th>
+                </tr>
+                <tr>
+                    <th>$100</th>
+                    <th><input type="number" id="cantidad-dolar-cien"></th>
+                    <th><span id="subtotal-dolar-cien">-</span></th>
+                </tr>
+                <tr>
+                    <th>$50</th>
+                    <th><input type="number" id="cantidad-dolar-cincuenta"></th>
+                    <th><span id="subtotal-dolar-cincuenta">-</span></th>
+                </tr>
+                <tr>
+                    <th>$20</th>
+                    <th><input type="number" id="cantidad-dolar-veinte"></th>
+                    <th><span id="subtotal-dolar-veinte">-</span></th>
+                </tr>
+                <tr>
+                    <th>$10</th>
+                    <th><input type="number" id="cantidad-dolar-diez"></th>
+                    <th><span id="subtotal-dolar-diez">-</span></th>
+                </tr>
+                <tr>
+                    <th>$5</th>
+                    <th><input type="number" id="cantidad-dolar-cinco"></th>
+                    <th><span id="subtotal-dolar-cinco">-</span></th>
+                </tr>
+                <tr>
+                    <th>$1</th>
+                    <th><input type="number" id="cantidad-dolar-uno"></th>
+                    <th><span id="subtotal-dolar-uno">-</span></th>
+                </tr>
+                <tr>
+                    <th>1000</th>
+                    <th><input type="number" id="cantidad-cordoba-mil"></th>
+                    <th><span id="subtotal-cordoba-mil">-</span></th>
+                </tr>
+                <tr>
+                    <th>500</th>
+                    <th><input type="number" id="cantidad-cordoba-quinientos"></th>
+                    <th><span id="subtotal-cordoba-quinientos">-</span></th>
+                </tr>
+                <tr>
+                    <th>200</th>
+                    <th><input type="number" id="cantidad-cordoba-doscientos"></th>
+                    <th><span id="subtotal-cordoba-doscientos">-</span></th>
+                </tr>
+                <tr>
+                    <th>100</th>
+                    <th><input type="number" id="cantidad-cordoba-cien"></th>
+                    <th><span id="subtotal-cordoba-cien">-</span></th>
+                </tr>
+                <tr>
+                    <th>50</th>
+                    <th><input type="number" id="cantidad-cordoba-cincuenta"></th>
+                    <th><span id="subtotal-cordoba-cincuenta">-</span></th>
+                </tr>
+                <tr>
+                    <th>20</th>
+                    <th><input type="number" id="cantidad-cordoba-veinte"></th>
+                    <th><span id="subtotal-cordoba-veinte">-</span></th>
+                </tr>
+                <tr>
+                    <th>10</th>
+                    <th><input type="number" id="cantidad-cordoba-diez"></th>
+                    <th><span id="subtotal-cordoba-diez">-</span></th>
+                </tr>
+                <tr>
+                    <th>5</th>
+                    <th><input type="number" id="cantidad-cordoba-cinco"></th>
+                    <th><span id="subtotal-cordoba-cinco">-</span></th>
+                </tr>
+                <tr>
+                    <th>1</th>
+                    <th><input type="number" id="cantidad-cordoba-uno"></th>
+                    <th><span id="subtotal-cordoba-uno">-</span></th>
+                </tr>
+                <tr>
+                    <th>0.50</th>
+                    <th><input type="number" id="cantidad-cordoba-cincuenta-centavos"></th>
+                    <th><span id="subtotal-cordoba-cincuenta-centavos">-</span></th>
+                </tr>
+                <tr>
+                    <th>0.25</th>
+                    <th><input type="number" id="cantidad-cordoba-veinticinco-centavos"></th>
+                    <th><span id="subtotal-cordoba-veinticinco-centavos">-</span></th>
+                </tr>
+                <tr>
+                    <th>0.10</th>
+                    <th><input type="number" id="cantidad-cordoba-diez-centavos"></th>
+                    <th><span id="subtotal-cordoba-diez-centavos">-</span></th>
+                </tr>
+                <tr>
+                    <th>Total</th>
+                    <th><button id="boton-calcular">Calcular</button></th>
+                    <th><span id="total-cordoba">-</span></th>
+                </tr>
+            </table>
+        </div>
     </main>
-
+<!--
     <footer class="footer">
         <p>Hecho con amor para el mundo</p>
         <div>
@@ -159,5 +158,6 @@
             <a href="https://github.com/ReynaldoMolina">GitHub</a>
         </div>
     </footer>
+-->
 </body>
 </html>
