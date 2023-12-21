@@ -1,8 +1,35 @@
 //Wait page load
 window.addEventListener("load", iniciarBoton);
 
+const botonCalculo = document.querySelector("#boton-calcular")
+//definir spans HTML
+let spanDolarCien = document.querySelector("#subtotal-dolar-cien");
+let spanDolarCincuenta = document.querySelector("#subtotal-dolar-cincuenta");
+let spanDolarVeinte = document.querySelector("#subtotal-dolar-veinte");
+let spanDolarDiez = document.querySelector("#subtotal-dolar-diez");
+let spanDolarCinco = document.querySelector("#subtotal-dolar-cinco");
+let spanDolarUno = document.querySelector("#subtotal-dolar-uno");
+//span de billetes de cordoba
+let spanCordobaMil = document.querySelector("#subtotal-cordoba-mil");
+let spanCordobaQuinientos = document.querySelector("#subtotal-cordoba-quinientos");
+let spanCordobaDoscientos = document.querySelector("#subtotal-cordoba-doscientos");
+let spanCordobaCien = document.querySelector("#subtotal-cordoba-cien");
+let spanCordobaCincuenta = document.querySelector("#subtotal-cordoba-cincuenta");
+let spanCordobaVeinte = document.querySelector("#subtotal-cordoba-veinte");
+let spanCordobaDiez = document.querySelector("#subtotal-cordoba-diez");
+//span de monedas de cordoba
+let spanCordobaCinco = document.querySelector("#subtotal-cordoba-cinco");
+let spanCordobaUno = document.querySelector("#subtotal-cordoba-uno");
+let spanCordobaCincuentaCentavos = document.querySelector("#subtotal-cordoba-cincuenta-centavos");
+let spanCordobaVeinticincoCentavos = document.querySelector("#subtotal-cordoba-veinticinco-centavos");
+let spanCordobaDiezCentavos = document.querySelector("#subtotal-cordoba-diez-centavos");
+//span para total de cordobas
+let spanTotal = document.querySelector("#total-cordoba");
+console.log("spans definidos");
+
+
+
 function iniciarBoton() {
-    const botonCalculo = document.querySelector("#boton-calcular")
     console.log("boton iniciado");
     botonCalculo.addEventListener("click", calculo)
 }
@@ -34,31 +61,6 @@ function calculo() {
     let cantidadCordobaVeinticincoCentavos = parseInt(document.querySelector("#cantidad-cordoba-veinticinco-centavos").value);
     let cantidadCordobaDiezCentavos = parseInt(document.querySelector("#cantidad-cordoba-diez-centavos").value);
     console.log("cantidades definidas");
-
-    //definir spans HTML
-    let spanDolarCien = document.querySelector("#subtotal-dolar-cien");
-    let spanDolarCincuenta = document.querySelector("#subtotal-dolar-cincuenta");
-    let spanDolarVeinte = document.querySelector("#subtotal-dolar-veinte");
-    let spanDolarDiez = document.querySelector("#subtotal-dolar-diez");
-    let spanDolarCinco = document.querySelector("#subtotal-dolar-cinco");
-    let spanDolarUno = document.querySelector("#subtotal-dolar-uno");
-    //span de billetes de cordoba
-    let spanCordobaMil = document.querySelector("#subtotal-cordoba-mil");
-    let spanCordobaQuinientos = document.querySelector("#subtotal-cordoba-quinientos");
-    let spanCordobaDoscientos = document.querySelector("#subtotal-cordoba-doscientos");
-    let spanCordobaCien = document.querySelector("#subtotal-cordoba-cien");
-    let spanCordobaCincuenta = document.querySelector("#subtotal-cordoba-cincuenta");
-    let spanCordobaVeinte = document.querySelector("#subtotal-cordoba-veinte");
-    let spanCordobaDiez = document.querySelector("#subtotal-cordoba-diez");
-    //span de monedas de cordoba
-    let spanCordobaCinco = document.querySelector("#subtotal-cordoba-cinco");
-    let spanCordobaUno = document.querySelector("#subtotal-cordoba-uno");
-    let spanCordobaCincuentaCentavos = document.querySelector("#subtotal-cordoba-cincuenta-centavos");
-    let spanCordobaVeinticincoCentavos = document.querySelector("#subtotal-cordoba-veinticinco-centavos");
-    let spanCordobaDiezCentavos = document.querySelector("#subtotal-cordoba-diez-centavos");
-    //span para total de cordobas
-    let spanTotal = document.querySelector("#total-cordoba");
-    console.log("spans definidos");
 
     //realizar multiplicaciones
     //multiplicacion de billetes de dolar
