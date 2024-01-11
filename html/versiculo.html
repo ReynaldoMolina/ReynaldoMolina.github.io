@@ -6,29 +6,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reynaldo Molina</title>
     <link rel="stylesheet" href="/styles/style.css">
+    <script src="/js/random-verse.js"></script>
 </head>
 <body>
     <header class="container header">
         <a href="/index.html">
             <h4>Reynaldo Molina GitHub Page</h4>
         </a>
-        <ul class="container">
+        <ul class="container"> 
             <li>
-                <a href="https://www.facebook.com/profile.php?id=100092726139099">Facebook</a>
+                <a href="https://www.facebook.com/profile.php?id=100092726139099" target="_blank" rel="noopener noreferrer">
+                    Facebook
+                </a>
             </li>
             <li>
-                <a href="https://www.linkedin.com/in/reynaldo-molina/">LinkedIn</a>
+                <a href="https://www.linkedin.com/in/reynaldo-molina/" target="_blank" rel="noopener noreferrer">
+                    LinkedIn
+                    <!-- <img src="/images/linkedin-logo.png" alt="linkedin"> -->
+                </a>
             </li>
             <li>
-                <a href="https://github.com/ReynaldoMolina">GitHub</a>
+                <a href="https://github.com/ReynaldoMolina" target="_blank" rel="noopener noreferrer">
+                    GitHub
+                    <!-- <img src="/images/github-icon.png" alt="github"> -->
+                </a>
             </li>
         </ul>
     </header>
 
     <main class="main-content">
         <div class="container">
-            <h2 class="title">Próximamente</h2>
+            <h2 class="title">Versículo aleatorio</h2>
         </div>
+
+        <div class="container container-col">
+            <div>
+                <label for="testaments">Selecciona</label>
+                <select name="testaments" id="testament-selector">
+                    <option value="old-testament">Antiguo testamento</option>
+                    <option value="new-testament">Nuevo testamento</option>
+                    <option value="all-testaments">Ambos</option>
+                </select>
+            </div>
+            <div class="container verse-container">
+                <span id="verse-display">Aquí se mostrará el versículo</span>
+            </div>
+            <button class="verse-button">
+                Generar
+            </button>
+            <div class="container log-container">
+                <span>Historial</span>
+                <div class="container verse-log">
+                    <ol id="verse-log-list"></ol>
+                </div>
+            </div>
+        </div>
+
     </main>
 </body>
 </html>

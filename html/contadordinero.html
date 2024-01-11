@@ -13,15 +13,23 @@
         <a href="/index.html">
             <h4>Reynaldo Molina GitHub Page</h4>
         </a>
-        <ul class="container">
+        <ul class="container"> 
             <li>
-                <a href="https://www.facebook.com/profile.php?id=100092726139099">Facebook</a>
+                <a href="https://www.facebook.com/profile.php?id=100092726139099" target="_blank" rel="noopener noreferrer">
+                    Facebook
+                </a>
             </li>
             <li>
-                <a href="https://www.linkedin.com/in/reynaldo-molina/">LinkedIn</a>
+                <a href="https://www.linkedin.com/in/reynaldo-molina/" target="_blank" rel="noopener noreferrer">
+                    LinkedIn
+                    <!-- <img src="/images/linkedin-logo.png" alt="linkedin"> -->
+                </a>
             </li>
             <li>
-                <a href="https://github.com/ReynaldoMolina">GitHub</a>
+                <a href="https://github.com/ReynaldoMolina" target="_blank" rel="noopener noreferrer">
+                    GitHub
+                    <!-- <img src="/images/github-icon.png" alt="github"> -->
+                </a>
             </li>
         </ul>
     </header>
@@ -30,113 +38,116 @@
         <div class="container">
             <h2 class="title">Contador de dinero</h2>
         </div>
-        <div class="container">
-            <p>Tipo de cambio</p>
-            <input type="number" id="tipo-de-cambio">
-        </div>
-        <div class="tabla1">
-            <table>
-                <tr>
-                    <th>Billete</th>
-                    <th>Cantidad</th>
-                    <th>Total</th>
-                </tr>
-                <tr>
-                    <td>$100</td>
-                    <td><input type="number" class="cant-dolar"></td>
-                    <td><span id="subtotal-dolar-cien">-</span></td>
-                </tr>
-                <tr>
-                    <td>$50</td>
-                    <td><input type="number" class="cant-dolar"></td>
-                    <td><span id="subtotal-dolar-cincuenta">-</span></td>
-                </tr>
-                <tr>
-                    <td>$20</td>
-                    <td><input type="number" class="cant-dolar"></td>
-                    <td><span id="subtotal-dolar-veinte">-</span></td>
-                </tr>
-                <tr>
-                    <td>$10</td>
-                    <td><input type="number" class="cant-dolar"></td>
-                    <td><span id="subtotal-dolar-diez">-</span></td>
-                </tr>
-                <tr>
-                    <td>$5</td>
-                    <td><input type="number" class="cant-dolar"></td>
-                    <td><span id="subtotal-dolar-cinco">-</span></td>
-                </tr>
-                <tr>
-                    <td>$1</td>
-                    <td><input type="number" class="cant-dolar"></td>
-                    <td><span id="subtotal-dolar-uno">-</span></td>
-                </tr>
-                <tr>
-                    <td>1000</td>
-                    <td><input type="number" class="cant-cordoba"></td>
-                    <td><span id="subtotal-cordoba-mil">-</span></td>
-                </tr>
-                <tr>
-                    <td>500</td>
-                    <td><input type="number" class="cant-cordoba"></td>
-                    <td><span id="subtotal-cordoba-quinientos">-</span></td>
-                </tr>
-                <tr>
-                    <td>200</td>
-                    <td><input type="number" class="cant-cordoba"></td>
-                    <td><span id="subtotal-cordoba-doscientos">-</span></td>
-                </tr>
-                <tr>
-                    <td>100</td>
-                    <td><input type="number" class="cant-cordoba"></td>
-                    <td><span id="subtotal-cordoba-cien">-</span></td>
-                </tr>
-                <tr>
-                    <td>50</td>
-                    <td><input type="number" class="cant-cordoba"></td>
-                    <td><span id="subtotal-cordoba-cincuenta">-</span></td>
-                </tr>
-                <tr>
-                    <td>20</td>
-                    <td><input type="number" class="cant-cordoba"></td>
-                    <td><span id="subtotal-cordoba-veinte">-</span></td>
-                </tr>
-                <tr>
-                    <td>10</td>
-                    <td><input type="number" class="cant-cordoba"></td>
-                    <td><span id="subtotal-cordoba-diez">-</span></td>
-                </tr>
-                <tr>
-                    <td>5</td>
-                    <td><input type="number" class="cant-cordoba"></td>
-                    <td><span id="subtotal-cordoba-cinco">-</span></td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td><input type="number" class="cant-cordoba"></td>
-                    <td><span id="subtotal-cordoba-uno">-</span></td>
-                </tr>
-                <tr>
-                    <td>0.50</td>
-                    <td><input type="number" class="cant-cordoba"></td>
-                    <td><span id="subtotal-cordoba-cincuenta-centavos">-</span></td>
-                </tr>
-                <tr>
-                    <td>0.25</td>
-                    <td><input type="number" class="cant-cordoba"></td>
-                    <td><span id="subtotal-cordoba-veinticinco-centavos">-</span></td>
-                </tr>
-                <tr>
-                    <td>0.10</td>
-                    <td><input type="number" class="cant-cordoba"></td>
-                    <td><span id="subtotal-cordoba-diez-centavos">-</span></td>
-                </tr>
-                <tr>
-                    <th>Total</th>
-                    <th><button id="boton-calcular">Calcular</button></th>
-                    <th><span id="total-cordoba">-</span></th>
-                </tr>
-            </table>
+
+        <div class="container container-col">
+            <div class="container cambio-container">
+                <p>Tipo de cambio</p>
+                <input type="number" id="tipo-de-cambio">
+            </div>
+            <div class="tabla1">
+                <table>
+                    <tr>
+                        <th>Billete</th>
+                        <th>Cantidad</th>
+                        <th>Total</th>
+                    </tr>
+                    <tr>
+                        <td>$100</td>
+                        <td><input type="number" class="cant-dolar"></td>
+                        <td><span id="subtotal-dolar-cien">-</span></td>
+                    </tr>
+                    <tr>
+                        <td>$50</td>
+                        <td><input type="number" class="cant-dolar"></td>
+                        <td><span id="subtotal-dolar-cincuenta">-</span></td>
+                    </tr>
+                    <tr>
+                        <td>$20</td>
+                        <td><input type="number" class="cant-dolar"></td>
+                        <td><span id="subtotal-dolar-veinte">-</span></td>
+                    </tr>
+                    <tr>
+                        <td>$10</td>
+                        <td><input type="number" class="cant-dolar"></td>
+                        <td><span id="subtotal-dolar-diez">-</span></td>
+                    </tr>
+                    <tr>
+                        <td>$5</td>
+                        <td><input type="number" class="cant-dolar"></td>
+                        <td><span id="subtotal-dolar-cinco">-</span></td>
+                    </tr>
+                    <tr>
+                        <td>$1</td>
+                        <td><input type="number" class="cant-dolar"></td>
+                        <td><span id="subtotal-dolar-uno">-</span></td>
+                    </tr>
+                    <tr>
+                        <td>1000</td>
+                        <td><input type="number" class="cant-cordoba"></td>
+                        <td><span id="subtotal-cordoba-mil">-</span></td>
+                    </tr>
+                    <tr>
+                        <td>500</td>
+                        <td><input type="number" class="cant-cordoba"></td>
+                        <td><span id="subtotal-cordoba-quinientos">-</span></td>
+                    </tr>
+                    <tr>
+                        <td>200</td>
+                        <td><input type="number" class="cant-cordoba"></td>
+                        <td><span id="subtotal-cordoba-doscientos">-</span></td>
+                    </tr>
+                    <tr>
+                        <td>100</td>
+                        <td><input type="number" class="cant-cordoba"></td>
+                        <td><span id="subtotal-cordoba-cien">-</span></td>
+                    </tr>
+                    <tr>
+                        <td>50</td>
+                        <td><input type="number" class="cant-cordoba"></td>
+                        <td><span id="subtotal-cordoba-cincuenta">-</span></td>
+                    </tr>
+                    <tr>
+                        <td>20</td>
+                        <td><input type="number" class="cant-cordoba"></td>
+                        <td><span id="subtotal-cordoba-veinte">-</span></td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td><input type="number" class="cant-cordoba"></td>
+                        <td><span id="subtotal-cordoba-diez">-</span></td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td><input type="number" class="cant-cordoba"></td>
+                        <td><span id="subtotal-cordoba-cinco">-</span></td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td><input type="number" class="cant-cordoba"></td>
+                        <td><span id="subtotal-cordoba-uno">-</span></td>
+                    </tr>
+                    <tr>
+                        <td>0.50</td>
+                        <td><input type="number" class="cant-cordoba"></td>
+                        <td><span id="subtotal-cordoba-cincuenta-centavos">-</span></td>
+                    </tr>
+                    <tr>
+                        <td>0.25</td>
+                        <td><input type="number" class="cant-cordoba"></td>
+                        <td><span id="subtotal-cordoba-veinticinco-centavos">-</span></td>
+                    </tr>
+                    <tr>
+                        <td>0.10</td>
+                        <td><input type="number" class="cant-cordoba"></td>
+                        <td><span id="subtotal-cordoba-diez-centavos">-</span></td>
+                    </tr>
+                    <tr>
+                        <th>Total</th>
+                        <th>C$</th>
+                        <th><span id="total-cordoba">-</span></th>
+                    </tr>
+                </table>
+            </div>
         </div>
     </main>
 </body>

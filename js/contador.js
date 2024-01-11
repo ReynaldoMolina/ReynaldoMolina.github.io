@@ -2,9 +2,17 @@
 window.addEventListener("load", iniciarBoton);
 
 function iniciarBoton() {
-    const botonCalculo = document.querySelector("#boton-calcular")
-    console.log("boton iniciado");
-    botonCalculo.addEventListener("click", calculo)
+
+    const cantDolarInputs = document.querySelectorAll('.cant-dolar');
+    const cantCordobaInputs = document.querySelectorAll('.cant-cordoba');
+    const cantCambio = document.querySelector('#tipo-de-cambio');
+    cantDolarInputs.forEach(function(element) {
+        element.addEventListener('input', calculo);
+    })
+    cantCordobaInputs.forEach(function(element) {
+        element.addEventListener('input', calculo);
+    })
+    cantCambio.addEventListener('input', calculo);
 }
 
 function calculo() {
@@ -13,7 +21,7 @@ function calculo() {
     if (isNaN(tipoCambio)) {
         tipoCambio = 1;
     }
-    console.log("tipo cambio obtenido");
+    //console.log("tipo cambio obtenido");
 
     //definir cantidad de dolares
     let cantDolarNode = document.querySelectorAll(".cant-dolar");
@@ -25,7 +33,7 @@ function calculo() {
         if (isNaN(cantDolar[index])) {
             cantDolar[index] = 0;
         }
-        console.log(cantDolar[index]);
+        //console.log(cantDolar[index]);
     }
 
     //definir cantidad de cordobas
@@ -38,26 +46,10 @@ function calculo() {
         if (isNaN(cantCordoba[index])) {
             cantCordoba[index] = 0;
         }
-        console.log(cantCordoba[index]);
+        //console.log(cantCordoba[index]);
     }
 
-
-    //definir cantidad de billetes de cordoba
-/*    let cantidadCordobaMil = parseInt(document.querySelector("#cantidad-cordoba-mil").value);
-    let cantidadCordobaQuinientos = parseInt(document.querySelector("#cantidad-cordoba-quinientos").value);
-    let cantidadCordobaDoscientos = parseInt(document.querySelector("#cantidad-cordoba-doscientos").value);
-    let cantidadCordobaCien = parseInt(document.querySelector("#cantidad-cordoba-cien").value);
-    let cantidadCordobaCincuenta = parseInt(document.querySelector("#cantidad-cordoba-cincuenta").value);
-    let cantidadCordobaVeinte = parseInt(document.querySelector("#cantidad-cordoba-veinte").value);
-    let cantidadCordobaDiez = parseInt(document.querySelector("#cantidad-cordoba-diez").value);
-    //definir cantidad de monedas de cordoba
-    let cantidadCordobaCinco = parseInt(document.querySelector("#cantidad-cordoba-cinco").value);
-    let cantidadCordobaUno = parseInt(document.querySelector("#cantidad-cordoba-uno").value);
-    let cantidadCordobaCincuentaCentavos = parseInt(document.querySelector("#cantidad-cordoba-cincuenta-centavos").value);
-    let cantidadCordobaVeinticincoCentavos = parseInt(document.querySelector("#cantidad-cordoba-veinticinco-centavos").value);
-    let cantidadCordobaDiezCentavos = parseInt(document.querySelector("#cantidad-cordoba-diez-centavos").value);
-*/    
-    console.log("cantidades definidas");
+    //console.log("cantidades definidas");
 
     //definir spans HTML
     let spanDolarCien = document.querySelector("#subtotal-dolar-cien");
@@ -82,7 +74,7 @@ function calculo() {
     let spanCordobaDiezCentavos = document.querySelector("#subtotal-cordoba-diez-centavos");
     //span para total de cordobas
     let spanTotal = document.querySelector("#total-cordoba");
-    console.log("spans definidos");
+    //console.log("spans definidos");
 
     //realizar multiplicaciones
     //multiplicacion de billetes de dolar
@@ -106,7 +98,7 @@ function calculo() {
     let subtotalCordobaCincuentaCentavos = (0.5 * cantCordoba[9]).toFixed(2);
     let subtotalCordobaVeinticincoCentavos = (0.25 * cantCordoba[10]).toFixed(2);
     let subtotalCordobaDiezCentavos = (0.1 * cantCordoba[11]).toFixed(2);
-    console.log("multiplicacion hecha");
+    //console.log("multiplicacion hecha");
 
     let totalCordoba = (
         parseFloat(subtotalDolarCien) + parseFloat(subtotalDolarCincuenta) + parseFloat(subtotalDolarVeinte) + parseFloat(subtotalDolarDiez) +
@@ -115,7 +107,7 @@ function calculo() {
         parseFloat(subtotalCordobaCincuenta) + parseFloat(subtotalCordobaVeinte) + parseFloat(subtotalCordobaDiez) + 
         parseFloat(subtotalCordobaCinco) + parseFloat(subtotalCordobaUno) + parseFloat(subtotalCordobaCincuentaCentavos) + parseFloat(subtotalCordobaVeinticincoCentavos) + parseFloat(subtotalCordobaDiezCentavos)
     ).toFixed(2);
-    console.log("total calculado");
+    //console.log("total calculado");
 
     //escribir spans
     spanDolarCien.innerHTML = subtotalDolarCien;

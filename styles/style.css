@@ -4,6 +4,7 @@
     --white: #FFFFFF;
     --border-gray: rgb(88, 88, 88);
     --link-hover: darkkhaki;
+    --link-clicked: rgb(255, 255, 160);
 }
 * {
     box-sizing: border-box;
@@ -27,6 +28,9 @@ a {
 a:hover {
     text-decoration: underline;
 }
+a:focus {
+    color: var(--link-clicked);
+}
 ul {
     list-style: none;
 }
@@ -42,6 +46,9 @@ ul li {
     align-items: center;
     justify-content: center;
 }
+.container-col {
+    flex-direction: column;
+}
 .header {
     width: 100%;
     background-color: var(--header-gray);
@@ -52,18 +59,6 @@ ul li {
 }
 .header ul {
     font-size: 1.2rem;
-}
-.social-media li {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 30px;
-}
-.social-media img {
-    height: 22px;
-}
-.social-media li:nth-child(2) img {
-    height: 25px;
 }
 .main-content {
     flex-direction: column;
@@ -87,6 +82,9 @@ ul li {
 .link-card:hover {
     border: 1px solid var(--white);
 }
+.link-card:active {
+    border: 1px solid var(--link-clicked);
+}
 .link {
     position: absolute;
     width: 100%;
@@ -95,12 +93,68 @@ ul li {
     left: 0;
     z-index: 1;
 }
-.footer {
+
+/*Pagina de contador de dinero*/
+.cambio-container {
+    margin-bottom: 5px;
     font-size: 1.4rem;
-    width: 100%;
-    height: 30px;
-    border-top: 1px solid var(--border-gray);
+    width: 300px;
+    justify-content: space-evenly;
+}
+.cambio-container input {
+    border: 1px solid var(--border-gray);
+}
+.tabla1 {
+    display: flex;
+    justify-content: center;
+    font-size: 1.4rem;
+}
+table {
+    border: 1px solid white;
+    border-collapse: collapse;
+}
+th, td {
+    border: 1px solid rgb(78, 78, 78);
+    width: 100px;
+    height: 20px;
+    text-align: center;
+}
+th {
+    background-color: rgb(65, 65, 65);
+}
+input {
+    width: 100px;
+    height: 20px;
+    background-color: var(--background-gray);
+    border: none;
+    appearance: textfield;
+    color: white;
+    text-align: center;
+}
+input:focus {
+    outline: 0;
+}
+
+/*pagina versiculo aleatorio*/
+.verse-container {
+    height: 100px;
+    width: 350px;
+    margin: 20px 0;
+    border: 1px solid var(--border-gray);
+    border-radius: 10px;
     background-color: var(--header-gray);
+}
+.verse-button {
+    height: 40px;
+    width: 300px;
+    margin-bottom: 20px;
+}
+.log-container {
+    flex-direction: column;
+    width: 350px;
+}
+.verse-log {
+    margin: 5px;
 }
 
 @media (max-width: 640px) {
@@ -113,41 +167,4 @@ ul li {
     .card-container {
         flex-direction: column;
     }
-}
-
-/*Pagina de contador de dinero*/
-.tabla1 {
-    display: flex;
-    justify-content: center;
-    font-size: 1.4rem;
-}
-
-table {
-    border: 1px solid white;
-    border-collapse: collapse;
-}
-
-th, td {
-    border: 1px solid rgb(78, 78, 78);
-    width: 100px;
-    height: 20px;
-    text-align: center;
-}
-
-th {
-    background-color: rgb(65, 65, 65);
-}
-
-input {
-    width: 100px;
-    height: 20px;
-    background-color: #212121;
-    border: 1px solid gray;
-    appearance: textfield;
-    color: white;
-    text-align: center;
-}
-
-input:focus {
-    outline: 0;
 }
