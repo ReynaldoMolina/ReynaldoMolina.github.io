@@ -3,16 +3,21 @@ window.addEventListener("load", iniciarBoton);
 
 function iniciarBoton() {
 
-    const cantDolarInputs = document.querySelectorAll('.cant-dolar');
-    const cantCordobaInputs = document.querySelectorAll('.cant-cordoba');
+    const cantUnidadesInputs = document.querySelectorAll('.cant-unidad');
+    cantUnidadesInputs.forEach(function(element) {
+        element.addEventListener('input', calculo);
+    })
+
     const cantCambio = document.querySelector('#tipo-de-cambio');
-    cantDolarInputs.forEach(function(element) {
-        element.addEventListener('input', calculo);
-    })
-    cantCordobaInputs.forEach(function(element) {
-        element.addEventListener('input', calculo);
-    })
     cantCambio.addEventListener('input', calculo);
+}
+
+function sumSubtotals(arr) {
+    let sum = 0;
+    for (let index = 0; index < arr.length; index++) {
+        sum = sum + parseFloat(arr[index]);
+    }
+    return sum;
 }
 
 function calculo() {
@@ -21,113 +26,45 @@ function calculo() {
     if (isNaN(tipoCambio)) {
         tipoCambio = 1;
     }
-    //console.log("tipo cambio obtenido");
 
-    //definir cantidad de dolares
-    let cantDolarNode = document.querySelectorAll(".cant-dolar");
-    let cantDolar = Array.from(cantDolarNode);
+    //definir tipos de billetes
+    let unidades = [100, 50, 20, 10, 5, 1, 1000, 500, 200, 100, 50, 20, 10, 5, 1, 0.5, 0.25, 0.1];
 
-    for (let index = 0; index < cantDolar.length; index++) {
-        cantDolar[index] = parseInt(cantDolar[index].value);
+    //definir cantidad de unidades
+    let cantUnidadNode = document.querySelectorAll(".cant-unidad");
+    let cantUnidad = Array.from(cantUnidadNode);
 
-        if (isNaN(cantDolar[index])) {
-            cantDolar[index] = 0;
+    for (let index = 0; index < cantUnidad.length; index++) {
+        cantUnidad[index] = parseInt(cantUnidad[index].value);
+
+        if (isNaN(cantUnidad[index])) {
+            cantUnidad[index] = 0;
         }
-        //console.log(cantDolar[index]);
     }
-
-    //definir cantidad de cordobas
-    let cantCordobaNode = document.querySelectorAll(".cant-cordoba");
-    let cantCordoba = Array.from(cantCordobaNode);
-
-    for (let index = 0; index < cantCordoba.length; index++) {
-        cantCordoba[index] = parseInt(cantCordoba[index].value);
-
-        if (isNaN(cantCordoba[index])) {
-            cantCordoba[index] = 0;
-        }
-        //console.log(cantCordoba[index]);
-    }
-
-    //console.log("cantidades definidas");
 
     //definir spans HTML
-    let spanDolarCien = document.querySelector("#subtotal-dolar-cien");
-    let spanDolarCincuenta = document.querySelector("#subtotal-dolar-cincuenta");
-    let spanDolarVeinte = document.querySelector("#subtotal-dolar-veinte");
-    let spanDolarDiez = document.querySelector("#subtotal-dolar-diez");
-    let spanDolarCinco = document.querySelector("#subtotal-dolar-cinco");
-    let spanDolarUno = document.querySelector("#subtotal-dolar-uno");
-    //span de billetes de cordoba
-    let spanCordobaMil = document.querySelector("#subtotal-cordoba-mil");
-    let spanCordobaQuinientos = document.querySelector("#subtotal-cordoba-quinientos");
-    let spanCordobaDoscientos = document.querySelector("#subtotal-cordoba-doscientos");
-    let spanCordobaCien = document.querySelector("#subtotal-cordoba-cien");
-    let spanCordobaCincuenta = document.querySelector("#subtotal-cordoba-cincuenta");
-    let spanCordobaVeinte = document.querySelector("#subtotal-cordoba-veinte");
-    let spanCordobaDiez = document.querySelector("#subtotal-cordoba-diez");
-    //span de monedas de cordoba
-    let spanCordobaCinco = document.querySelector("#subtotal-cordoba-cinco");
-    let spanCordobaUno = document.querySelector("#subtotal-cordoba-uno");
-    let spanCordobaCincuentaCentavos = document.querySelector("#subtotal-cordoba-cincuenta-centavos");
-    let spanCordobaVeinticincoCentavos = document.querySelector("#subtotal-cordoba-veinticinco-centavos");
-    let spanCordobaDiezCentavos = document.querySelector("#subtotal-cordoba-diez-centavos");
-    //span para total de cordobas
-    let spanTotal = document.querySelector("#total-cordoba");
-    //console.log("spans definidos");
+    let spanSubtotalsNode = document.querySelectorAll(".subtotal");
+    let spanSubtotals = Array.from(spanSubtotalsNode);
 
     //realizar multiplicaciones
-    //multiplicacion de billetes de dolar
-    let subtotalDolarCien = ((100 * cantDolar[0]) * tipoCambio).toFixed(2);    
-    let subtotalDolarCincuenta = ((50 * cantDolar[1]) * tipoCambio).toFixed(2);
-    let subtotalDolarVeinte = ((20 * cantDolar[2]) * tipoCambio).toFixed(2);
-    let subtotalDolarDiez = ((10 * cantDolar[3]) * tipoCambio).toFixed(2);
-    let subtotalDolarCinco = ((5 * cantDolar[4]) * tipoCambio).toFixed(2);
-    let subtotalDolarUno = ((1 * cantDolar[5]) * tipoCambio).toFixed(2);
-    //multiplicacion de billetes de cordoba
-    let subtotalCordobaMil = (1000 * cantCordoba[0]).toFixed(2);
-    let subtotalCordobaQuinientos = (500 * cantCordoba[1]).toFixed(2);
-    let subtotalCordobaDoscientos = (200 * cantCordoba[2]).toFixed(2);
-    let subtotalCordobaCien = (100 * cantCordoba[3]).toFixed(2);
-    let subtotalCordobaCincuenta = (50 * cantCordoba[4]).toFixed(2);
-    let subtotalCordobaVeinte = (20 * cantCordoba[5]).toFixed(2);
-    let subtotalCordobaDiez = (10 * cantCordoba[6]).toFixed(2);
-    //multiplicacion de monedas de cordoba
-    let subtotalCordobaCinco = (5 * cantCordoba[7]).toFixed(2);
-    let subtotalCordobaUno = (1 * cantCordoba[8]).toFixed(2);
-    let subtotalCordobaCincuentaCentavos = (0.5 * cantCordoba[9]).toFixed(2);
-    let subtotalCordobaVeinticincoCentavos = (0.25 * cantCordoba[10]).toFixed(2);
-    let subtotalCordobaDiezCentavos = (0.1 * cantCordoba[11]).toFixed(2);
-    //console.log("multiplicacion hecha");
+    let subtotals = [];
 
-    let totalCordoba = (
-        parseFloat(subtotalDolarCien) + parseFloat(subtotalDolarCincuenta) + parseFloat(subtotalDolarVeinte) + parseFloat(subtotalDolarDiez) +
-        parseFloat(subtotalDolarCinco) + parseFloat(subtotalDolarUno) +
-        parseFloat(subtotalCordobaMil) + parseFloat(subtotalCordobaQuinientos) + parseFloat(subtotalCordobaDoscientos) + parseFloat(subtotalCordobaCien) +
-        parseFloat(subtotalCordobaCincuenta) + parseFloat(subtotalCordobaVeinte) + parseFloat(subtotalCordobaDiez) + 
-        parseFloat(subtotalCordobaCinco) + parseFloat(subtotalCordobaUno) + parseFloat(subtotalCordobaCincuentaCentavos) + parseFloat(subtotalCordobaVeinticincoCentavos) + parseFloat(subtotalCordobaDiezCentavos)
-    ).toFixed(2);
-    //console.log("total calculado");
+    for (let index = 0; index < spanSubtotals.length; index++) {
+        subtotals[index] = ((unidades[index] * cantUnidad[index]) * tipoCambio).toFixed(2);
+    }
 
     //escribir spans
-    spanDolarCien.innerHTML = subtotalDolarCien;
-    spanDolarCincuenta.innerHTML = subtotalDolarCincuenta;
-    spanDolarVeinte.innerHTML = subtotalDolarVeinte;
-    spanDolarDiez.innerHTML = subtotalDolarDiez;
-    spanDolarCinco.innerHTML = subtotalDolarCinco;
-    spanDolarUno.innerHTML = subtotalDolarUno;
-    spanCordobaMil.innerHTML = subtotalCordobaMil;
-    spanCordobaQuinientos.innerHTML = subtotalCordobaQuinientos;
-    spanCordobaDoscientos.innerHTML = subtotalCordobaDoscientos;
-    spanCordobaCien.innerHTML = subtotalCordobaCien;
-    spanCordobaCincuenta.innerHTML = subtotalCordobaCincuenta;
-    spanCordobaVeinte.innerHTML = subtotalCordobaVeinte;
-    spanCordobaDiez.innerHTML = subtotalCordobaDiez;
-    spanCordobaCinco.innerHTML = subtotalCordobaCinco;
-    spanCordobaUno.innerHTML = subtotalCordobaUno;
-    spanCordobaCincuentaCentavos.innerHTML = subtotalCordobaCincuentaCentavos;
-    spanCordobaVeinticincoCentavos.innerHTML = subtotalCordobaVeinticincoCentavos;
-    spanCordobaDiezCentavos.innerHTML = subtotalCordobaDiezCentavos;
+    for (let index = 0; index < spanSubtotals.length; index++) {
+        if (subtotals[index] == 0) {
+            spanSubtotals[index].innerHTML = '-';
+        }
+        else {
+            spanSubtotals[index].innerHTML = subtotals[index];
+        }
+    }
 
+    //sum subtotals and print total
+    let totalCordoba = sumSubtotals(subtotals).toFixed(2);
+    const spanTotal = document.querySelector('#total-cordoba');
     spanTotal.innerHTML = totalCordoba;
 }    
