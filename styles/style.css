@@ -95,6 +95,9 @@ ul li {
 }
 
 /*Pagina de contador de dinero*/
+.button-clear {
+    width: 90px;
+}
 .cambio-container {
     margin-bottom: 5px;
     font-size: 1.4rem;

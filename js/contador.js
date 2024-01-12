@@ -2,7 +2,6 @@
 window.addEventListener("load", iniciarBoton);
 
 function iniciarBoton() {
-
     const cantUnidadesInputs = document.querySelectorAll('.cant-unidad');
     cantUnidadesInputs.forEach(function(element) {
         element.addEventListener('input', calculo);
@@ -50,7 +49,11 @@ function calculo() {
     let subtotals = [];
 
     for (let index = 0; index < spanSubtotals.length; index++) {
-        subtotals[index] = ((unidades[index] * cantUnidad[index]) * tipoCambio).toFixed(2);
+        if (index < 6) {
+            subtotals[index] = ((unidades[index] * cantUnidad[index]) * tipoCambio).toFixed(2);
+        } else {
+            subtotals[index] = (unidades[index] * cantUnidad[index]).toFixed(2);            
+        }
     }
 
     //escribir spans

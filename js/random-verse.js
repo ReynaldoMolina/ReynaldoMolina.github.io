@@ -32,16 +32,25 @@ function randomVerse() {
         ]
     )
 
+    const exodo = new Book('Éxodo', 40,
+        [
+            22,25,22,31,23,30,25,32,35,29,10,51,22,31,27,36,16,27,25,26,//1-20
+            36,31,33,18,40,37,21,43,46,38,18,35,23,35,35,38,29,31,43,38
+        ]
+    )
+
+    const oldTestament = [genesis, exodo];
+
     //variables for random numbers
     let randomBook = 0, randomChapter = 0, randomVerse = 0;
 
     //generate random verse
-    randomBook = numAleatorio(0, 1);
-    randomChapter = numAleatorio(1, 50);
-    randomVerse = numAleatorio(1, 10);
+    randomBook = numAleatorio(0, (oldTestament.length - 1));
+    randomChapter = numAleatorio(1, oldTestament[randomBook].chapters);
+    randomVerse = numAleatorio(1, genesis.verses[randomChapter]);
 
     //print verse
-    let generatedVerse = `Génesis ${randomChapter}:${randomVerse}`;
+    let generatedVerse = `${oldTestament[randomBook].name} ${randomChapter}:${randomVerse}`;
     spanVerse.innerHTML = generatedVerse;
 
     //print log
