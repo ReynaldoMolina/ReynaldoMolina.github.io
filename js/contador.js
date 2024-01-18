@@ -1,15 +1,22 @@
-//Wait page load
-window.addEventListener("load", iniciarBoton);
+//definir variables
+let tipoCambio = document.querySelector("#tipo-de-cambio");
+tipoCambio.addEventListener('input', calculo);
 
-function iniciarBoton() {
-    const cantUnidadesInputs = document.querySelectorAll('.cant-unidad');
-    cantUnidadesInputs.forEach(function(element) {
-        element.addEventListener('input', calculo);
-    })
+const clearButton = document.querySelector('.button-clear');
+clearButton.addEventListener('click', clearInputs);
 
-    const cantCambio = document.querySelector('#tipo-de-cambio');
-    cantCambio.addEventListener('input', calculo);
-}
+const cantUnidadesInputs = document.querySelectorAll('.cant-unidad');
+cantUnidadesInputs.forEach(function(element) {
+    element.addEventListener('input', calculo);
+})
+
+let cantUnidadNode = document.querySelectorAll(".cant-unidad");
+let spanSubtotalsNode = document.querySelectorAll(".subtotal");
+
+const unidades = [100, 50, 20, 10, 5, 1, 1000, 500, 200, 100, 50, 20, 10, 5, 1, 0.5, 0.25, 0.1];
+let subtotals = [];
+const spanTotal = document.querySelector('#total-cordoba');
+
 
 function sumSubtotals(arr) {
     let sum = 0;
@@ -21,16 +28,13 @@ function sumSubtotals(arr) {
 
 function calculo() {
     //definir tipo de cambio
-    let tipoCambio = parseFloat(document.querySelector("#tipo-de-cambio").value);
+    tipoCambio = document.querySelector("#tipo-de-cambio");
+    tipoCambio = parseFloat(tipoCambio.value);
     if (isNaN(tipoCambio)) {
         tipoCambio = 1;
     }
 
-    //definir tipos de billetes
-    let unidades = [100, 50, 20, 10, 5, 1, 1000, 500, 200, 100, 50, 20, 10, 5, 1, 0.5, 0.25, 0.1];
-
     //definir cantidad de unidades
-    let cantUnidadNode = document.querySelectorAll(".cant-unidad");
     let cantUnidad = Array.from(cantUnidadNode);
 
     for (let index = 0; index < cantUnidad.length; index++) {
@@ -41,13 +45,7 @@ function calculo() {
         }
     }
 
-    //definir spans HTML
-    let spanSubtotalsNode = document.querySelectorAll(".subtotal");
-    let spanSubtotals = Array.from(spanSubtotalsNode);
-
     //realizar multiplicaciones
-    let subtotals = [];
-
     for (let index = 0; index < spanSubtotals.length; index++) {
         if (index < 6) {
             subtotals[index] = ((unidades[index] * cantUnidad[index]) * tipoCambio).toFixed(2);
@@ -57,6 +55,8 @@ function calculo() {
     }
 
     //escribir spans
+    let spanSubtotals = Array.from(spanSubtotalsNode);
+
     for (let index = 0; index < spanSubtotals.length; index++) {
         if (subtotals[index] == 0) {
             spanSubtotals[index].innerHTML = '-';
@@ -68,6 +68,14 @@ function calculo() {
 
     //sum subtotals and print total
     let totalCordoba = sumSubtotals(subtotals).toFixed(2);
-    const spanTotal = document.querySelector('#total-cordoba');
     spanTotal.innerHTML = totalCordoba;
-}    
+}
+
+function clearInputs() {
+    let cantUnidad = Array.from(cantUnidadNode);
+
+    cantUnidad.forEach(function(element) {
+        element.value = "";
+    })
+    calculo();
+}
