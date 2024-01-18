@@ -46,7 +46,7 @@ function calculo() {
     }
 
     //realizar multiplicaciones
-    for (let index = 0; index < spanSubtotals.length; index++) {
+    for (let index = 0; index < cantUnidad.length; index++) {
         if (index < 6) {
             subtotals[index] = ((unidades[index] * cantUnidad[index]) * tipoCambio).toFixed(2);
         } else {
