@@ -1,13 +1,15 @@
 const buttonGenerate = document.querySelector('.verse-button');
 buttonGenerate.addEventListener('click', generateVerse)
 
+const buttonClear = document.querySelector('#button-clear');
+buttonClear.addEventListener('click', clearLog)
+
 const spanVerse = document.querySelector('#verse-display');
 
 const testamentSelect = document.querySelector('#testament-select');
 
 //variables for random numbers
 let randomBook = 0, randomChapter = 0, randomVerse = 0, generatedVerse = 0;
-
 const spanLog = document.querySelector('#verse-log-list');
 
 //constructor for books
@@ -17,7 +19,7 @@ function Book(name, chapters, verses) {
     this.verses = verses;
 }
 
-//old testament books
+//old testament books ----------------------------------
 const genesis = new Book('Génesis', 50,
     [
         31,25,24,26,32,22,24,22,29,32,32,20,18,24,21,16,27,33,38,18,//1-20
@@ -33,9 +35,7 @@ const exodo = new Book('Éxodo', 40,
     ]
 )
 
-const oldTestament = [genesis, exodo];
-
-//new testament books
+//new testament books ----------------------------------
 const mateo = new Book('Mateo', 3,
     [
         10, 20, 50
@@ -48,7 +48,9 @@ const marcos = new Book('Marcos', 3,
     ]
 )
 
+const oldTestament = [genesis, exodo];
 const newTestament = [mateo, marcos];
+const bible = oldTestament.concat(newTestament);
 
 //funcion para generar numeros aleatorios entre un rango
 function numAleatorio(min, max) {
@@ -56,32 +58,32 @@ function numAleatorio(min, max) {
 	return resultado;
 }
 
-function generateVerse() {
+//funcion para generar libro, capitulo y versiculo aleatorio
+function randomNumbers(array) {
+    randomBook = numAleatorio(0, (array.length - 1));
+    randomChapter = numAleatorio(1, array[randomBook].chapters - 1);
+    randomVerse = numAleatorio(1, array[randomBook].verses[randomChapter]);
 
+    generatedVerse = `${array[randomBook].name} ${randomChapter}:${randomVerse}`;
+}
+
+function clearLog() {
+    spanLog.innerHTML = "";
+}
+
+function generateVerse() {
     let testamentSelection = testamentSelect.value;
 
     //generate random verse
     switch (testamentSelection) {
         case 'old-testament':
-            randomBook = numAleatorio(0, (oldTestament.length - 1));
-            randomChapter = numAleatorio(1, oldTestament[randomBook].chapters - 1);
-            randomVerse = numAleatorio(1, oldTestament[randomBook].verses[randomChapter]);
-
-            generatedVerse = `${oldTestament[randomBook].name} ${randomChapter}:${randomVerse}`;
+            randomNumbers(oldTestament);
             break;
         case 'new-testament':
-            randomBook = numAleatorio(0, (newTestament.length - 1));
-            randomChapter = numAleatorio(1, newTestament[randomBook].chapters - 1);
-            randomVerse = numAleatorio(1, newTestament[randomBook].verses[randomChapter]);
-
-            generatedVerse = `${newTestament[randomBook].name} ${randomChapter}:${randomVerse}`;
+            randomNumbers(newTestament);
             break;
         case 'both-testaments':
-            randomBook = numAleatorio(0, ((newTestament.length + oldTestament.length) - 1));
-            randomChapter = numAleatorio(1, newTestament[randomBook].chapters);
-            randomVerse = numAleatorio(1, newTestament[randomBook].verses[randomChapter]);
-
-            generatedVerse = `${newTestament[randomBook].name} ${randomChapter}:${randomVerse}`;
+            randomNumbers(bible);
             break;
         default:
             break;
@@ -96,5 +98,5 @@ function generateVerse() {
 
     createLogLi.appendChild(createLogLiText);
 
-    spanLog.appendChild(createLogLi);
+    spanLog.insertBefore(createLogLi, spanLog.children[0]);
 }

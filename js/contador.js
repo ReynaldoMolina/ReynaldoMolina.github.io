@@ -15,12 +15,22 @@ let spanSubtotalsNode = document.querySelectorAll(".subtotal");
 
 const unidades = [100, 50, 20, 10, 5, 1, 1000, 500, 200, 100, 50, 20, 10, 5, 1, 0.5, 0.25, 0.1];
 let subtotals = [];
-const spanTotal = document.querySelector('#total-cordoba');
-
+const spanTotalCordoba = document.querySelector('#total-cordoba');
+const spanTotalDolar = document.querySelector('#total-dolar');
+const spanDetalleCordoba = document.querySelector('#detalle-cordoba');
+const spanDetalleDolar = document.querySelector('#detalle-dolar');
 
 function sumSubtotals(arr) {
     let sum = 0;
     for (let index = 0; index < arr.length; index++) {
+        sum = sum + parseFloat(arr[index]);
+    }
+    return sum;
+}
+
+function sumaArray(arr, start, end) {
+    let sum = 0;
+    for (let index = start; index < end; index++) {
         sum = sum + parseFloat(arr[index]);
     }
     return sum;
@@ -54,6 +64,9 @@ function calculo() {
         }
     }
 
+    let totalDolar = (sumSubtotals(subtotals) / tipoCambio).toFixed(2);
+    let totalCordoba = sumSubtotals(subtotals).toFixed(2);
+
     //escribir spans
     let spanSubtotals = Array.from(spanSubtotalsNode);
 
@@ -66,9 +79,15 @@ function calculo() {
         }
     }
 
+    //realizar detalle
+    let detalleDolar = (sumaArray(subtotals, 0, 5) / tipoCambio).toFixed(2);
+    let detalleCordoba = sumaArray(subtotals, 6, subtotals.length).toFixed(2);
+
     //sum subtotals and print total
-    let totalCordoba = sumSubtotals(subtotals).toFixed(2);
-    spanTotal.innerHTML = totalCordoba;
+    spanTotalDolar.innerHTML = `$ ${totalDolar}`;
+    spanTotalCordoba.innerHTML = `C$ ${totalCordoba}`;
+    spanDetalleDolar.innerHTML = `$ ${detalleDolar}`;
+    spanDetalleCordoba.innerHTML = `C$ ${detalleCordoba}`;
 }
 
 function clearInputs() {
