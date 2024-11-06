@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reynaldo Molina</title>
     <link rel="stylesheet" href="/styles/style.css">
+    <script src="/js/random-number.js" defer></script>
 </head>
 <body>
     <header class="container header">
@@ -35,29 +36,37 @@
 
     <main class="main-content">
         <div class="container">
-            <h2 class="title">Bienvenido</h2>
+            <h2 class="title">Número aleatorio</h2>
         </div>
 
-        <div class="container card-container">
-            <div class="container link-card">
-                Versículo aleatorio de la Biblia
-                <a href="./html/versiculo.html">
-                    <span class="link"></span>
-                </a>
+        <div class="container container-col">
+
+
+            <div class="container">
+                <p>Minimo</p>
+                <input type="number" id="min" placeholder="0">
+                <p>Maximo</p>
+                <input type="number" id="max" placeholder="0">
             </div>
-            <div class="container link-card">
-                Contador de dinero
-                <a href="./html/contadordinero.html">
-                    <span class="link"></span>
-                </a>
+
+
+            <div class="container verse-container">
+                <span id="verse-display">Aquí se mostrará el número</span>
             </div>
-            <div class="container link-card">
-                Número aleatorio
-                <a href="./html/randomnumber.html">
-                    <span class="link"></span>
-                </a>
+            <button class="verse-button">
+                Generar
+            </button>
+            <button class="verse-button" id="button-clear">
+                Limpiar registro
+            </button>
+            <div class="container log-container">
+                <span>Historial</span>
+                <div class="container verse-log">
+                    <ol reversed id="verse-log-list"></ol>
+                </div>
             </div>
         </div>
+
     </main>
 </body>
 </html>

@@ -80,7 +80,7 @@ function calculo() {
     }
 
     //realizar detalle
-    let detalleDolar = (sumaArray(subtotals, 0, 5) / tipoCambio).toFixed(2);
+    let detalleDolar = (sumaArray(subtotals, 0, 5) / tipoCambio).toFixed(2n );
     let detalleCordoba = sumaArray(subtotals, 6, subtotals.length).toFixed(2);
 
     //sum subtotals and print total
