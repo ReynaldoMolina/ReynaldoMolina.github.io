@@ -49,6 +49,11 @@ ul li {
 .container-col {
     flex-direction: column;
 }
+.card-container{
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+    /*flex-direction: column;*/
+}
 .header {
     width: 100%;
     background-color: var(--header-gray);
@@ -173,6 +178,13 @@ input:focus {
     position: relative;
 }
 
+.link-card-store:hover {
+    border: 1px solid var(--white);
+}
+.link-card-store:active {
+    border: 1px solid var(--link-clicked);
+}
+
 @media (max-width: 640px) {
     .header {
         justify-content: center;
@@ -183,6 +195,7 @@ input:focus {
     .card-container {
         flex-wrap: wrap;
         margin-bottom: 40px;
+        justify-content: flex-start;
         /*flex-direction: column;*/
     }
 
