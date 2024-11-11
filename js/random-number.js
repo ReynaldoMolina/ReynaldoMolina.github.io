@@ -9,11 +9,10 @@ const spanVerse = document.querySelector('#verse-display');
 const min = document.querySelector("#min");
 const max = document.querySelector("#max");
 let numberList = [];
+let randomNumber = 0;
 
 //variables for random numbers
 const spanLog = document.querySelector('#verse-log-list');
-
-
 
 //funcion para generar numeros aleatorios entre un rango
 function numAleatorio(min, max) {
@@ -21,15 +20,25 @@ function numAleatorio(min, max) {
 	return resultado;
 }
 
-
 function clearLog() {
     spanLog.innerHTML = "";
 }
 
 function generateNumber() {
+
     let minimo = parseInt(min.value);
     let maximo = parseInt(max.value);
 
+    if (min.value == ""){
+        spanVerse.innerHTML = 'Escriba el numero minimo';
+        return;
+    }
+
+    if (max.value == ""){
+        spanVerse.innerHTML = 'Escriba el numero maximo';
+        return;
+    }
+/*
     if (typeof randomNumber == 'undefined') {
         randomNumber = numAleatorio(minimo, maximo);
         numberList.push(randomNumber);
@@ -37,8 +46,8 @@ function generateNumber() {
     else if (numberList.includes(randomNumber)) {
         randomNumber = numAleatorio(minimo, maximo);
     }
-    
-    
+*/
+    randomNumber = numAleatorio(minimo, maximo);
 
     //print verse
     spanVerse.innerHTML = randomNumber;
