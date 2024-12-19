@@ -20,6 +20,7 @@ body {
     color: var(--white);
     font-size: 1.6rem;
 }
+
 a {
     color: var(--white);
     text-decoration: none;
@@ -40,120 +41,77 @@ ul li {
 .inactive {
     display: none;
 }
-.flex {
+
+.container-main{
     display: flex;
-}
-.flx-col {
-    flex-direction: column;
-}
-.flx-center {
     justify-content: center;
-    align-items: center;
 }
 
-/*Main page*/
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container-col {
+    flex-direction: column;
+    justify-content: left;
+}
+.card-container{
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+    /*flex-direction: column;*/
+}
 .header {
+    width: 100%;
     background-color: var(--header-gray);
     height: 50px;
     border-bottom: 1px solid var(--border-gray);
     justify-content: space-between;
     padding: 0 20px;
-    margin-bottom: 20px;
 }
 .header ul {
     font-size: 1.2rem;
 }
-.main-content h2 {
-    text-align: center;
-    margin-bottom: 15px;
+.main-content {
+    flex-direction: column;
+    margin: 20px;
 }
-.card-container{
-    flex-wrap: wrap;
-    margin: 0 20px;
+
+.title {
+    margin: 0 auto 20px;
 }
+
 .link-card {
     background-color: var(--header-gray);
+    width: 300px;
+    height: 150px;
     border-radius: 10px;
     border: 1px solid var(--border-gray);
     margin: 10px;
     cursor: pointer;
-    height: 150px;
-    width: 250px;
-    padding: 0 20px;
-    text-align: center;
+    position: relative;
 }
+
 .link-card:hover {
     border: 1px solid var(--white);
-    text-decoration: none;
 }
 .link-card:active {
     border: 1px solid var(--link-clicked);
 }
-
-/*Pagina de contador de dinero*/
-.button-clear {
-    width: 90px;
-}
-.cambio-container {
-    margin-bottom: 5px;
-    font-size: 1.4rem;
-    width: 300px;
-    justify-content: space-evenly;
-}
-.cambio-container input {
-    border: 1px solid var(--border-gray);
-}
-.tabla1 {
-    display: flex;
-    justify-content: center;
-    font-size: 1.4rem;
-}
-table {
-    border: 1px solid white;
-    border-collapse: collapse;
-}
-th, td {
-    border: 1px solid rgb(78, 78, 78);
-    width: 100px;
-    height: 20px;
-    text-align: center;
-}
-th {
-    background-color: rgb(65, 65, 65);
-}
-input {
-    width: 100px;
-    height: 20px;
-    background-color: var(--background-gray);
-    border: none;
-    appearance: textfield;
-    color: white;
-    text-align: center;
-}
-input:focus {
-    outline: 0;
+.link {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
 }
 
-/*pagina versiculo aleatorio*/
-.verse-container {
-    height: 100px;
-    width: 350px;
-    margin: 20px 0;
-    border: 1px solid var(--border-gray);
-    border-radius: 10px;
-    background-color: var(--header-gray);
-}
-.verse-button {
-    height: 40px;
-    width: 300px;
-    margin-bottom: 20px;
-}
-.log-container {
-    flex-direction: column;
-    width: 350px;
-}
-.verse-log {
-    margin: 5px;
+.nav-bar{
+    width: 400px;
+    height: 400px;
+    position: relative;
 }
 
 /*pagina Jahaira store*/
@@ -175,7 +133,7 @@ input:focus {
     border: 1px solid var(--link-clicked);
 }
 
-@media (max-width: 500px) {
+@media (max-width: 640px) {
     .header {
         justify-content: center;
     }
@@ -185,6 +143,8 @@ input:focus {
     .card-container {
         flex-wrap: wrap;
         margin-bottom: 40px;
+        justify-content: flex-start;
+        /*flex-direction: column;*/
     }
 
     .link-card-store {
