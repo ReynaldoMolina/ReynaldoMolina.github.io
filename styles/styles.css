@@ -1,24 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
 :root {
-    --background-gray: #212121;
-    --header-gray: #383838;
+    --background: #34353a;
+    --secondary-background: #3f3f3f;
     --white: #FFFFFF;
-    --border-gray: rgb(88, 88, 88);
-    --link-hover: darkkhaki;
-    --link-clicked: rgb(255, 255, 160);
+    --primary: #ffc96b;
+    --secondary: #664d09;
+    --link-hover: #ffb22d;
+    --max-width: 1000px;
 }
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
+    font-family: "Noto Sans", serif;
 }
 html {
     font-size: 62.5%;
 }
 body {
-    background-color: var(--background-gray);
+    background-color: var(--background);
     color: var(--white);
-    font-size: 1.6rem;
+    font-size: 1.5rem;
 }
 a {
     color: var(--white);
@@ -28,7 +31,7 @@ a:hover {
     text-decoration: underline;
 }
 a:focus {
-    color: var(--link-clicked);
+    color: var(--link-hover);
 }
 ul {
     list-style: none;
@@ -37,10 +40,7 @@ ul li {
     margin: 0 5px;
 }
 
-.inactive {
-    display: none;
-}
-.flex {
+.flx {
     display: flex;
 }
 .flx-col {
@@ -51,26 +51,57 @@ ul li {
     align-items: center;
 }
 
-/*Main page*/
+/*Header*/
 .header {
-    background-color: red;
-    height: 50px;
-    border-bottom: 1px solid var(--border-gray);
+    width: 100%;
+    height: 60px;
     justify-content: space-between;
-    padding: 0 20px;
+    padding: 0 30px;
     margin-bottom: 20px;
 }
-.header a {
-    height: 25px;
-    margin-left: 15px;
-}
-.header a:hover > img{
-    filter: none;
-}
-.header a img {
+.header-logo {
     height: 100%;
-    filter: grayscale();
 }
+.header-logo img {
+    height: 50%;
+}
+.header-link {
+    color: gainsboro;
+    padding: 10px 10px;
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+.header-link:hover{
+    text-decoration: none;
+    color: var(--white);
+}
+.header-search {
+    background-color: var(--secondary-background);
+    border-radius: 5px;
+}
+.header-search-input {
+    height: 30px;
+    padding: 0 3px 0 10px;
+    text-align: left;
+    background-color: transparent;
+}
+.header-search-button {
+    background-color: transparent;
+    height: 30px;
+    width: 30px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.header-search-button:hover {
+    background-color: rgb(78, 78, 78);
+}
+.header-search-button img {
+    height: 15px;
+    opacity: 60%;
+}
+
+/* Main content */
 .main-content h2 {
     text-align: center;
     margin-bottom: 15px;
