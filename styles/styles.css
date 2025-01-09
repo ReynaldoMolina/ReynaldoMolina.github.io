@@ -53,7 +53,7 @@ ul li {
 
 /*Main page*/
 .header {
-    background-color: var(--header-gray);
+    background-color: red;
     height: 50px;
     border-bottom: 1px solid var(--border-gray);
     justify-content: space-between;
