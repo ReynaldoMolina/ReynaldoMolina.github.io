@@ -6,7 +6,7 @@
     --primary-hover: #ffdfa9;
     --secondary: #664d09;
     --link-hover: #ffb22d;
-    --max-width: 1000px;
+    --max-width: 550px;
 }
 * {
     box-sizing: border-box;
@@ -52,6 +52,9 @@ h1 {
     font-family:Georgia, 'Times New Roman', Times, serif;
     font-size: 2.5rem;
 }
+em {
+    font-style: normal;
+}
 /*Header*/
 .header {
     width: 100%;
@@ -77,15 +80,15 @@ h1 {
 }
 
 /* About */
-.about-container {
+.contact-container {
     width: 100%;
-    max-width: 550px;
+    max-width: var(--max-width);
     margin: 0 auto;
 }
-.about-info-container {
+.contact-info-container {
     width: 100%;
 }
-.about-info-container h5 {
+.contact-info-container h5 {
     margin-top: 20px;
 }
 .name-container {
@@ -106,23 +109,41 @@ h1 {
     margin-left: 15px;
     aspect-ratio: 1;
 }
-.about-links {
+.contact-links {
     margin-top: 10px;
     align-items: center;
 }
-.about-links a {
+.contact-links a {
     margin-right: 15px;
 }
-.about-links a:last-child {
+.contact-links a:last-child {
     margin-right: 0;
 }
-.about-link {
+.contact-link {
     width: 23px;
     height: 23px;
     filter: brightness(80%);
 }
-.about-link:hover {
+.contact-link:hover {
     filter: brightness(100%);
+}
+/* About */
+.about-container {
+    margin: 40px auto 0;
+    max-width: var(--max-width);
+}
+.about-container h1 {
+    width: 100%;
+    text-align: left;
+    margin-bottom: 10px;
+}
+.about-container p {
+    border-left: 5px solid var(--primary);
+    padding-left: 15px;
+    text-align: justify;
+}
+.about-container em {
+    color: var(--primary);
 }
 
 @media (max-width: 500px) {
@@ -132,23 +153,23 @@ h1 {
     .header-logo {
         height: 70%;
     }
-    .about-container {
+    .contact-container {
         flex-direction: column;
     }
-    .about-info-container {
+    .contact-info-container {
         padding: 0;
     }
-    .about-info {
+    .contact-info {
         align-items: center;
     }
     .name-container {
         flex-direction: column;
         align-items: center;
     }
-    .about-info-container h5 {
+    .contact-info-container h5 {
         text-align: center;
     }
-    .about-links {
+    .contact-links {
         justify-content: center;
     }
     .profile-pic {
@@ -156,5 +177,9 @@ h1 {
         max-width: 200px;
         margin-left: 0;
         margin-top: 25px;
+    }
+    /* About */
+    .about-container p {
+        font-size: 1.3rem;
     }
 }
