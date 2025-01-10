@@ -9,13 +9,6 @@ class Header extends HTMLElement {
           <div class="flx">
             <a href="#" class="header-link">About</a>
             <a href="#" class="header-link">Portfolio</a>
-            <a href="#" class="header-link">Contact</a>
-          </div>
-          <div class="flx header-search">
-            <input class="header-search-input" type="search" placeholder="Search">
-            <button class="flx flx-center header-search-button">
-              <img src="/assets/icons/search.svg" alt="search">
-            </button>
           </div>
         </div>
       </header>
