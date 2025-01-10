@@ -5,6 +5,7 @@
     --secondary-background: #3f3f3f;
     --white: #FFFFFF;
     --primary: #ffc96b;
+    --primary-hover: #ffdfa9;
     --secondary: #664d09;
     --link-hover: #ffb22d;
     --max-width: 1000px;
@@ -26,9 +27,6 @@ body {
 a {
     color: var(--white);
     text-decoration: none;
-}
-a:hover {
-    text-decoration: underline;
 }
 a:focus {
     color: var(--link-hover);
@@ -54,6 +52,7 @@ ul li {
 /*Header*/
 .header {
     width: 100%;
+    max-width: 700px;
     height: 60px;
     justify-content: space-between;
     padding: 0 30px;
@@ -72,7 +71,6 @@ ul li {
     font-size: 1.3rem;
 }
 .header-link:hover{
-    text-decoration: none;
     color: var(--white);
 }
 .header-search {
@@ -101,6 +99,83 @@ ul li {
     opacity: 60%;
 }
 
+/* About */
+.about-container {
+    margin: 0 auto;
+    height: 400px;
+    width: 650px;
+    position: relative;
+}
+.about-info {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 25px;
+    z-index: 1;
+}
+.about-info h4 {
+    font-weight: normal;
+}
+.name-container {
+    align-items: baseline;
+}
+.name-container h2 {
+    margin-left: 5px;
+    color: var(--primary);
+}
+.about-info a {
+    width: 100px;
+    margin-top: 20px;
+    border: 2px solid var(--primary);
+    color: var(--primary);
+    font-size: 1.2rem;
+    border-radius: 5px;
+    padding: 5px 0;
+    text-align: center;
+}
+.about-info a:hover {
+    color: var(--primary-hover);
+}
+.profile-pic {
+    position: absolute;
+    height: 350px;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 40px;
+    outline: 5px solid var(--secondary-background);
+    border-radius: 50%;
+}
+.about-links {
+    position: absolute;
+    align-items: center;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.about-links-line {
+    background-color: var(--primary);
+    width: 3px;
+    height: 70px;
+    border-radius: 3px;
+    margin-bottom: 10px;
+}
+.about-links a {
+    display: flex;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    margin-top: 10px;
+}
+#github-icon {
+    width: 80%;
+}
+#linkedin-icon {
+    width: 70%;
+}
+#whatsapp-icon {
+    width: 90%;
+}
+
 /* Main content */
 .main-content h2 {
     text-align: center;
@@ -123,7 +198,6 @@ ul li {
 }
 .link-card:hover {
     border: 1px solid var(--white);
-    text-decoration: none;
 }
 .link-card:active {
     border: 1px solid var(--link-clicked);
