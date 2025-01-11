@@ -1,7 +1,8 @@
 .portfolio-h1 {
     width: 100%;
-    text-align: center;
-    margin-bottom: 20px;
+    max-width: var(--max-width);
+    text-align: left;
+    margin: 0 auto 20px;
 }
 .portfolio-container {
     grid-template-columns: 1fr 1fr 1fr;
@@ -17,21 +18,35 @@
 .project:hover {
     background-color: var(--secondary-hover);
 }
+.project:hover h4,
+.project:hover p {
+    color: black;
+}
+.project:hover img {
+    filter: none;
+}
 .project img {
     width: 100%;
     aspect-ratio: 1;
     text-align: center;
     overflow: hidden;
     margin-bottom: 5px;
-    border-radius: 5px;
+    border-radius: 5px 5px 0 0;
+    filter: brightness(90%);
 }
 .project h4, p {
     margin-bottom: 7px;
     font-size: 1.3rem;
 }
+.project p {
+    font-size: 1.2rem;
+}
 
 @media (max-width: 500px) {
     .portfolio-container {
         grid-template-columns: 1fr 1fr;
-    }    
+    }
+    .project img {
+        filter: none;
+    }
 }

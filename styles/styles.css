@@ -78,9 +78,15 @@ em {
     color: gainsboro;
     padding: 10px 10px;
     font-weight: bold;
+    border-radius: 5px;
+    margin-left: 5px;
 }
 .header-link:hover{
     color: var(--white);
+    background-color: var(--secondary-background);
+}
+.active {
+    background-color: var(--secondary-background);
 }
 
 @media (max-width: 500px) {

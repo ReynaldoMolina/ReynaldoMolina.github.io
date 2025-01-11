@@ -18,4 +18,24 @@ class Header extends HTMLElement {
 
 customElements.define('custom-header', Header);
 
+function toggleActiveLink(className) {
+  const links = document.querySelectorAll(className);  
+  let activeLink = getActiveLink(); 
+  links[activeLink].classList.add('active');
+}
+
+function getActiveLink() {
+  let activeLink;
+  let url = document.URL;
+  if (url.includes('index')) {
+    activeLink = 0;
+  }
+  if (url.includes('portfolio')) {
+    activeLink = 1;
+  }
+  return activeLink;
+}
+
+toggleActiveLink('.header-link');
+
 export { Header };
