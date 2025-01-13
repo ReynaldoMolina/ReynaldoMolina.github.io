@@ -11,12 +11,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/styles/styles.css">
   <link rel="stylesheet" href="/styles/about.css">
-  <script type="module" src="./js/header.js"></script>
+  <script src="./js/header.js"></script>
 </head>
 <body>
-  <custom-header></custom-header>
+  <custom-header class="header-container"></custom-header>
 
-  <div class="flx flx-center contact-container">
+  <section class="flx flx-center contact-container">
     <div class="contact-info-container">
       <div class="flx flx-col contact-info">
         <div class="flx name-container">
@@ -28,33 +28,35 @@
       
       <h5>Contact me</h5>
       <div class="flx contact-links">
-        <!-- <div class="contact-links-line"></div> -->
-        <a href="#">
-          <img class="contact-link" src="/assets/icons/facebook.svg" alt="facebook">
+        <a href="https://www.facebook.com/profile.php?id=100092726139099" target="_blank">
+          <img class="contact-link" src="/assets/icons/facebook.svg" alt="Facebook">
         </a>
-        <a href="#">
-          <img class="contact-link" src="/assets/icons/github.svg" alt="github">
+        <a href="https://github.com/ReynaldoMolina" target="_blank">
+          <img class="contact-link" src="/assets/icons/github.svg" alt="GitHub">
         </a>
-        <a href="#">
-          <img class="contact-link" src="/assets/icons/linkedin.svg" alt="linkedin">
+        <a href="https://www.linkedin.com/in/reynaldo-molina/" target="_blank">
+          <img class="contact-link" src="/assets/icons/linkedin.svg" alt="Linkedin">
         </a>
-        <a href="#">
-          <img class="contact-link" src="/assets/icons/whatsapp.svg" alt="whatsapp">
+        <a href="https://api.whatsapp.com/send?phone=78679884" target="_blank">
+          <img class="contact-link" src="/assets/icons/whatsapp.svg" alt="WhatsApp">
+        </a>
+        <a href="mailto:molinareynaldo952@gmail.com" target="_blank">
+          <img class="contact-link" src="/assets/icons/email.svg" alt="Email">
         </a>
       </div>
     </div>
 
     <img class="flx flx-center profile-pic" src="/assets/images/profile-pic.png" alt="Profile picture">
-  </div>
+  </section>
 
-  <div class="flx flx-col flx-center about-container">
+  <section class="flx flx-col flx-center about-container" id="about-section">
     <h1>About</h1>
-    <p>I am a front-end developer in training with a solid foundation in programming acquired through courses at Platzi. I am looking for my first opportunity in the technology sector, ready to apply my knowledge in <em>HTML, CSS, JavaScript</em> and modern frameworks. My experience in administrative and accounting roles has given me valuable skills in <em>organization</em> and precision, which I complement with a <em>passion for technology and innovation.</em></p>
-  </div>
+    <p>I am a front-end developer with a solid foundation in programming. I'm looking for an opportunity in the technology sector, ready to apply my knowledge in <em>HTML, CSS, JavaScript</em> and modern frameworks. My experience  has given me valuable skills in <em>oganization</em> and precision, which I complement with a <em>passion for technology and innovation.</em></p>
+  </section>
 
-  <div class="skills-container">
+  <section class="skills-container">
     <h1>My skills</h1>
-    <div class="grid skill-cards">
+    <div class="flx skill-cards">
       <div class="flx flx-col flx-center skill-card">
         <img src="/assets/icons/css3.svg" alt="CSS">
         <figcaption>CSS</figcaption>
@@ -87,11 +89,49 @@
         <img src="/assets/icons/react.svg" alt="React">
         <figcaption>React</figcaption>
       </div>
-      <div class="flx flx-col flx-center skill-card">
-        <img src="/assets/icons/terminal.svg" alt="Terminal">
-        <figcaption>Terminal</figcaption>
-      </div>
     </div>
-  </div>
+  </section>
+
+  <section class="flx flx-col portfolio-container" id="portfolio-section">
+    <h1>Portfolio</h1>
+    <div class="grid projects-container">
+      <a href="#" class="flx flx-col flx-center project">
+        <img src="/assets/images/bible.jpeg" alt="Project image">
+        <h4>Project name</h4>
+        <p>Project description</p>
+      </a>
+      <a href="#" class="flx flx-col flx-center project">
+        <img src="/assets/images/bible.jpeg" alt="Project image">
+        <h4>Project name</h4>
+        <p>Project description</p>
+      </a>
+      <a href="#" class="flx flx-col flx-center project">
+        <img src="/assets/images/bible.jpeg" alt="Project image">
+        <h4>Project name</h4>
+        <p>Project description</p>
+      </a>
+      <a href="#" class="flx flx-col flx-center project">
+        <img src="/assets/images/bible.jpeg" alt="Project image">
+        <h4>Project name</h4>
+        <p>Project description</p>
+      </a>
+      <a href="#" class="flx flx-col flx-center project">
+        <img src="/assets/images/bible.jpeg" alt="Project image">
+        <h4>Project name</h4>
+        <p>Project description</p>
+      </a>
+      <a href="#" class="flx flx-col flx-center project">
+        <img src="/assets/images/bible.jpeg" alt="Project image">
+        <h4>Project name</h4>
+        <p>Project description</p>
+      </a>
+    </div>
+  </section>
+
+  <footer class="footer flx flx-col flx-center">
+    <img src="/assets/icons/logo.svg" alt="Logo">
+    <h3>Thanks for scrolling!</h3>
+    <h6>Made with ❤️ in Nicaragua</h6>
+  </footer>
 </body>
 </html>
