@@ -28,18 +28,18 @@
     </section>
 
     <section class="flx flx-col flx-center">
-      <table class="counter-table table-dollars">
-        <div class="flx table-title">
-          <h3>Dollars</h3>
-          <div class="flx">
-            <button id="button-clear-dollars" class="flx flx-center">
-              <img src="../assets/icons/clear.svg" alt="Clear">
-            </button>
-            <button id="dropdown-dollars" class="flx flx-center">
-              <img class="dropdown-img" src="../assets/icons/dropdown.svg" alt="Dropdown">
-            </button>
-          </div>
+      <div class="flx table-title">
+        <h3>Dollars</h3>
+        <div class="flx">
+          <button id="button-clear-dollars" class="flx flx-center">
+            <img src="../assets/icons/clear.svg" alt="Clear">
+          </button>
+          <button id="dropdown-dollars" class="flx flx-center">
+            <img class="dropdown-img" src="../assets/icons/dropdown.svg" alt="Dropdown">
+          </button>
         </div>
+      </div>
+      <table class="counter-table table-dollars">
         <thead>
           <tr>
             <th>Unit</th>
@@ -59,18 +59,18 @@
         </tfoot>
       </table>
 
-      <table class="counter-table table-cordobas">
-        <div class="flx table-title">
-          <h3>Córdobas</h3>
-          <div class="flx">
-            <button id="button-clear-cordobas" class="flx flx-center">
-              <img src="../assets/icons/clear.svg" alt="Clear">
-            </button>
-            <button id="dropdown-cordobas" class="flx flx-center">
-              <img class="dropdown-img" src="../assets/icons/dropdown.svg" alt="Dropdown">
-            </button>
-          </div>
+      <div class="flx table-title">
+        <h3>Córdobas</h3>
+        <div class="flx">
+          <button id="button-clear-cordobas" class="flx flx-center">
+            <img src="../assets/icons/clear.svg" alt="Clear">
+          </button>
+          <button id="dropdown-cordobas" class="flx flx-center">
+            <img class="dropdown-img" src="../assets/icons/dropdown.svg" alt="Dropdown">
+          </button>
         </div>
+      </div>
+      <table class="counter-table table-cordobas">
         <thead>
           <tr>
             <th>Unit</th>
@@ -90,11 +90,10 @@
         </tfoot>
       </table>
 
+      <div class="flx table-title">
+        <h3>Totals</h3>
+      </div>
       <table class="counter-table table-totals">
-        <div class="flx table-title">
-          <h3>Totals</h3>
-          </div>
-        </div>
         <thead>
           <tr>
             <th>Dollars</th>
@@ -103,8 +102,8 @@
         </thead>
         <tfoot>
           <tr>
-            <th id="general-total-dollars">-</th>
-            <th id="general-total-cordobas">-</th>
+            <td id="general-total-dollars">-</td>
+            <td id="general-total-cordobas">-</td>
           </tr>
         </tfoot>
       </table>
