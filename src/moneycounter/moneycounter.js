@@ -8,6 +8,7 @@ getTableRows(cordobas, '.tbl-rows-cordobas');
 // define variables
 const inputExchangeRate = document.querySelector('#exchange-rate');
 const clearAllButton = document.querySelector('#button-clear-all');
+const spanMessage = document.querySelector('#message');
 const dropdownImgs = document.querySelectorAll('.dropdown-img');
 
 const clearDollarsButton = document.querySelector('#button-clear-dollars');
@@ -17,6 +18,9 @@ const dollarsTable = document.querySelector('.table-dollars');
 const clearCordobasButton = document.querySelector('#button-clear-cordobas');
 const cordobasDropdownButton = document.querySelector('#dropdown-cordobas');
 const cordobasTable = document.querySelector('.table-cordobas');
+
+const totalsDropdownButton = document.querySelector('#dropdown-totals');
+const totalsTable = document.querySelector('.table-totals');
 
 const inputsValues = document.querySelectorAll('.money-qty');
 const spansSubtotal = document.querySelectorAll('.money-subtotal');
@@ -39,18 +43,23 @@ let generalCordobas;
 
 // add event listeners
 inputExchangeRate.addEventListener('input', calculateDollars);
-clearAllButton.addEventListener('click', () => clearInputs(money));
+clearAllButton.addEventListener('click', () => clearInputs(money, 'All'));
 
-clearDollarsButton.addEventListener('click', () => clearInputs(dollars));
+clearDollarsButton.addEventListener('click', () => clearInputs(dollars, 'Dollars'));
 dollarsDropdownButton.addEventListener('click', () => {
   dollarsTable.classList.toggle('hidden');
   dropdownImgs[0].classList.toggle('rotate');
 });
 
-clearCordobasButton.addEventListener('click', () => clearInputs(cordobas));
+clearCordobasButton.addEventListener('click', () => clearInputs(cordobas,'Córdobas'));
 cordobasDropdownButton.addEventListener('click', () => {
   cordobasTable.classList.toggle('hidden');
   dropdownImgs[1].classList.toggle('rotate');
+});
+
+totalsDropdownButton.addEventListener('click', () => {
+  totalsTable.classList.toggle('hidden');
+  dropdownImgs[2].classList.toggle('rotate');
 });
 
 inputsValues.forEach((element) => {
@@ -60,7 +69,7 @@ inputsValues.forEach((element) => {
   });
 });
 
-function clearInputs(array) {
+function clearInputs(array, name) {
   // reset money values
   for (const element of array) {
     element.quantity = 0;
@@ -70,6 +79,11 @@ function clearInputs(array) {
     spansSubtotal[element.id].innerHTML = '-';
   }
   
+  spanMessage.innerHTML = `${name} inputs cleared`;
+  setTimeout(() => {
+    spanMessage.innerHTML = '-';
+  }, 7000);
+
   updateTotals();
   updateTotalSpans();
 }

@@ -21,10 +21,15 @@
   <main class="flx flx-col counter-container">
     <h1>Money counter</h1>
 
-    <section class="flx flx-center exchange-rate">
-      <p>Exchange rate</p>
-      <input type="number" id="exchange-rate" min="0" placeholder="1">
-      <button id="button-clear-all" class="flx flx-center button-clear">Clear all</button>
+    <section class="flx flx-col flx-center exchange-rate">
+      <div class="flx flx-center">
+        <p>Exchange rate</p>
+        <input type="number" id="exchange-rate" min="0" placeholder="1">
+      </div>
+      <div class="flx flx-center options">
+        <span id="message">-</span>
+        <button id="button-clear-all" class="flx flx-center button-clear">Clear all</button>
+      </div>
     </section>
 
     <section class="flx flx-col flx-center">
@@ -92,6 +97,9 @@
 
       <div class="flx table-title">
         <h3>Totals</h3>
+        <button id="dropdown-totals" class="flx flx-center">
+          <img class="dropdown-img" src="../assets/icons/dropdown.svg" alt="Dropdown">
+        </button>
       </div>
       <table class="counter-table table-totals">
         <thead>
