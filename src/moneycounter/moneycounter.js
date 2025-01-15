@@ -8,6 +8,7 @@ getTableRows(cordobas, '.tbl-rows-cordobas');
 // define variables
 const inputExchangeRate = document.querySelector('#exchange-rate');
 const clearAllButton = document.querySelector('#button-clear-all');
+const dropdownImgs = document.querySelectorAll('.dropdown-img');
 
 const clearDollarsButton = document.querySelector('#button-clear-dollars');
 const dollarsDropdownButton = document.querySelector('#dropdown-dollars');
@@ -29,12 +30,12 @@ const spanGeneralTotalDollars = document.querySelector('#general-total-dollars')
 const spanGeneralTotalCordobas = document.querySelector('#general-total-cordobas');
 
 //global variables
-let detailDollars = 0;
-let totalDollars = 0;
-let cordobasInDollars = 0;
-let totalCordobas = 0;
-let generalDollars = 0;
-let generalCordobas = 0;
+let detailDollars;
+let totalDollars;
+let cordobasInDollars;
+let totalCordobas;
+let generalDollars;
+let generalCordobas;
 
 // add event listeners
 inputExchangeRate.addEventListener('input', calculateDollars);
@@ -43,11 +44,13 @@ clearAllButton.addEventListener('click', () => clearInputs(money));
 clearDollarsButton.addEventListener('click', () => clearInputs(dollars));
 dollarsDropdownButton.addEventListener('click', () => {
   dollarsTable.classList.toggle('hidden');
+  dropdownImgs[0].classList.toggle('rotate');
 });
 
 clearCordobasButton.addEventListener('click', () => clearInputs(cordobas));
 cordobasDropdownButton.addEventListener('click', () => {
   cordobasTable.classList.toggle('hidden');
+  dropdownImgs[1].classList.toggle('rotate');
 });
 
 inputsValues.forEach((element) => {
@@ -111,7 +114,8 @@ function updateSubtotalSpan(id) {
     if (subtotal === 0) {
       subtotalSpan.innerHTML = '-';
     } else {
-      subtotal = subtotal.toFixed(2);
+      subtotal = subtotal.toLocaleString('en-US', { minimumFractionDigits: 2 });
+      // subtotal = subtotal.toFixed(2);
       subtotalSpan.innerHTML = subtotal;
     }
   } else {
@@ -122,7 +126,7 @@ function updateSubtotalSpan(id) {
       if (subtotal === 0) {
         subtotalSpan.innerHTML = '-';
       } else {
-        subtotal = subtotal.toFixed(2);
+        subtotal = subtotal.toLocaleString('en-US', { minimumFractionDigits: 2 });
         subtotalSpan.innerHTML = subtotal;     
       }
     }
@@ -163,27 +167,27 @@ function updateTotals() {
 
 function updateTotalSpans() {
   spanDetailDollars.innerHTML = (
-    detailDollars === 0 ? '-' : '$ ' + detailDollars.toFixed(2)
+    detailDollars === 0 ? '-' : '$ ' + detailDollars.toLocaleString('en-US', { minimumFractionDigits: 2 })
   );
 
   spanTotalDollars.innerHTML = (
-    totalDollars === 0 ? '-' : 'C$ ' + totalDollars.toFixed(2)
+    totalDollars === 0 ? '-' : 'C$ ' + totalDollars.toLocaleString('en-US', { minimumFractionDigits: 2 })
   );
   
   spanCordobasInDollars.innerHTML = (
-    cordobasInDollars === 0 ? '-' : '$ ' + cordobasInDollars.toFixed(2)
+    cordobasInDollars === 0 ? '-' : '$ ' + cordobasInDollars.toLocaleString('en-US', { minimumFractionDigits: 2 })
   );
 
   spanTotalCordobas.innerHTML = (
-    totalCordobas === 0 ? '-' : 'C$ ' + totalCordobas.toFixed(2)
+    totalCordobas === 0 ? '-' : 'C$ ' + totalCordobas.toLocaleString('en-US', { minimumFractionDigits: 2 })
   );
 
   spanGeneralTotalDollars.innerHTML = (
-    generalDollars === 0 ? '-' : '$ ' + generalDollars.toFixed(2)
+    generalDollars === 0 ? '-' : '$ ' + generalDollars.toLocaleString('en-US', { minimumFractionDigits: 2 })
   );
 
   spanGeneralTotalCordobas.innerHTML = (
-    generalCordobas === 0 ? '-' : 'C$ ' + generalCordobas.toFixed(2)
+    generalCordobas === 0 ? '-' : 'C$ ' + generalCordobas.toLocaleString('en-US', { minimumFractionDigits: 2 })
   );
 }
 

@@ -9,11 +9,11 @@ input::-webkit-inner-spin-button {
 }
 input {
   color: white;
-  width: 60px;
-  height: 25px;
   text-align: right;
   background-color: transparent;
   border: none;
+  height: 100%;
+  width: 100%;
 }
 input:focus-visible {
   outline: none;
@@ -22,25 +22,34 @@ input:focus-visible {
   display: none;
 }
 /* Container */
+.counter-container {
+  margin: 0 auto;
+  max-width: 300px;
+}
 .counter-container h1 {
+  text-align: center;
   margin-bottom: 20px;
   color: var(--primary);
 }
 /* Exchange rate */
 .exchange-rate {
-  margin: 0 auto;
+  justify-content: space-evenly;
+  margin: 0 auto 25px;
   height: 40px;
   border-radius: 5px;
   background-color: var(--secondary-background);
   padding: 0 5px;
+  width: 100%;
 }
 .exchange-rate p {
   text-align: center;
 }
 #exchange-rate {
+  height: auto;
   margin: 0 10px;
   border-bottom: 1px solid gray;
   text-align: center;
+  width: 70px;
 }
 #exchange-rate:focus-visible {
   border-bottom: 1px solid white;
@@ -57,7 +66,9 @@ input:focus-visible {
 }
 /* Tables */
 .counter-table {
+  width: 100%;
   border-collapse: collapse;
+  margin-bottom: 25px;
 }
 .counter-table td, th {
   border-top: 1px solid gray;
@@ -65,9 +76,9 @@ input:focus-visible {
   text-align: right;
   height: 25px;
 }
-.money-qty,
-.money-subtotal {
-  width: 100px;
+.counter-table th:nth-child(2),
+.counter-table th:nth-child(3) {
+  width: 50%;
 }
 .table-title  {
   padding: 5px 7px;
@@ -75,7 +86,7 @@ input:focus-visible {
   background-color: var(--secondary-background);
   width: 100%;
   justify-content: space-between;
-  margin: 25px 0 10px;
+  margin-bottom: 10px;
 }
 .table-title button {
   width: 30px;
@@ -90,6 +101,12 @@ input:focus-visible {
 .dropdown-img {
   transform: rotate(180deg);
 }
+.rotate {
+  transform: rotate(0deg);
+}
 .table-title button:hover {
   background-color: var(--secondary-hover);
+}
+.table-totals th {
+  text-align: center;
 }
