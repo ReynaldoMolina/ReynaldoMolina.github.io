@@ -2,8 +2,8 @@ class Header extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
       <header class="header flx flx-center">
-        <a href="/index.html" class="header-logo flx flx-center">
-          <img src="/assets/icons/logo.svg" alt="Logo">
+        <a href="/" class="header-logo flx flx-center">
+          <img src="/src/assets/icons/logo.svg" alt="Logo">
         </a>
         <nav class="flx">
           <a href="#about-section" class="header-link">About</a>

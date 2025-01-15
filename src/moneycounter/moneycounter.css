@@ -1,0 +1,95 @@
+/* for general inputs */
+input[type=number]{
+  -moz-appearance: textfield;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input {
+  color: white;
+  width: 60px;
+  height: 25px;
+  text-align: right;
+  background-color: transparent;
+  border: none;
+}
+input:focus-visible {
+  outline: none;
+}
+.hidden {
+  display: none;
+}
+/* Container */
+.counter-container h1 {
+  margin-bottom: 20px;
+  color: var(--primary);
+}
+/* Exchange rate */
+.exchange-rate {
+  margin: 0 auto;
+  height: 40px;
+  border-radius: 5px;
+  background-color: var(--secondary-background);
+  padding: 0 5px;
+}
+.exchange-rate p {
+  text-align: center;
+}
+#exchange-rate {
+  margin: 0 10px;
+  border-bottom: 1px solid gray;
+  text-align: center;
+}
+#exchange-rate:focus-visible {
+  border-bottom: 1px solid white;
+}
+.button-clear {
+  color: black;
+  border: none;
+  background-color: rgb(255, 135, 135);
+  border-radius: 5px;
+  padding: 5px 7px;
+}
+.button-clear:hover {
+  background-color: rgb(255, 83, 83);
+}
+/* Tables */
+.counter-table {
+  border-collapse: collapse;
+}
+.counter-table td, th {
+  border-top: 1px solid gray;
+  padding: 0 5px;
+  text-align: right;
+  height: 25px;
+}
+.money-qty,
+.money-subtotal {
+  width: 100px;
+}
+.table-title  {
+  padding: 5px 7px;
+  border-radius: 5px;
+  background-color: var(--secondary-background);
+  width: 100%;
+  justify-content: space-between;
+  margin: 25px 0 10px;
+}
+.table-title button {
+  width: 30px;
+  border: none;
+  background-color: transparent;
+  border-radius: 5px;
+  padding: 0 17px;
+}
+.table-title button > img {
+  width: 17px;
+}
+.dropdown-img {
+  transform: rotate(180deg);
+}
+.table-title button:hover {
+  background-color: var(--secondary-hover);
+}

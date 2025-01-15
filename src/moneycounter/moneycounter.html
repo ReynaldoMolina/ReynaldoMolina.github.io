@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reynaldo Molina</title>
+  <link rel="shortcut icon" href="/src/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/src/utils/utils.css">
+  <link rel="stylesheet" href="/src/header/header.css">
+  <link rel="stylesheet" href="/src/moneycounter/moneycounter.css">
+  <script src="/src/header/header.js"></script>
+  <script type="module" src="/src/moneycounter/moneycounter.js"></script>
+</head>
+<body>
+  <custom-header></custom-header>
+
+  <main class="flx flx-col flx-center counter-container">
+    <h1>Money counter</h1>
+
+    <section class="flx flx-center exchange-rate">
+      <p>Exchange rate</p>
+      <input type="number" id="exchange-rate" min="0" placeholder="1">
+      <button id="button-clear-all" class="flx flx-center button-clear">Clear all</button>
+    </section>
+
+    <section class="flx flx-col flx-center">
+      <table class="counter-table table-dollars">
+        <div class="flx table-title">
+          <h3>Dollars</h3>
+          <div class="flx">
+            <button id="button-clear-dollars" class="flx flx-center">
+              <img src="../assets/icons/clear.svg" alt="Clear">
+            </button>
+            <button id="dropdown-dollars" class="flx flx-center">
+              <img class="dropdown-img" src="../assets/icons/dropdown.svg" alt="Dropdown">
+            </button>
+          </div>
+        </div>
+        <thead>
+          <tr>
+            <th>Unit</th>
+            <th>Qty</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+
+        <tbody class="tbl-rows-dollars"></tbody>
+
+        <tfoot>
+          <tr>
+            <th>Total</th>
+            <th id="detail-dollars">-</th>
+            <th id="total-dollars">-</th>
+          </tr>
+        </tfoot>
+      </table>
+
+      <table class="counter-table table-cordobas">
+        <div class="flx table-title">
+          <h3>Córdobas</h3>
+          <div class="flx">
+            <button id="button-clear-cordobas" class="flx flx-center">
+              <img src="../assets/icons/clear.svg" alt="Clear">
+            </button>
+            <button id="dropdown-cordobas" class="flx flx-center">
+              <img class="dropdown-img" src="../assets/icons/dropdown.svg" alt="Dropdown">
+            </button>
+          </div>
+        </div>
+        <thead>
+          <tr>
+            <th>Unit</th>
+            <th>Qty</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+
+        <tbody class="tbl-rows-cordobas"></tbody>
+
+        <tfoot>
+          <tr>
+            <th>Total</th>
+            <th id="cordobas-in-dollars">-</th>
+            <th id="total-cordobas">-</th>
+          </tr>
+        </tfoot>
+      </table>
+
+      <table class="counter-table table-totals">
+        <div class="flx table-title">
+          <h3>Totals</h3>
+          </div>
+        </div>
+        <thead>
+          <tr>
+            <th>Dollars</th>
+            <th>Córdobas</th>
+          </tr>
+        </thead>
+        <tfoot>
+          <tr>
+            <th id="general-total-dollars">-</th>
+            <th id="general-total-cordobas">-</th>
+          </tr>
+        </tfoot>
+      </table>
+    </section>
+  </main>
+</body>
+</html>
