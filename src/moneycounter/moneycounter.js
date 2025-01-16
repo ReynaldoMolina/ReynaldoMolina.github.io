@@ -40,6 +40,7 @@ let cordobasInDollars;
 let totalCordobas;
 let generalDollars;
 let generalCordobas;
+let timeout;
 
 // add event listeners
 inputExchangeRate.addEventListener('input', calculateDollars);
@@ -80,9 +81,11 @@ function clearInputs(array, name) {
   }
   
   spanMessage.innerHTML = `${name} inputs cleared`;
-  setTimeout(() => {
+
+  clearTimeout(timeout);
+  timeout = setTimeout(() => {
     spanMessage.innerHTML = '-';
-  }, 7000);
+  }, 5000);
 
   updateTotals();
   updateTotalSpans();

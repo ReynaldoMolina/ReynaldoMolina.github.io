@@ -6,8 +6,9 @@ class Header extends HTMLElement {
           <img src="/src/assets/icons/logo.svg" alt="Logo">
         </a>
         <nav class="flx">
-          <a href="#about-section" class="header-link">About</a>
-          <a href="#portfolio-section" class="header-link">Portfolio</a>
+          <a href="/" class="header-link">Home</a>
+          <a href="/#about-section" class="header-link">About</a>
+          <a href="/#portfolio-section" class="header-link">Portfolio</a>
         </nav>
       </header>
     `
