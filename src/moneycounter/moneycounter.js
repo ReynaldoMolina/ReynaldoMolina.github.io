@@ -41,18 +41,28 @@ let totalCordobas;
 let generalDollars;
 let generalCordobas;
 let timeout;
+let timeoutMessage;
 
 // add event listeners
 inputExchangeRate.addEventListener('input', calculateDollars);
-clearAllButton.addEventListener('click', () => clearInputs(money, 'All'));
+clearAllButton.addEventListener('click', () => {
+  clearInputs(money, 'All');
+  highlight();
+});
 
-clearDollarsButton.addEventListener('click', () => clearInputs(dollars, 'Dollars'));
+clearDollarsButton.addEventListener('click', () => {
+  clearInputs(dollars, 'Dollars');
+  highlight();
+});
 dollarsDropdownButton.addEventListener('click', () => {
   dollarsTable.classList.toggle('hidden');
   dropdownImgs[0].classList.toggle('rotate');
 });
 
-clearCordobasButton.addEventListener('click', () => clearInputs(cordobas,'Córdobas'));
+clearCordobasButton.addEventListener('click', () => {
+  clearInputs(cordobas,'Córdobas');
+  highlight();
+});
 cordobasDropdownButton.addEventListener('click', () => {
   cordobasTable.classList.toggle('hidden');
   dropdownImgs[1].classList.toggle('rotate');
@@ -69,6 +79,16 @@ inputsValues.forEach((element) => {
     calculateOne(id);
   });
 });
+
+function highlight() {
+  // spanMessage.classList.remove('highlight');
+  spanMessage.classList.add('highlight');
+
+  clearTimeout(timeoutMessage);
+  timeoutMessage = setTimeout(() => {
+    spanMessage.classList.remove('highlight');
+  }, 2000);
+}
 
 function clearInputs(array, name) {
   // reset money values

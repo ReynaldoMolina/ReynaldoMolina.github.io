@@ -66,6 +66,13 @@ input:focus-visible {
   width: 65%;
   margin-right: 5px;
 }
+.highlight {
+  animation: 1s blink infinite;
+}
+@keyframes blink {
+  50% {border: 1px solid rgb(255, 0, 0);}
+  100% {border: 1px solid rgb(255, 135, 135);}
+}
 .button-clear {
   color: black;
   border: none;
