@@ -105,6 +105,7 @@
   margin: 0 auto;
   column-gap: 20px;
   row-gap: 20px;
+  flex-wrap: wrap;
 }
 .portfolio-container h1 {
   width: 100%;
@@ -115,6 +116,7 @@
 .project {
   background-color: var(--secondary-background);
   border-radius: 5px;
+  border: 1px solid var(--secondary-background);
 }
 .project:hover {
   background-color: var(--secondary-hover);
@@ -123,17 +125,12 @@
 .project:hover p {
   color: black;
 }
-.project:hover img {
-  filter: none;
-}
 .project img {
   width: 100%;
   aspect-ratio: 1;
   text-align: center;
-  overflow: hidden;
   margin-bottom: 5px;
-  border-radius: 5px 5px 0 0;
-  filter: brightness(90%);
+  border-radius: 4px 4px 0 0;
 }
 .project h4, p {
   margin-bottom: 7px;
