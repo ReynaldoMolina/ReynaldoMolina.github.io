@@ -31,7 +31,7 @@
   border-top: 5px solid var(--primary);
   position: relative;
 }
-.footer img {
+.footer-logo {
   width: 130px;
   padding: 0 20px;
   background-color: var(--background);
@@ -41,6 +41,13 @@
 }
 .footer h6 {
   margin-top: 10px;
+}
+.footer-heart {
+  width: 15px;
+  margin: 0 5px;
+}
+.footer-heart-a {
+  cursor: default;
 }
 
 @media (max-width: 500px) {
