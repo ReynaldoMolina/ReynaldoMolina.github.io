@@ -30,7 +30,8 @@ a {
     text-decoration: none;
 }
 a:focus {
-    color: var(--link-hover);
+    background-color: var(--secondary-hover);
+    color: black;
 }
 ul {
     list-style: none;
