@@ -59,6 +59,7 @@
   border-left: 5px solid var(--primary);
   padding-left: 15px;
   font-size: 1.4rem;
+  line-height: 2.5rem;
 }
 .about-container em {
   color: var(--primary);
@@ -115,9 +116,12 @@
   text-align: center;
   position: relative;
   overflow: hidden;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   outline: 2px solid var(--secondary-background);
   transition: 0.1s linear;
+}
+.project:last-of-type {
+  margin-bottom: 0;
 }
 .project:hover {
   outline: 3px solid var(--secondary-hover);
