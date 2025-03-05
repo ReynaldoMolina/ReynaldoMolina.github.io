@@ -17,6 +17,7 @@
   font-weight: bold;
   border-radius: 5px;
   margin-left: 5px;
+  transition: 0.1s linear;
 }
 .header-link:hover{
   color: var(--white);
@@ -45,16 +46,19 @@
 .footer-heart {
   width: 15px;
   margin: 0 5px;
+  /* animation: grow 2s ease-out infinite; */
 }
-.footer-heart-a {
-  cursor: default;
+
+@keyframes grow {
+  0% {width: 15px;}
+  50% {width: 16px;}
 }
 
 @media (max-width: 500px) {
   .header {
-      justify-content: space-between;
+    justify-content: space-between;
   }
   .header-logo {
-      height: 70%;
+    height: 70%;
   }
 }

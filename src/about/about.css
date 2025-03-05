@@ -39,10 +39,10 @@
 }
 .contact-link {
   width: 100%;
-  filter: brightness(80%);
+  transition: 0.1s linear;
 }
 .contact-link:hover {
-  filter: brightness(100%);
+  filter: brightness(120%);
 }
 
 /* About */
@@ -85,6 +85,7 @@
   background-color: var(--secondary-background);
   padding: 10px;
   width: 22.5%;
+  transition: 0.1s linear;
 }
 .skill-card:hover {
   background-color: var(--secondary-hover);
@@ -102,9 +103,6 @@
 .projects-container {
   max-width: var(--max-width);
   margin: 0 auto;
-  column-gap: 20px;
-  row-gap: 20px;
-  flex-wrap: wrap;
 }
 .portfolio-container h1 {
   width: 100%;
@@ -113,30 +111,39 @@
   margin: 50px auto 20px;
 }
 .project {
-  background-color: var(--secondary-background);
   border-radius: 5px;
-  border: 1px solid var(--secondary-background);
   text-align: center;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 20px;
+  outline: 2px solid var(--secondary-background);
+  transition: 0.1s linear;
 }
 .project:hover {
-  background-color: var(--secondary-hover);
+  outline: 3px solid var(--secondary-hover);
 }
-.project:hover h4,
+/* .project:hover h4,
 .project:hover p {
   color: black;
-}
+} */
 .project img {
   width: 100%;
   aspect-ratio: 2/1;
   text-align: center;
-  margin-bottom: 10px;
-  border-radius: 4px 4px 0 0;
   object-fit: cover;
-
 }
-.project h4, p {
-  margin-bottom: 10px;
+.project-info {
+  position: absolute;
+  gap: 5px;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  padding: 7px;
+  backdrop-filter: blur(10px);
+}
+.project h4 {
   font-size: 1.3rem;
+  /* color: black; */
 }
 .project p {
   font-size: 1rem;
@@ -175,6 +182,6 @@
 
   /* Portfolio */
   .project img {
-      filter: none;
+    filter: none;
   }
 }
