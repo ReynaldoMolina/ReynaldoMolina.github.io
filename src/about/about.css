@@ -89,6 +89,7 @@
 }
 .about-container em {
   color: var(--primary);
+  font-weight: bold;
 }
 
 /* My skills */
@@ -153,9 +154,6 @@
   border-radius: 5px;
   text-align: center;
   object-fit: cover;
-}
-#money-counter-img-project {
-  border: 2px solid var(--secondary-background);
 }
 .project h4,
 .project p {
