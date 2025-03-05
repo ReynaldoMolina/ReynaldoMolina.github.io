@@ -19,19 +19,16 @@ html {
     font-size: 62.5%;
 }
 body {
-    background-color: var(--background);
+    background: radial-gradient(rgb(72, 73, 78), var(--background));
+    /* background-color: var(--background); */
     color: var(--white);
     font-size: 1.5rem;
-    padding: 0 20px 30px;
+    padding: 0 0 30px;
     min-width: 250px;
 }
 a {
     color: var(--white);
     text-decoration: none;
-}
-a:focus {
-    background-color: var(--secondary-hover);
-    color: black;
 }
 ul {
     list-style: none;
@@ -41,7 +38,7 @@ ul li {
 }
 h1 {
     font-family: "Noto Sans", serif;
-    font-size: 2.5rem;
+    font-size: 3rem;
 }
 em {
     font-style: normal;
@@ -58,7 +55,4 @@ p {
 .flx-center {
     justify-content: center;
     align-items: center;
-}
-.grid {
-    display: grid;
 }
