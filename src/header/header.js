@@ -8,7 +8,7 @@ class Header extends HTMLElement {
         <nav class="flx">
           <a href="/" class="header-link">Home</a>
           <a href="/#about-section" class="header-link">About</a>
-          <a href="/#portfolio-section" class="header-link">Portfolio</a>
+          <a href="/#projects-section" class="header-link">Projects</a>
         </nav>
       </header>
     `

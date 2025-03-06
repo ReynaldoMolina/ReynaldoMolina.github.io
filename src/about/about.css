@@ -1,6 +1,15 @@
 .main-container {
   padding: 0 20px;
 }
+.section-title {
+  width: 100%;
+  margin: 70px 0 20px;
+  align-items: center;
+}
+.section-img {
+  height: 22px;
+  margin-right: 12px;
+}
 /* Contact info */
 .contact-container {
   width: 100%;
@@ -76,11 +85,6 @@
   margin: 0 auto 0;
   max-width: var(--max-width);
 }
-.about-container h1 {
-  margin: 70px 0 20px;
-  width: 100%;
-  text-align: left;
-}
 .about-container p {
   border-left: 5px solid var(--primary);
   padding-left: 15px;
@@ -97,9 +101,6 @@
   margin: 0 auto;
   width: 100%;
   max-width: var(--max-width);
-}
-.skills-container h1 {
-  margin: 70px 0 20px;
 }
 .skill-cards {
   width: 100%;
@@ -128,15 +129,13 @@
 }
 
 /* Portfolio */
+.portfolio-container {
+  margin: 0 auto 0;
+  max-width: var(--max-width);
+}
 .projects-container {
   max-width: var(--max-width);
   margin: 0 auto;
-}
-.portfolio-container h1 {
-  width: 100%;
-  max-width: var(--max-width);
-  text-align: left;
-  margin: 70px auto 20px;
 }
 .project {
   text-align: center;
@@ -144,6 +143,7 @@
   overflow: hidden;
   margin-bottom: 50px;
   transition: 0.1s linear;
+  gap: 7px;
 }
 .project:last-of-type {
   margin-bottom: 0;
@@ -151,23 +151,61 @@
 .project-img {
   width: 100%;
   aspect-ratio: 2/1;
-  border-radius: 5px;
+  border-radius: 10px;
   text-align: center;
   object-fit: cover;
 }
 .project h4,
-.project p {
+.project-description {
   width: 100%;
   text-align: left;
-  margin-bottom: 10px;
 }
 .project h4 {
   font-size: 1.9rem;
   color: var(--primary);
 }
-.project p {
+.project-description {
   font-size: 1.4rem;
   color: rgb(194, 194, 194);
+}
+.project-techs {
+  width: 100%;
+  gap: 7px;
+  flex-wrap: wrap;
+}
+.tech-img {
+  height: 13px;
+  width: 13px;
+}
+.tech-container {
+  align-items: center;
+  border-radius: 20px;
+  padding: 3px 12px;
+  gap: 6px;
+}
+.tech-p {
+  font-size: 1.2rem;
+}
+.tech-react {
+  background-color: rgb(0, 35, 74);
+}
+.tech-javascript {
+  background-color: rgb(105, 91, 19);
+}
+.tech-node {
+  background-color: rgb(0, 74, 12);
+}
+.tech-express {
+  background-color: rgb(80, 80, 80);
+}
+.tech-postgres {
+  background-color: rgb(0, 58, 94);
+}
+.tech-html {
+  background-color: rgb(88, 36, 36);
+}
+.tech-css {
+  background-color: rgb(0, 70, 76);
 }
 
 @media (max-width: 500px) {
