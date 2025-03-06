@@ -249,7 +249,7 @@
     text-align: center;
   }
   .open-to-work {
-    justify-content: center;
+    margin: 20px auto 0;
   }
   .contact-links {
     justify-content: center;
@@ -272,5 +272,8 @@
   /* Portfolio */
   .project img {
     filter: none;
+  }
+  .project-description {
+    line-height: 2.2rem;
   }
 }
