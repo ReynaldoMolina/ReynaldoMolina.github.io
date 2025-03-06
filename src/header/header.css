@@ -47,18 +47,17 @@
   width: 100%;
   max-width: var(--max-width);
   margin: 70px 20px 0;
-  padding-top: 30px;
-  border-top: 5px solid var(--primary);
+  /* border-top: 5px solid var(--primary); */
   position: relative;
 }
-.footer-logo {
+/* .footer-logo {
   width: 130px;
   padding: 0 20px;
   background-color: var(--background);
   position: absolute;
   top: 0;
   transform: translateY(-60%);
-}
+} */
 .footer h6 {
   margin-top: 10px;
 }
