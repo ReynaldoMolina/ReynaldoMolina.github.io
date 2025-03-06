@@ -97,14 +97,14 @@ input:focus-visible {
   height: 25px;
 }
 .counter-table td {
-  border: 1px solid var(--secondary-background);
+  border: 1px solid rgba(89, 89, 89, 0.8);
 }
 .counter-table th:nth-child(2),
 .counter-table th:nth-child(3) {
   width: 50%;
 }
 .counter-table th {
-  background-color: var(--secondary-background);
+  background-color: rgba(89, 89, 89, 0.8);
 }
 .table-title  {
   color: black;

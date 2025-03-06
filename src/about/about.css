@@ -35,22 +35,23 @@
   font-size: 3.3rem;
 }
 .open-to-work {
-  justify-content: left;
-}
-.open-to-work h5 {
+  justify-content: center;
   padding: 7px;
   border-radius: 20px;
   width: 120px;
   text-align: center;
+  margin-top: 20px;
+  font-size: 1.2rem;
+  font-weight: bold;
   animation: glow 6s linear infinite;
 }
 @keyframes glow {
-  0% {border:2px solid rgb(255, 94, 94);}
-  20% {border:2px solid rgb(255, 228, 94);}
-  40% {border:2px solid rgb(94, 255, 94);}
-  60% {border:2px solid rgb(94, 172, 255);}
-  80% {border:2px solid rgb(234, 94, 255);}
-  100% {border:2px solid rgb(255, 94, 94);}
+  0% {border: 3px solid rgb(255, 94, 94);}
+  20% {border: 3px solid rgb(255, 228, 94);}
+  40% {border: 3px solid rgb(94, 255, 94);}
+  60% {border: 3px solid rgb(94, 172, 255);}
+  80% {border: 3px solid rgb(234, 94, 255);}
+  100% {border: 3px solid rgb(255, 94, 94);}
 }
 .profile-pic {
   width: 60%;
@@ -136,17 +137,14 @@
 .projects-container {
   max-width: var(--max-width);
   margin: 0 auto;
+  gap: 60px;
 }
 .project {
   text-align: center;
   position: relative;
   overflow: hidden;
-  margin-bottom: 50px;
   transition: 0.1s linear;
-  gap: 7px;
-}
-.project:last-of-type {
-  margin-bottom: 0;
+  gap: 10px;
 }
 .project-img {
   width: 100%;
@@ -154,6 +152,7 @@
   border-radius: 10px;
   text-align: center;
   object-fit: cover;
+  margin-bottom: 7px;
 }
 .project h4,
 .project-description {
@@ -161,12 +160,15 @@
   text-align: left;
 }
 .project h4 {
-  font-size: 1.9rem;
-  color: var(--primary);
+  font-size: 2rem;
 }
 .project-description {
   font-size: 1.4rem;
   color: rgb(194, 194, 194);
+  line-height: 2.5rem;
+}
+.project-description em {
+  font-weight: bold;
 }
 .project-techs {
   width: 100%;
@@ -206,6 +208,24 @@
 }
 .tech-css {
   background-color: rgb(0, 70, 76);
+}
+.project-link-container {
+  width: 100%;
+  gap: 20px;
+}
+.project-link {
+  background-color: rgb(79, 79, 79);
+  padding: 7px 10px;
+  border-radius: 10px;
+  border: 1px solid gray;
+  gap: 10px;
+  transition: 0.1s linear;
+}
+.project-link:hover {
+  border: 1px solid var(--primary-hover);
+}
+.project-link-img {
+  width: 13px;
 }
 
 @media (max-width: 500px) {

@@ -2,21 +2,14 @@
 <!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
 
 <svg
-   width="50px"
-   height="50px"
-   viewBox="0 0 512 512"
+   fill="#fff"
+   width="800px"
+   height="800px"
+   viewBox="0 0 56 56"
    version="1.1"
    xmlns="http://www.w3.org/2000/svg">
-  <g
-     id="g2"
-     transform="matrix(1.1320548,0,0,1.0719492,-33.811623,-18.418995)">
-    <path
-       d="m 344,144 c -3.92,52.87 -44,96 -88,96 -44,0 -84.15,-43.12 -88,-96 -4,-55 35,-96 88,-96 53,0 92,42 88,96 z"
-       style="fill:none;fill-opacity:1;stroke:#fff;stroke-width:60;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
-       id="path1" />
-    <path
-       d="M 256,304 C 169,304 80.7,352 64.36,442.6 62.39,453.52 68.57,464 80,464 h 352 c 11.44,0 17.62,-10.48 15.65,-21.4 C 431.3,352 343,304 256,304 Z"
-       style="fill:none;fill-opacity:1;stroke:#fff;stroke-width:60;stroke-miterlimit:10;stroke-opacity:1"
-       id="path2" />
-  </g>
+  <path
+     d="m 28.016578,27.174893 c 7.139791,0 13.283233,-5.867546 13.283233,-13.507613 0,-7.5484038 -6.176597,-13.1408275 -13.283233,-13.1408275 -7.106495,0 -13.283234,5.7147295 -13.283234,13.2019805 0,7.578914 6.176739,13.44646 13.283234,13.44646 z M 7.1619727,55.473548 H 48.871324 c 5.213545,0 7.073198,-1.375222 7.073198,-4.064514 0,-7.884549 -10.726193,-18.763892 -27.927944,-18.763892 -17.234907,0 -27.9610995,10.879343 -27.9610995,18.763892 0,2.689292 1.8595109,4.064514 7.1064942,4.064514 z"
+     id="path1"
+     style="fill:#fff;fill-opacity:1;stroke:none;stroke-width:1.35922;stroke-opacity:1" />
 </svg>
