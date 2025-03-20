@@ -1,0 +1,26 @@
+---
+import '../styles/global.css';
+
+const links = [
+  {
+    name: 'Home',
+    link: '/'
+  },
+  {
+    name: 'About',
+    link: '/#about-section'
+  },
+  {
+    name: 'Projects',
+    link: '/#projects-section'
+  },
+];
+---
+
+<header class="flex sticky top-0">
+  <nav class="flex text-white rounded-xl bg-gray-700/60 mx-auto backdrop-blur-2xl p-2 my-4 gap-2 outline-gray-700">
+    {links.map((element) =>
+      <a href={element.link} class="font-semibold rounded-md px-3 py-1 hover:bg-gray-500 transition duration-75">{element.name}</a>
+    )}
+  </nav>
+</header>
