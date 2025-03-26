@@ -17,10 +17,10 @@ const links = [
 ];
 ---
 
-<header class="flex sticky top-0">
-  <nav class="flex text-white rounded-xl bg-gray-700/60 mx-auto backdrop-blur-2xl p-2 my-4 gap-2 outline-gray-700">
+<header class="flex sticky top-5 mb-20 z-1">
+  <nav class="flex rounded-xl bg-neutral-400/60 dark:bg-neutral-500/60 mx-auto backdrop-blur-xl p-2 gap-2 outline-1 outline-neutral-300">
     {links.map((element) =>
-      <a href={element.link} class="font-semibold rounded-md px-3 py-1 hover:bg-gray-500 transition duration-75">{element.name}</a>
+      <a href={element.link} class="font-bold rounded-md px-3 py-1 hover:bg-neutral-300 dark:hover:bg-neutral-500 transition duration-150">{element.name}</a>
     )}
   </nav>
 </header>

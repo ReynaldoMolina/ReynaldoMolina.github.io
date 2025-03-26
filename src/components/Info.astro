@@ -1,0 +1,94 @@
+---
+import '../styles/global.css';
+import { Icon } from 'astro-icon/components';
+import { projects, contacts, skills } from './data';
+import profilepic from '../assets/profile-pic.jpg';
+---
+
+<main class="flex flex-col gap-20 items-center">
+  <section class="flex flex-col w-full max-w-2xl items-center gap-7 sm:flex-row">
+    <div class="flex flex-col items-center gap-4 w-full sm:items-start">
+      <div class="flex flex-col gap-2 items-center sm:items-start">
+        <div class="flex flex-col items-center gap-2 sm:items-baseline sm:flex-row">
+          <h4 class="font-bold text-lg">I'M</h4>
+          <h1 class="font-bold text-3xl text-sky-700 dark:text-sky-300 text-center">Reynaldo Molina</h1>
+        </div>
+        <h3 class="font-bold text-lg text-center">Front end developer</h3>
+      </div>
+
+      <a class="text-sm font-semibold flex px-2 py-1.5 outline-3 outline-sky-700 dark:outline-sky-300 justify-center w-35 rounded-2xl animate-pulse" href="https://www.linkedin.com/in/reynaldo-molina/" target="_blank">Open to work</a>
+      
+      <h5 class="text-sm font-bold">Contact me</h5>
+      <div class="flex gap-4">
+        {contacts.map((contact) =>
+          <a href={contact.link} target="_blank">
+            <Icon name={contact.icon} class="size-9 opacity-80 hover:scale-110 cursor-pointer transition duration-150" />
+          </a>
+        )}
+      </div>
+    </div>
+
+    <img class="flex justify-center border-5 w-55 border-sky-700 rounded-full aspect-square sm:w-60" src={profilepic.src} alt="Profile picture">
+  </section>
+
+  <section class="flex flex-col max-w-2xl gap-5" id="about-section">
+    <div class="flex items-center gap-4">
+      <Icon name="aboutme" class="size-7" />
+      <h1 class="text-3xl font-semibold">About me</h1>
+    </div>
+    <p class="border-l-4 border-sky-700 dark:border-sky-300 pl-5 leading-8 text-pretty">Front end developer with a solid foundation in programming. Looking for an opportunity ready to apply my knowledge in <em class="not-italic font-bold text-sky-700 dark:text-sky-300">HTML, CSS, JavaScript, Node.js, Git, Tailwind</em> and modern libraries like <em class="not-italic font-bold text-sky-700 dark:text-sky-300">React</em>. My experience has given me valuable skills in <em class="not-italic font-bold text-sky-700 dark:text-sky-300">organization</em> and precision, which I complement with a <em class="not-italic font-bold text-sky-700 dark:text-sky-300">passion for technology and innovation.</em></p>
+  </section>
+
+  <section class="flex flex-col max-w-2xl gap-5" id="projects-section">
+    <div class="flex items-center gap-4">
+      <Icon name="portfolio" class="size-7" />
+      <h1 class="text-3xl font-semibold">Projects</h1>
+    </div>
+
+    <div class="flex flex-col gap-15">
+      {projects.map((project) =>
+        <div class="flex flex-col gap-4">
+          <a class="flex flex-col gap-4" href={project.previewlink} target="_blank">
+            <img src={project.thumbnail} class="rounded-xl shadow-xl hover:scale-102 transition duration-150" alt="Project image">
+            <h4 class="font-semibold text-2xl">{project.name}</h4>
+          </a>
+
+          <div class="flex gap-3 flex-wrap">
+            {project.techs.map((tech) =>
+              <div class={`${tech.color} flex justify-center items-center gap-2 py-1 px-3 rounded-2xl`}>
+                <img class="h-4 aspect-square" src={tech.icon} alt={tech.name}>
+                <p class="text-xs text-gray-100 cursor-default">{tech.name}</p>
+              </div>
+            )}
+          </div>
+          <p class="opacity-70">{project.description}</p>
+          <div class="flex gap-5 flex-wrap">
+            <a class="flex items-center gap-3 rounded-lg px-4 py-2 bg-neutral-900 dark:bg-neutral-300 hover:scale-105 transition duration-150" href={project.codelink} target="_blank">
+              <Icon name="github-link" class="size-4 text-white dark:text-black" />
+              <p class="text-white dark:text-black">Code</p>
+            </a>
+            <a class="flex items-center gap-3 rounded-lg px-4 py-2 bg-neutral-900 dark:bg-neutral-300 hover:scale-105 transition duration-150" href={project.previewlink} target="_blank">
+              <Icon name="link" class="size-4 stroke-3 stroke-white dark:stroke-black" />
+              <p class="text-white dark:text-black">Preview</p>
+            </a>
+          </div>
+        </div>
+      )}
+    </div>
+  </section>
+
+  <section class="flex w-full flex-col max-w-2xl gap-5" id="skills-section">
+    <div class="flex items-center gap-4">
+      <Icon name="skills" class="size-7" />
+      <h1 class="text-3xl font-semibold">Skills</h1>
+    </div>
+    <div class="flex justify-center items-center gap-5 flex-wrap">
+      {skills.map((skill) => 
+        <div class="flex flex-col justify-center items-center gap-y-3 bg-neutral-200 hover:bg-neutral-300 dark:bg-neutral-600 dark:hover:bg-neutral-500 size-35 rounded-2xl transition duration-150">
+          <Icon name={skill.icon} class="size-10 text-black dark:text-white" />
+          <span class="text-sm cursor-default">{skill.name}</span>
+        </div>
+      )}
+    </div>
+  </section>
+</main>
