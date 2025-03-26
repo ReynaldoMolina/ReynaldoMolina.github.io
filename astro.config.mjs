@@ -10,6 +10,6 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()]
   },
-
+  site: 'https://reynaldomolina.github.io/',
   integrations: [icon()]
 });

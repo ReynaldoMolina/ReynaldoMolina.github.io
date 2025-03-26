@@ -11,6 +11,21 @@ import supraural from '../assets/supraural.png';
 import moneycounter from '../assets/moneycounter.png';
 // import todoapp from '../assets/todoreact.png';
 
+const headerLinks = [
+  {
+    name: 'Home',
+    link: '/'
+  },
+  {
+    name: 'About',
+    link: '/#about-section'
+  },
+  {
+    name: 'Projects',
+    link: '/#projects-section'
+  },
+];
+
 const techs = {
   html: {
     name: 'HTML',
@@ -137,4 +152,4 @@ const skills = [
   },
 ];
 
-export { projects, contacts, skills };
+export { projects, contacts, skills, headerLinks };
