@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import '../styles/global.css';
 import ClearIcon from '../icons/clear.svg';
+import '../styles/global.css';
 
 function MoneyCounter() {  
   const [exchangeRate, setExchangeRate] = useState('');
@@ -140,12 +140,12 @@ function MoneyCounter() {
       <h1 className='mx-auto text-2xl font-bold dark:text-yellow-400 text-yellow-600'>Money Counter</h1>
 
       {/* exchangeRate, toCount, difference */}
-      <div className='flex flex-col items-center justify-center bg-neutral-300 dark:bg-neutral-600 rounded-2xl gap-4 py-3 px-10 w-85 mx-auto'>
+      <div className='flex flex-col items-center bg-neutral-300 dark:bg-neutral-600 rounded-2xl gap-3 py-3 px-4 w-full max-w-85 mx-auto'>
         <div className='flex w-full justify-between'>
           <span>Exchange rate</span>
           <input
             type="number"
-            className='w-30 border-b-2 border-neutral-400 text-center focus-visible:outline-0 focus-visible:border-neutral-500 dark:focus-visible:border-neutral-300'
+            className='w-25 sm:w-30 border-b-2 border-neutral-400 text-center focus-visible:outline-0 focus-visible:border-neutral-500 dark:focus-visible:border-neutral-300'
             value={exchangeRate}
             placeholder='1'
             min={0}
@@ -155,7 +155,7 @@ function MoneyCounter() {
           <span>Amount to count</span>
           <input
             type="number"
-            className='w-30 border-b-2 border-neutral-400 text-center focus-visible:outline-0 focus-visible:border-neutral-500 dark:focus-visible:border-neutral-300'
+            className='w-25 sm:w-30 border-b-2 border-neutral-400 text-center focus-visible:outline-0 focus-visible:border-neutral-500 dark:focus-visible:border-neutral-300'
             value={toCount}
             placeholder='0'
             min={0}
@@ -165,18 +165,18 @@ function MoneyCounter() {
           <span>Difference</span>
           <span
             type="number"
-            className='w-30 text-center'
+            className='w-25 sm:w-30 text-center'
             >
             {(isNaN(toCount) || toCount === '') ? '-' : difference.toFixed(2)}
           </span>
         </div>
       </div>
 
-      <section className='flex flex-col mx-auto gap-10 xl:flex-row'>
-        <div className='flex flex-col mx-auto gap-10 md:flex-row'>
+      <section className='flex flex-col mx-auto w-full gap-10'>
+        <div className='flex flex-col mx-auto w-full max-w-85 sm:max-w-full gap-10 md:flex-row justify-center'>
           {/* table dollars */}
           <section className='flex flex-col gap-1'>
-            <div className='flex justify-between w-85 px-3 py-2 mx-auto bg-neutral-300 dark:bg-neutral-500 rounded-2xl'>
+            <div className='flex justify-between w-full max-w-85 px-3 py-2 mx-auto bg-neutral-300 dark:bg-neutral-500 rounded-2xl'>
               <span className='font-bold'>Dollars</span>
               <button
                 onClick={() => resetDollars()}>
@@ -184,7 +184,7 @@ function MoneyCounter() {
               </button>
             </div>
 
-            <table className='flex flex-col w-85 mx-auto bg-neutral-600 rounded-2xl'>
+            <table className='table w-full max-w-85 sm:w-85 mx-auto bg-neutral-600 rounded-2xl'>
               <thead>
                 <tr className='flex bg-neutral-300 dark:bg-neutral-500 px-3 py-1 rounded-t-xl'>
                   <th className='font-bold text-right w-2/20'>Unit</th>
@@ -227,7 +227,7 @@ function MoneyCounter() {
 
           {/* table cordobas */}
           <section className='flex flex-col gap-1'>
-          <div className='flex justify-between w-85 px-3 py-2 mx-auto bg-neutral-300 dark:bg-neutral-500 rounded-2xl'>
+          <div className='flex justify-between w-full max-w-85 px-3 py-2 mx-auto bg-neutral-300 dark:bg-neutral-500 rounded-2xl'>
               <span className='font-bold'>Córdobas</span>
               <button
                 onClick={() => resetCordobas()}>
@@ -235,7 +235,7 @@ function MoneyCounter() {
               </button>
             </div>
             
-            <table className='flex flex-col w-85 mx-auto bg-neutral-600 rounded-2xl'>
+            <table className='table w-full max-w-85 sm:w-85 mx-auto bg-neutral-600 rounded-2xl'>
               <thead>
                 <tr className='flex bg-neutral-300 dark:bg-neutral-500 px-3 py-1 rounded-t-xl'>
                   <th className='font-bold text-right w-2/20'>Unit</th>
@@ -278,12 +278,12 @@ function MoneyCounter() {
         </div>
 
         {/* General total */}
-        <section className='flex flex-col gap-1 mx-auto'>
-          <div className='flex justify-between w-85 px-3 py-2.5 mx-auto bg-neutral-300 dark:bg-neutral-500 rounded-2xl'>
+        <section className='flex flex-col w-full max-w-85 gap-1 mx-auto'>
+          <div className='flex justify-center w-full px-3 py-2.5 mx-auto bg-neutral-300 dark:bg-neutral-500 rounded-2xl'>
             <span className='font-bold'>General total</span>
           </div>
 
-          <div className='flex flex-col w-85'>
+          <div className='flex flex-col w-full'>
             <div className='flex justify-around w-full bg-neutral-300 dark:bg-neutral-500 py-1 rounded-t-xl'>
               <span className='text-center font-bold'>Dollars</span>
               <span className='text-center font-bold'>Córdobas</span>

@@ -3,7 +3,7 @@ import '../styles/global.css';
 import { headerLinks } from './data';
 ---
 
-<header class="flex sticky top-5 mb-10 z-1">
+<header class="flex sticky top-5 mb-5 sm:mb-10  z-1">
   <nav class="flex rounded-xl bg-neutral-400/60 dark:bg-neutral-500/60 mx-auto backdrop-blur-xl p-2 gap-2 outline-1 outline-neutral-300">
     {headerLinks.map((link) =>
       <a href={link.link} class="font-bold rounded-md px-3 py-1 hover:bg-neutral-300 dark:hover:bg-neutral-500 transition duration-150">{link.name}</a>

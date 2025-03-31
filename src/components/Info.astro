@@ -55,9 +55,9 @@ import profilepic from '../assets/profile-pic.jpg';
 
           <div class="flex gap-3 flex-wrap">
             {project.techs.map((tech) =>
-              <div class={`${tech.color} flex justify-center items-center gap-2 py-1 px-3 rounded-2xl`}>
-                <img class="h-4 aspect-square" src={tech.icon} alt={tech.name}>
-                <p class="text-xs text-gray-100 cursor-default">{tech.name}</p>
+              <div class="bg-neutral-200 dark:bg-neutral-600 flex justify-center items-center gap-2 py-1 px-3 rounded-2xl">
+                <Icon name={tech.icon} class="size-4" />
+                <p class="text-sm cursor-default">{tech.name}</p>
               </div>
             )}
           </div>

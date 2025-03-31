@@ -1,3 +1,6 @@
+import { Icon } from 'astro-icon/components';
+
+import astroIcon from '../icons/astro.svg';
 import reactIcon from '../icons/react.svg';
 import cssIcon from '../icons/css3.svg';
 import nodeIcon from '../icons/node.svg';
@@ -30,43 +33,39 @@ const headerLinks = [
 const techs = {
   html: {
     name: 'HTML',
-    icon: htmlIcon.src,
-    color: 'bg-blue-900'
+    icon: 'html5',
   },
   javascript: {
     name: 'JavaScript',
-    icon: javascriptIcon.src,
-    color: 'bg-blue-900'
+    icon: 'javascript',
   },
   css: {
     name: 'CSS',
-    icon: cssIcon.src,
-    color: 'bg-yellow-700'
+    icon: 'css3',
   },
   react: {
     name: 'React',
-    icon: reactIcon.src,
-    color: 'bg-blue-900'
+    icon: 'react',
   },
   nodejs: {
     name: 'Node.js',
-    icon: nodeIcon.src,
-    color: 'bg-green-900'
+    icon: 'nodejs',
   },
   express: {
     name: 'Express.js',
-    icon: expressIcon.src,
-    color: 'bg-gray-800'
+    icon: 'express',
   },
   postgresql: {
     name: 'PostgreSQL',
-    icon: postgresqlIcon.src,
-    color: 'bg-blue-900'
+    icon: 'postgresql',
   },
   tailwind: {
     name: 'Tailwind',
-    icon: tailwindIcon.src,
-    color: 'bg-blue-900'
+    icon: 'tailwind',
+  },
+  astro: {
+    name: 'Astro',
+    icon: 'astro',
   },
 };
 
@@ -90,7 +89,7 @@ const projects = [
   {
     name: 'Currency Counter',
     thumbnail: moneycounter.src,
-    techs: [techs.react, techs.tailwind, techs.html, techs.css, techs.javascript],
+    techs: [techs.astro, techs.react, techs.tailwind, techs.html, techs.css, techs.javascript],
     description: 'A simple yet practical JavaScript tool for counting money, supporting both Nicaraguan Córdobas and US Dollars. Designed for accuracy and ease of use, it helps users quickly calculate totals in mixed currencies.',
     codelink: 'https://github.com/ReynaldoMolina/ReynaldoMolina.github.io/tree/main/src/moneycounter',
     previewlink: '/moneycounter'
@@ -143,6 +142,10 @@ const skills = [
   {
     name: 'CSS',
     icon: 'css3'
+  },
+  {
+    name: 'Astro',
+    icon: 'astro'
   },
   {
     name: 'Node.js',
