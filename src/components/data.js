@@ -90,7 +90,7 @@ const projects = [
     name: 'Currency Counter',
     thumbnail: moneycounter.src,
     techs: [techs.astro, techs.react, techs.tailwind, techs.html, techs.css, techs.javascript],
-    description: 'A simple yet practical JavaScript tool for counting money, supporting both Nicaraguan Córdobas and US Dollars. Designed for accuracy and ease of use, it helps users quickly calculate totals in mixed currencies.',
+    description: 'A simple yet practical React tool for counting money, supporting both Nicaraguan Córdobas and US Dollars. Designed for accuracy and ease of use, it helps users quickly calculate totals in mixed currencies.',
     codelink: 'https://github.com/ReynaldoMolina/ReynaldoMolina.github.io/tree/main/src/moneycounter',
     previewlink: '/moneycounter'
   },
