@@ -16,7 +16,7 @@ import profilepic from '../assets/profile-pic.jpg';
         <h3 class="font-bold text-lg text-center">Front end developer</h3>
       </div>
 
-      <a class="text-sm font-semibold flex p-2 bg-yellow-400 dark:text-black justify-center w-35 rounded-2xl animate-pulse" href="https://www.linkedin.com/in/reynaldo-molina/" target="_blank">Open to work</a>
+      <a class="text-sm font-semibold flex p-2 bg-yellow-400 dark:text-black justify-center w-35 rounded-2xl hover:bg-yellow-300 transition duration-150" href="#projects-section">View my work</a>
       
       <h5 class="text-sm font-bold">Contact me</h5>
       <div class="flex gap-4">
@@ -28,7 +28,10 @@ import profilepic from '../assets/profile-pic.jpg';
       </div>
     </div>
 
-    <img class="flex justify-center border-5 w-55 border-yellow-400 rounded-full aspect-square sm:w-60" src={profilepic.src} alt="Profile picture">
+    <div class="flex flex-col items-center gap-2 w-full">
+      <img class="flex justify-center border-5 w-55 border-yellow-400 rounded-full aspect-square sm:w-60" src={profilepic.src} alt="Profile picture">
+      <a class="text-sm font-semibold flex p-2 border-3 border-yellow-400 justify-center w-35 rounded-2xl animate-pulse" href="https://www.linkedin.com/in/reynaldo-molina/" target="_blank">Open to work</a>
+    </div>
   </section>
 
   <section class="flex flex-col max-w-2xl gap-5" id="about-section">
