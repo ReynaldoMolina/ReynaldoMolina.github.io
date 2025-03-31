@@ -177,7 +177,7 @@ function MoneyCounter() {
           {/* table dollars */}
           <section className='flex flex-col gap-1'>
             <div className='flex justify-between w-full max-w-85 px-3 py-2 mx-auto bg-neutral-300 dark:bg-neutral-500 rounded-2xl'>
-              <span className='font-bold'>Dollars</span>
+              <span className='flex items-center font-bold'>Dollars</span>
               <button
                 onClick={() => resetDollars()}>
                 <img className='h-7 w-9 rounded-xl p-1 hover:bg-neutral-400' src={ClearIcon.src} alt="Clear" />
@@ -228,7 +228,7 @@ function MoneyCounter() {
           {/* table cordobas */}
           <section className='flex flex-col gap-1'>
           <div className='flex justify-between w-full max-w-85 px-3 py-2 mx-auto bg-neutral-300 dark:bg-neutral-500 rounded-2xl'>
-              <span className='font-bold'>Córdobas</span>
+              <span className='flex items-center font-bold'>Córdobas</span>
               <button
                 onClick={() => resetCordobas()}>
                 <img className='h-7 w-9 rounded-xl p-1 hover:bg-neutral-400' src={ClearIcon.src} alt="Clear" />
@@ -280,7 +280,7 @@ function MoneyCounter() {
         {/* General total */}
         <section className='flex flex-col w-full max-w-85 gap-1 mx-auto'>
           <div className='flex justify-center w-full px-3 py-2.5 mx-auto bg-neutral-300 dark:bg-neutral-500 rounded-2xl'>
-            <span className='font-bold'>General total</span>
+            <span className='flex items-center font-bold'>General total</span>
           </div>
 
           <div className='flex flex-col w-full'>
