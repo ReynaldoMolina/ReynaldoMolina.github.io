@@ -5,6 +5,7 @@ import expressIcon from '../icons/express.svg';
 import postgresqlIcon from '../icons/postgresql.svg';
 import htmlIcon from '../icons/html5.svg';
 import javascriptIcon from '../icons/javascript.svg';
+import tailwindIcon from '../icons/tailwind.svg';
 
 import jahairastore from '../assets/store.png';
 import supraural from '../assets/supraural.png';
@@ -62,6 +63,11 @@ const techs = {
     icon: postgresqlIcon.src,
     color: 'bg-blue-900'
   },
+  tailwind: {
+    name: 'Tailwind',
+    icon: tailwindIcon.src,
+    color: 'bg-blue-900'
+  },
 };
 
 const projects = [
@@ -84,10 +90,10 @@ const projects = [
   {
     name: 'Currency Counter',
     thumbnail: moneycounter.src,
-    techs: [techs.html, techs.css, techs.javascript],
+    techs: [techs.react, techs.tailwind, techs.html, techs.css, techs.javascript],
     description: 'A simple yet practical JavaScript tool for counting money, supporting both Nicaraguan Córdobas and US Dollars. Designed for accuracy and ease of use, it helps users quickly calculate totals in mixed currencies.',
     codelink: 'https://github.com/ReynaldoMolina/ReynaldoMolina.github.io/tree/main/src/moneycounter',
-    previewlink: '/src/moneycounter/moneycounter.html'
+    previewlink: '/moneycounter'
   },
   // {
   //   name: 'To-Do App',
@@ -121,6 +127,10 @@ const skills = [
   {
     name: 'React',
     icon: 'react'
+  },
+  {
+    name: 'Tailwind',
+    icon: 'tailwind'
   },
   {
     name: 'HTML',

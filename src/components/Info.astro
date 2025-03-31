@@ -6,17 +6,17 @@ import profilepic from '../assets/profile-pic.jpg';
 ---
 
 <main class="flex flex-col gap-20 items-center">
-  <section class="flex flex-col w-full max-w-2xl items-center gap-7 sm:flex-row">
+  <section class="flex flex-col w-full max-w-2xl items-center gap-7 sm:flex-row mt-10">
     <div class="flex flex-col items-center gap-4 w-full sm:items-start">
       <div class="flex flex-col gap-2 items-center sm:items-start">
         <div class="flex flex-col items-center gap-2 sm:items-baseline sm:flex-row">
           <h4 class="font-bold text-lg">I'M</h4>
-          <h1 class="font-bold text-3xl text-sky-700 dark:text-sky-300 text-center">Reynaldo Molina</h1>
+          <h1 class="font-bold text-3xl text-yellow-600 dark:text-yellow-300 text-center">Reynaldo Molina</h1>
         </div>
         <h3 class="font-bold text-lg text-center">Front end developer</h3>
       </div>
 
-      <a class="text-sm font-semibold flex px-2 py-1.5 outline-3 outline-sky-700 dark:outline-sky-300 justify-center w-35 rounded-2xl animate-pulse" href="https://www.linkedin.com/in/reynaldo-molina/" target="_blank">Open to work</a>
+      <a class="text-sm font-semibold flex p-2 bg-yellow-400 dark:text-black justify-center w-35 rounded-2xl animate-pulse" href="https://www.linkedin.com/in/reynaldo-molina/" target="_blank">Open to work</a>
       
       <h5 class="text-sm font-bold">Contact me</h5>
       <div class="flex gap-4">
@@ -28,7 +28,7 @@ import profilepic from '../assets/profile-pic.jpg';
       </div>
     </div>
 
-    <img class="flex justify-center border-5 w-55 border-sky-700 rounded-full aspect-square sm:w-60" src={profilepic.src} alt="Profile picture">
+    <img class="flex justify-center border-5 w-55 border-yellow-400 rounded-full aspect-square sm:w-60" src={profilepic.src} alt="Profile picture">
   </section>
 
   <section class="flex flex-col max-w-2xl gap-5" id="about-section">
@@ -36,7 +36,7 @@ import profilepic from '../assets/profile-pic.jpg';
       <Icon name="aboutme" class="size-7" />
       <h1 class="text-3xl font-semibold">About me</h1>
     </div>
-    <p class="border-l-4 border-sky-700 dark:border-sky-300 pl-5 leading-8 text-pretty">Front end developer with a solid foundation in programming. Looking for an opportunity ready to apply my knowledge in <em class="not-italic font-bold text-sky-700 dark:text-sky-300">HTML, CSS, JavaScript, Node.js, Git, Tailwind</em> and modern libraries like <em class="not-italic font-bold text-sky-700 dark:text-sky-300">React</em>. My experience has given me valuable skills in <em class="not-italic font-bold text-sky-700 dark:text-sky-300">organization</em> and precision, which I complement with a <em class="not-italic font-bold text-sky-700 dark:text-sky-300">passion for technology and innovation.</em></p>
+    <p class="border-l-4 border-yellow-400 pl-5 leading-8 text-pretty">Front end developer with a solid foundation in programming. Looking for an opportunity ready to apply my knowledge in <strong class="text-yellow-600 dark:text-yellow-300">HTML, CSS, JavaScript, Node.js, Git, Tailwind</strong> and modern libraries like <strong class="text-yellow-600 dark:text-yellow-300">React</strong>. My experience has given me valuable skills in <strong class="text-yellow-600 dark:text-yellow-300">organization</strong> and precision, which I complement with a <strong class="text-yellow-600 dark:text-yellow-300">passion for technology and innovation.</strong></p>
   </section>
 
   <section class="flex flex-col max-w-2xl gap-5" id="projects-section">
@@ -50,7 +50,7 @@ import profilepic from '../assets/profile-pic.jpg';
         <div class="flex flex-col gap-4">
           <a class="flex flex-col gap-4" href={project.previewlink} target="_blank">
             <img src={project.thumbnail} class="rounded-xl shadow-xl hover:scale-102 transition duration-150" alt="Project image">
-            <h4 class="font-semibold text-2xl">{project.name}</h4>
+            <h4 class="font-semibold text-2xl hover:underline">{project.name}</h4>
           </a>
 
           <div class="flex gap-3 flex-wrap">
