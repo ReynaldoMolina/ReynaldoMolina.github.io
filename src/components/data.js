@@ -67,7 +67,7 @@ const projects = [
     techs: [techs.nextjs, techs.react, techs.tailwind, techs.postgresql],
     description: 'Store Management App – it handles clients, products, categories, providers, orders, payments and invoices. The backend, powered by Next.js and PostgreSQL, ensures data handling and validation.',
     codelink: 'https://github.com/ReynaldoMolina/jahairastore-demo',
-    previewlink: 'https://reynaldomolina.github.io/jahairastore-demo'
+    previewlink: 'https://jahairastore-demo.vercel.app/'
   },
   {
     name: 'SuprAural',
