@@ -1,19 +1,6 @@
-import { Icon } from 'astro-icon/components';
-
-import astroIcon from '../icons/astro.svg';
-import reactIcon from '../icons/react.svg';
-import cssIcon from '../icons/css3.svg';
-import nodeIcon from '../icons/node.svg';
-import expressIcon from '../icons/express.svg';
-import postgresqlIcon from '../icons/postgresql.svg';
-import htmlIcon from '../icons/html5.svg';
-import javascriptIcon from '../icons/javascript.svg';
-import tailwindIcon from '../icons/tailwind.svg';
-
 import jahairastore from '../assets/store.png';
 import supraural from '../assets/supraural.png';
 import moneycounter from '../assets/moneycounter.png';
-// import todoapp from '../assets/todoreact.png';
 
 const headerLinks = [
   {
@@ -31,6 +18,10 @@ const headerLinks = [
 ];
 
 const techs = {
+  nextjs: {
+    name: 'Next.js',
+    icon: 'nextjs',
+  },
   html: {
     name: 'HTML',
     icon: 'html5',
@@ -71,10 +62,10 @@ const techs = {
 
 const projects = [
   {
-    name: 'Jahaira Store',
+    name: 'Jahaira Store ⭐',
     thumbnail: jahairastore.src,
-    techs: [techs.react, techs.css, techs.nodejs, techs.express, techs.postgresql],
-    description: 'Store Management App – it handles clients, products, categories, providers, orders, payments and invoices, all through a custom-built API. The backend, powered by Express, Sequelize, and PostgreSQL, ensures data handling and validation.',
+    techs: [techs.nextjs, techs.react, techs.tailwind, techs.postgresql],
+    description: 'Store Management App – it handles clients, products, categories, providers, orders, payments and invoices. The backend, powered by Next.js and PostgreSQL, ensures data handling and validation.',
     codelink: 'https://github.com/ReynaldoMolina/jahairastore-demo',
     previewlink: 'https://reynaldomolina.github.io/jahairastore-demo'
   },
@@ -93,15 +84,7 @@ const projects = [
     description: 'A simple yet practical React tool for counting money, supporting both Nicaraguan Córdobas and US Dollars. Designed for accuracy and ease of use, it helps users quickly calculate totals in mixed currencies.',
     codelink: 'https://github.com/ReynaldoMolina/ReynaldoMolina.github.io/tree/main/src/moneycounter',
     previewlink: '/moneycounter'
-  },
-  // {
-  //   name: 'To-Do App',
-  //   thumbnail: todoapp.src,
-  //   techs: [techs.react, techs.css],
-  //   description: 'A React-based task management app built as part of a learning course. Implements state management, hooks, and local storage to create a simple yet effective tool for organizing daily tasks.',
-  //   codelink: 'https://github.com/ReynaldoMolina/curso-react-intro',
-  //   previewlink: 'https://reynaldomolina.github.io/curso-react-intro'
-  // },
+  }
 ];
 
 const contacts = [
@@ -123,6 +106,10 @@ const contacts = [
 ];
 
 const skills = [
+  {
+    name: 'Next.js',
+    icon: 'nextjs'
+  },
   {
     name: 'React',
     icon: 'react'
