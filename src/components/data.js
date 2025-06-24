@@ -1,23 +1,30 @@
 import jahairastore from '../assets/store.png';
 import supraural from '../assets/supraural.png';
 import moneycounter from '../assets/moneycounter.png';
+import EmailIcon from '../icons/email.svg?react';
+import LinkedInIcon from '../icons/linkedin.svg?react';
+import GitHubIcon from '../icons/github-circle.svg?react';
 
-const headerLinks = [
+export const headerLinks = [
   {
-    name: 'Home',
-    link: '/'
+    name: 'About me',
+    link: '/#aboutme'
   },
   {
-    name: 'About',
-    link: '/#about-section'
+    name: 'Skills',
+    link: '/#skills'
   },
   {
     name: 'Projects',
-    link: '/#projects-section'
+    link: '/#projects'
+  },
+  {
+    name: 'Experience',
+    link: '/#experience'
   },
 ];
 
-const techs = {
+export const techs = {
   nextjs: {
     name: 'Next.js',
     icon: 'nextjs',
@@ -60,52 +67,64 @@ const techs = {
   },
 };
 
-const projects = [
+export const projects = [
   {
-    name: 'Jahaira Store ⭐',
+    name: 'Jahaira Store',
+    bgColor: 'bg-blue-300',
+    titleColor: 'text-blue-400',
+    borderColor: 'border-b-blue-300 dark:border-b-blue-300',
     thumbnail: jahairastore.src,
     techs: [techs.nextjs, techs.react, techs.tailwind, techs.postgresql],
-    description: 'Store Management App – it handles clients, products, categories, providers, orders, payments and invoices. The backend, powered by Next.js and PostgreSQL, ensures data handling and validation.',
+    description: 'Handles clients, products, categories, providers, orders, payments and invoices. Powered by Next.js and PostgreSQL.',
     codelink: 'https://github.com/ReynaldoMolina/jahairastore-demo',
     previewlink: 'https://jahairastore-demo.vercel.app/'
   },
   {
     name: 'SuprAural',
+    bgColor: 'bg-red-300',
+    titleColor: 'text-red-400',
+    borderColor: 'border-b-red-300 dark:border-b-red-300',
     thumbnail: supraural.src,
     techs: [techs.html, techs.css, techs.javascript],
-    description: 'Music Studio Landing Page – A modernized and responsive redesign of an existing music studio website. Enhances the original design with improved styling and consistency while maintaining its essence.',
+    description: 'A modernized and responsive redesign of an existing music studio website. Enhances the original design with improved styling and consistency while maintaining its essence.',
     codelink: 'https://github.com/ReynaldoMolina/musicstudio',
     previewlink: 'https://reynaldomolina.github.io/musicstudio'
   },
   {
     name: 'Currency Counter',
+    bgColor: 'bg-amber-300',
+    titleColor: 'text-amber-400',
+    borderColor: 'border-b-amber-300 dark:border-b-amber-300',
     thumbnail: moneycounter.src,
     techs: [techs.astro, techs.react, techs.tailwind, techs.html, techs.css, techs.javascript],
-    description: 'A simple yet practical React tool for counting money, supporting both Nicaraguan Córdobas and US Dollars. Designed for accuracy and ease of use, it helps users quickly calculate totals in mixed currencies.',
+    description: 'A simple yet practical tool for counting money, supporting both Nicaraguan Córdobas and US Dollars. It helps users quickly calculate totals in mixed currencies.',
     codelink: 'https://github.com/ReynaldoMolina/ReynaldoMolina.github.io/tree/main/src/moneycounter',
     previewlink: '/moneycounter'
   }
 ];
 
-const contacts = [
+export const contacts = [
   {
     name: 'Email',
     link: 'mailto:molinareynaldo952@gmail.com',
-    icon: 'email'
+    icon: 'email',
+    Icon: EmailIcon,
   },
   {
     name: 'LinkedIn',
     link: 'https://www.linkedin.com/in/reynaldo-molina/',
-    icon: 'linkedin'
+    icon: 'linkedin',
+    Icon: LinkedInIcon,
   },
   {
     name: 'GitHub',
     link: 'https://github.com/ReynaldoMolina',
-    icon: 'github-circle'
+    icon: 'github-circle',
+    Icon: GitHubIcon,
   }
 ];
 
-const skills = [
+export const skillsFront = [
   {
     name: 'Next.js',
     icon: 'nextjs'
@@ -115,41 +134,53 @@ const skills = [
     icon: 'react'
   },
   {
-    name: 'Tailwind',
-    icon: 'tailwind'
-  },
-  {
-    name: 'HTML',
-    icon: 'html5'
-  },
-  {
-    name: 'JavaScript',
-    icon: 'javascript'
-  },
-  {
-    name: 'CSS',
-    icon: 'css3'
-  },
-  {
     name: 'Astro',
     icon: 'astro'
   },
+  {
+    name: 'Tailwind',
+    icon: 'tailwind'
+  },
+];
+
+export const skillsBack = [
   {
     name: 'Node.js',
     icon: 'nodejs'
   },
   {
-    name: 'Git',
-    icon: 'git'
+    name: 'Express.js',
+    icon: 'express'
   },
   {
-    name: 'GitHub',
-    icon: 'github'
+    name: 'PostgreSQL',
+    icon: 'postgresql'
   },
   {
-    name: 'NPM',
-    icon: 'npm'
+    name: 'Sequelize',
+    icon: 'sequelize'
   },
 ];
 
-export { projects, contacts, skills, headerLinks };
+export const experience = [
+  {
+    year: '2025',
+    place: 'Freelance',
+    title: 'Frontend Developer, built responsive web applications and user interfaces with React, HTML, JavaScript and CSS.',
+  },
+  {
+    year: '2024',
+    place: 'Colegio Adventista Maranatha',
+    title: 'Accountant, managed budgeting, optimizing resource allocation and improved accounting software efficiency, reducing reporting time by 60%.',
+  },
+  {
+    year: '2023',
+    place: 'Radio El Centinela',
+    title: 'Radio Announcer',
+  },
+  {
+    year: '2018',
+    place: 'SeaJoy™',
+    title: 'Aquaculture Professional Internship',
+  },
+];

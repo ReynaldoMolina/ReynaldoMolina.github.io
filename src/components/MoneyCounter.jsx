@@ -137,7 +137,7 @@ function MoneyCounter() {
 
   return (
     <main className='flex flex-col gap-10'>
-      <h1 className='mx-auto text-2xl font-bold dark:text-yellow-400 text-yellow-600'>Money Counter</h1>
+      <h1 className='mx-auto text-2xl font-bold dark:text-indigo-400 text-indigo-600 mt-20'>Money Counter</h1>
 
       {/* exchangeRate, toCount, difference */}
       <div className='flex flex-col items-center bg-neutral-300 dark:bg-neutral-600 rounded-2xl gap-3 py-3 px-4 w-full max-w-85 mx-auto'>

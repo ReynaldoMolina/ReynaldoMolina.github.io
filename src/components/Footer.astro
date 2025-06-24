@@ -1,14 +1,29 @@
 ---
 import { Icon } from 'astro-icon/components';
+import { headerLinks, contacts } from './data';
 ---
 
-<footer class="flex flex-col w-full gap-2 mt-20">
-  <span class="text-center font-bold">Thanks for scrolling!</span>
-  <span class="flex text-center justify-center items-center gap-2 text-sm">
-    Made with
-    <a href="https://reynaldomolina.github.io/todoapp/" target="_blank">
-      <Icon name="heart" class="size-5" />
-    </a>
-    in Nicaragua
-  </span>
+<footer class="flex flex-col w-full gap-10 mt-20 bg-indigo-600 p-10">
+  <p class="text-3xl font-semibold w-full text-center text-white">Reynaldo Molina</p>
+  <div class="flex flex-col md:justify-center md:flex-row gap-5">
+    {headerLinks.map((link) =>
+      <a
+        href={link.link}
+        class="font-semibold text-center transition text-xl duration-150 text-white hover:text-orange-300"
+      >{link.name}</a>
+    )}
+  </div>
+  
+  <div class="flex justify-center gap-5">
+    {contacts.map((contact) =>
+      <a href={contact.link} target="_blank">
+        <Icon name={contact.icon} class="size-9 opacity-80 hover:scale-110 cursor-pointer transition duration-150 text-white" />
+      </a>
+    )}
+  </div>
+
+  <span class="text-center font-bold text-white">Thanks for scrolling!</span>
+  <a class="flex justify-center items-center" href="https://reynaldomolina.github.io/todoapp/" target="_blank">
+    <Icon name="heart" class="size-7 text-red-400" />
+  </a>
 </footer>

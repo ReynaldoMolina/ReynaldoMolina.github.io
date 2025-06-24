@@ -1,13 +1,13 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
+import { Header } from '../components/Header';
 import { MoneyCounter } from '../components/MoneyCounter';
 import Footer from '../components/Footer.astro';
 import '../styles/global.css';
 ---
 
 <Layout>
-  <Header />
+  <Header client:load />
   <MoneyCounter client:load />
   <Footer />
 </Layout>
