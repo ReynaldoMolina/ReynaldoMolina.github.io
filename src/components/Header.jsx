@@ -7,7 +7,7 @@ export function Header() {
   const [openMenu, setOpenMenu] = useState(false);
 
   return (
-    <header className="flex flex-col max-w-7xl p-10 mx-auto">
+    <header className="flex flex-col max-w-7xl p-7 mx-auto">
       <div className="flex w-full justify-between items-center">
       <a href="/" className="flex items-center text-5xl text-blue-700 dark:text-blue-300 font-semibold">RM</a>
         <HeaderNavDesktop />
@@ -45,7 +45,7 @@ function HeaderNavDesktop() {
 function HeaderNav({ children, setOpenMenu }) {
   return (
     <>
-      <nav className="flex md:hidden fixed top-0 left-0 flex-col h-full w-full p-10 items-center gap-10 bg-white dark:bg-neutral-800/80 backdrop-blur-2xl z-10">
+      <nav className="flex md:hidden fixed top-0 left-0 flex-col h-full w-full p-7 items-center gap-10 bg-white dark:bg-neutral-800/80 backdrop-blur-2xl z-10">
         <div className="flex w-full justify-between items-center">
           <a href="/" className="flex items-center text-5xl text-blue-700 dark:text-blue-300 font-semibold">RM</a>
           {children}
