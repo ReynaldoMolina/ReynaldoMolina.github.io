@@ -17,7 +17,7 @@ import ContactForm from './ContactForm';
     <h2 class="text-4xl font-bold bg-blue-600 w-full text-center text-white p-12 rounded-xl mt-20">Skills</h2>
 
     <div class="flex flex-col md:flex-row w-full gap-10">
-      <div class="flex flex-col items-center border border-neutral-200 dark:border-neutral-500 shadow-xl p-12 rounded-xl gap-7 bg-white dark:bg-neutral-700/70 w-full">
+      <div class="flex flex-col items-center border border-neutral-200 dark:border-neutral-500 shadow-xl p-10 md:p-12 rounded-xl gap-7 bg-white dark:bg-neutral-700/70 w-full">
         <Icon name="frontend" class="size-9 text-blue-600 dark:text-blue-300" />
         <h3 class="text-center text-2xl font-bold text-neutral-700 dark:text-neutral-100">Front End</h3>
   
@@ -36,7 +36,7 @@ import ContactForm from './ContactForm';
         )}
       </div>
   
-      <div class="flex flex-col items-center border border-neutral-200 dark:border-neutral-500 shadow-xl p-12 rounded-xl gap-7 bg-white dark:bg-neutral-700/70 w-full">
+      <div class="flex flex-col items-center border border-neutral-200 dark:border-neutral-500 shadow-xl p-10 md:p-12 rounded-xl gap-7 bg-white dark:bg-neutral-700/70 w-full">
         <Icon name="backend" class="size-9 text-blue-600 dark:text-blue-300" />
         <h3 class="text-center text-2xl font-bold text-neutral-700 dark:text-neutral-100">Backend</h3>
         <p class="text-center text-xl text-neutral-500 dark:text-neutral-300">Develop business logic and back-end system to support the product, create API, experience with version control systems.</p>
@@ -70,7 +70,7 @@ import ContactForm from './ContactForm';
             <img class="object-contain aspect-[5/4]" src={project.thumbnail} alt="Project image">
           </div>
 
-          <div class={`flex bg-white dark:bg-neutral-700/70 flex-col items-center justify-center gap-10 p-10 border border-neutral-300 dark:border-neutral-500 border-b-3 ${project.borderColor} rounded-xl md:w-[50%]`}>
+          <div class={`flex bg-white dark:bg-neutral-700/70 flex-col items-center justify-center gap-8 md:gap-10 px-7 py-10 border border-neutral-300 dark:border-neutral-500 border-b-3 ${project.borderColor} rounded-xl md:w-[50%]`}>
             <p class={`font-semibold text-3xl ${project.titleColor}`}>{project.name}</p>
             
             <p class="text-neutral-500 dark:text-neutral-300 text-center">{project.description}</p>

@@ -25,7 +25,7 @@ export default function ContactForm() {
     <form
       ref={formRef}
       onSubmit={sendEmail}
-      className="flex md:w-[50%] flex-col gap-7 bg-white dark:bg-neutral-700/90 dark:border-neutral-600 rounded-xl p-10 border border-neutral-200 shadow-xl">
+      className="flex md:w-[50%] flex-col gap-7 bg-white dark:bg-neutral-700/90 dark:border-neutral-600 rounded-xl p-7 md:p-10 border border-neutral-200 shadow-xl">
       <input required autoComplete="off" autoCapitalize="words" className="h-13 bg-neutral-100 dark:bg-neutral-600 rounded-lg px-7" type="text" name="name" placeholder="Name"></input>
       <input required autoComplete="off" className="h-13 bg-neutral-100 dark:bg-neutral-600 rounded-lg px-7" type="email" name="email" placeholder="youremail@mail.com"></input>
       <textarea required autoComplete="off" className="h-13 bg-neutral-100 dark:bg-neutral-600 rounded-lg px-7 py-3" name="message" placeholder="Message"></textarea>
