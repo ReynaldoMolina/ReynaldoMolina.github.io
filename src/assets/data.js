@@ -98,9 +98,9 @@ export const projects = [
     borderColor: 'border-b-emerald-300 dark:border-b-emerald-300',
     thumbnail: urlshortener.src,
     techs: [techs.astro, techs.react, techs.tailwind, techs.html, techs.css, techs.javascript],
-    description: 'A fast and responsive URL shortener built with Astro, React, and Tailwind CSS. It lets users shorten links via an external API and displays them in a clean, modern UI.',
+    description: 'A fast and responsive URL shortener mockup built with Astro, React, and Tailwind CSS, with a clean and modern UI.',
     codelink: 'https://github.com/ReynaldoMolina/url-shortener',
-    previewlink: '/url-shortener'
+    previewlink: 'https://urlshortener-rm.vercel.app/'
   },
   {
     name: 'Currency Counter',
