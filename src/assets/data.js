@@ -1,6 +1,7 @@
 import jahairastore from '../assets/store.png';
 import supraural from '../assets/supraural.png';
 import moneycounter from '../assets/moneycounter.png';
+import urlshortener from '../assets/url-shortener.png';
 import EmailIcon from '../icons/email.svg?react';
 import LinkedInIcon from '../icons/linkedin.svg?react';
 import GitHubIcon from '../icons/github-circle.svg?react';
@@ -71,7 +72,7 @@ export const projects = [
   {
     name: 'Jahaira Store',
     bgColor: 'bg-blue-300',
-    titleColor: 'text-blue-400',
+    titleColor: 'text-blue-400 dark:text-blue-300',
     borderColor: 'border-b-blue-300 dark:border-b-blue-300',
     thumbnail: jahairastore.src,
     techs: [techs.nextjs, techs.react, techs.tailwind, techs.postgresql],
@@ -82,7 +83,7 @@ export const projects = [
   {
     name: 'SuprAural',
     bgColor: 'bg-red-300',
-    titleColor: 'text-red-400',
+    titleColor: 'text-red-400 dark:text-red-300',
     borderColor: 'border-b-red-300 dark:border-b-red-300',
     thumbnail: supraural.src,
     techs: [techs.html, techs.css, techs.javascript],
@@ -91,16 +92,27 @@ export const projects = [
     previewlink: 'https://reynaldomolina.github.io/musicstudio'
   },
   {
+    name: 'Url Shortener',
+    bgColor: 'bg-emerald-300',
+    titleColor: 'text-emerald-400 dark:text-emerald-300',
+    borderColor: 'border-b-emerald-300 dark:border-b-emerald-300',
+    thumbnail: urlshortener.src,
+    techs: [techs.astro, techs.react, techs.tailwind, techs.html, techs.css, techs.javascript],
+    description: 'A fast and responsive URL shortener built with Astro, React, and Tailwind CSS. It lets users shorten links via an external API and displays them in a clean, modern UI.',
+    codelink: 'https://github.com/ReynaldoMolina/url-shortener',
+    previewlink: '/url-shortener'
+  },
+  {
     name: 'Currency Counter',
     bgColor: 'bg-amber-300',
-    titleColor: 'text-amber-400',
+    titleColor: 'text-amber-400 dark:text-amber-300',
     borderColor: 'border-b-amber-300 dark:border-b-amber-300',
     thumbnail: moneycounter.src,
     techs: [techs.astro, techs.react, techs.tailwind, techs.html, techs.css, techs.javascript],
     description: 'A simple yet practical tool for counting money, supporting both Nicaraguan Córdobas and US Dollars. It helps users quickly calculate totals in mixed currencies.',
     codelink: 'https://github.com/ReynaldoMolina/ReynaldoMolina.github.io/tree/main/src/moneycounter',
     previewlink: '/moneycounter'
-  }
+  },
 ];
 
 export const contacts = [

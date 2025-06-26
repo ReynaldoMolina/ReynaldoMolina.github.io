@@ -29,7 +29,7 @@ export default function ContactForm() {
       <input required autoComplete="off" autoCapitalize="words" className="h-13 bg-neutral-100 dark:bg-neutral-600 rounded-lg px-7" type="text" name="name" placeholder="Name"></input>
       <input required autoComplete="off" className="h-13 bg-neutral-100 dark:bg-neutral-600 rounded-lg px-7" type="email" name="email" placeholder="youremail@mail.com"></input>
       <textarea required autoComplete="off" className="h-13 bg-neutral-100 dark:bg-neutral-600 rounded-lg px-7 py-3" name="message" placeholder="Message"></textarea>
-      <button type="submit" className="bg-indigo-600 rounded-xl p-3 text-white cursor-pointer hover:scale-103 transition font-semibold">Start Conversation</button>
+      <button type="submit" className="bg-blue-600 rounded-xl p-3 text-white cursor-pointer hover:scale-103 transition font-bold">Start Conversation</button>
     </form>
   );
 }
