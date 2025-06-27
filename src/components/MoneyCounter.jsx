@@ -5,6 +5,7 @@ import CoinIcon from '../icons/coin.svg?react';
 import ExchangeIcon from '../icons/exchange.svg?react';
 import MoneyIcon from '../icons/money.svg?react';
 import CompareIcon from '../icons/compare.svg?react';
+import DropdownIcon from '../icons/dropdown.svg?react';
 import '../styles/global.css';
 import { dollarsObj, cordobasObj } from '../assets/moneycounterdata';
 
@@ -177,16 +178,23 @@ function ExchangeRateInput({ value, setValue, placeholder }) {
 }
 
 function Table({ tableName, resetTable, data, handleData, totalQuantity, total }) {
+  const [isOpen, setIsOpen] = useState(true);
+
   return (
     <section className='flex flex-col gap-1'>
       <div className='flex justify-between w-full max-w-85 px-3 py-2 mx-auto bg-neutral-200 dark:bg-neutral-600 rounded-xl'>
         <span className='flex items-center font-bold'>{tableName}</span>
-        <ClearIcon
-          className='h-7 w-9 rounded-lg p-1 cursor-pointer bg-neutral-100 dark:bg-neutral-700 shadow hover:bg-white dark:hover:bg-neutral-800'
-          onClick={() => resetTable()} />
+        <div className='flex gap-1'>
+          <DropdownIcon
+            className={`${isOpen && "rotate-180"} h-7 w-9 rounded-lg p-1 cursor-pointer bg-neutral-100 dark:bg-neutral-700 hover:bg-white dark:hover:bg-neutral-800`}
+            onClick={() => setIsOpen(state => !state)} />
+          <ClearIcon
+            className='h-7 w-9 rounded-lg p-1 cursor-pointer bg-neutral-100 dark:bg-neutral-700 hover:bg-white dark:hover:bg-neutral-800'
+            onClick={() => resetTable()} />
+        </div>
       </div>
 
-      <table className='table w-full max-w-85 sm:w-85 mx-auto rounded-xl'>
+      <table className={`${isOpen ? "table" : "hidden" } w-full max-w-85 sm:w-85 mx-auto rounded-xl`}>
         <thead>
           <tr className='flex bg-neutral-200 dark:bg-neutral-600 px-3 py-1 rounded-t-xl'>
             <th className='font-bold text-left w-6/20'>Unit</th>
