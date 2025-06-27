@@ -92,13 +92,13 @@ export const projects = [
     previewlink: 'https://reynaldomolina.github.io/musicstudio'
   },
   {
-    name: 'Url Shortener',
+    name: 'Shortly',
     bgColor: 'bg-emerald-300',
     titleColor: 'text-emerald-400 dark:text-emerald-300',
     borderColor: 'border-b-emerald-300 dark:border-b-emerald-300',
     thumbnail: urlshortener.src,
     techs: [techs.astro, techs.react, techs.tailwind, techs.html, techs.css, techs.javascript],
-    description: 'A fast and responsive URL shortener mockup built with Astro, React, and Tailwind CSS, with a clean and modern UI.',
+    description: 'A fast and responsive URL shortener built with Astro, React, and Tailwind. Consumes a personal API (Express, PostgreSQL) to shorten the URLs.',
     codelink: 'https://github.com/ReynaldoMolina/url-shortener',
     previewlink: 'https://urlshortener-rm.vercel.app/'
   },
