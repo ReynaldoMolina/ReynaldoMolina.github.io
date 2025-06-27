@@ -1,38 +1,13 @@
 import { useState } from 'react';
 import ClearIcon from '../icons/clear.svg';
 import '../styles/global.css';
+import { dollarsObj, cordobasObj } from '../assets/moneycounterdata';
 
 function MoneyCounter() {  
   const [exchangeRate, setExchangeRate] = useState('');
   const [toCount, setToCount] = useState('');
-  const [dollars, setDollars] = useState([
-    { value: 100, quantity: '', subtotal: 0 },
-    { value: 50, quantity: '', subtotal: 0 },
-    { value: 20, quantity: '', subtotal: 0 },
-    { value: 10, quantity: '', subtotal: 0 },
-    { value: 5, quantity: '', subtotal: 0 },
-    { value: 2, quantity: '', subtotal: 0 },
-    { value: 1, quantity: '', subtotal: 0 },
-    { value: 0.50, quantity: '', subtotal: 0 },
-    { value: 0.25, quantity: '', subtotal: 0 },
-    { value: 0.10, quantity: '', subtotal: 0 },
-    { value: 0.05, quantity: '', subtotal: 0 },
-    { value: 0.01, quantity: '', subtotal: 0 },
-  ]);
-  const [cordobas, setCordobas] = useState([
-    { value: 1000, quantity: '', subtotal: 0 },
-    { value: 500, quantity: '', subtotal: 0 },
-    { value: 200, quantity: '', subtotal: 0 },
-    { value: 100, quantity: '', subtotal: 0 },
-    { value: 50, quantity: '', subtotal: 0 },
-    { value: 20, quantity: '', subtotal: 0 },
-    { value: 10, quantity: '', subtotal: 0 },
-    { value: 5, quantity: '', subtotal: 0 },
-    { value: 1, quantity: '', subtotal: 0 },
-    { value: 0.5, quantity: '', subtotal: 0 },
-    { value: 0.25, quantity: '', subtotal: 0 },
-    { value: 0.1, quantity: '', subtotal: 0 },
-  ]);
+  const [dollars, setDollars] = useState(dollarsObj);
+  const [cordobas, setCordobas] = useState(cordobasObj);
 
   function handleExchange(newRate) {
     let rate;
@@ -136,7 +111,7 @@ function MoneyCounter() {
   const difference = toCount - cordobaGeneralTotal;
 
   return (
-    <main className='flex flex-col gap-10'>
+    <main className='flex flex-col gap-10 px-7'>
       <h1 className='mx-auto text-2xl font-bold dark:text-indigo-400 text-indigo-600 mt-20'>Money Counter</h1>
 
       {/* exchangeRate, toCount, difference */}
