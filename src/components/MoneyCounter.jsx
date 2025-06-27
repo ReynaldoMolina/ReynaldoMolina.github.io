@@ -2,6 +2,9 @@ import { useState } from 'react';
 import ClearIcon from '../icons/clear.svg?react';
 import BillIcon from '../icons/money-bill.svg?react';
 import CoinIcon from '../icons/coin.svg?react';
+import ExchangeIcon from '../icons/exchange.svg?react';
+import MoneyIcon from '../icons/money.svg?react';
+import CompareIcon from '../icons/compare.svg?react';
 import '../styles/global.css';
 import { dollarsObj, cordobasObj } from '../assets/moneycounterdata';
 
@@ -58,8 +61,7 @@ export function MoneyCounter() {
   const difference = toCount - cordobasGeneralTotal;
 
   return (
-    <main className='flex flex-col gap-10 px-7'>
-      <h1 className='mx-auto text-2xl font-bold mt-10'>Money Counter</h1>
+    <>
       <ExchangeRate
         exchangeRate={exchangeRate}
         handleExchange={handleExchange}
@@ -90,25 +92,34 @@ export function MoneyCounter() {
           dollarsTotal={dollarsGeneralTotal}
           cordobasTotal={cordobasGeneralTotal} />
       </section>
-    </main>
+    </>
   );
 }
 
 function ExchangeRate({ exchangeRate, handleExchange, toCount, setToCount, difference }) {
   return (
-    <section className='flex flex-col items-center bg-neutral-300 dark:bg-neutral-700 rounded-xl gap-3 p-5 w-full max-w-85 mx-auto'>
+    <section className='flex flex-col items-center bg-neutral-100 dark:bg-neutral-700 rounded-xl gap-3 p-5 w-full max-w-85 mx-auto shadow-md'>
       <div className='flex w-full justify-between'>
-        <span>Exchange rate</span>
+        <div className='flex gap-3 items-center'>
+          <ExchangeIcon className="size-4" />
+          <span>Exchange rate</span>
+        </div>
         <ExchangeRateInput value={exchangeRate} setValue={handleExchange} placeholder="1" />
       </div>
 
       <div className='flex w-full justify-between'>
-        <span>Amount to count</span>
+        <div className='flex gap-3 items-center'>
+          <MoneyIcon className="size-4" />
+          <span>Amount to count</span>
+        </div>
         <ExchangeRateInput value={toCount} setValue={setToCount} placeholder="0" />
       </div>
       
       <div className='flex w-full justify-between'>
-        <span>Difference</span>
+        <div className='flex gap-3 items-center'>
+          <CompareIcon className="size-4" />
+          <span>Difference</span>
+        </div>
         <span
           type="number"
           className='w-25 sm:w-30 text-center'
@@ -135,16 +146,16 @@ function ExchangeRateInput({ value, setValue, placeholder }) {
 function Table({ tableName, resetTable, data, handleData, totalQuantity, total }) {
   return (
     <section className='flex flex-col gap-1'>
-      <div className='flex justify-between w-full max-w-85 px-3 py-2 mx-auto bg-neutral-300 dark:bg-neutral-600 rounded-xl'>
+      <div className='flex justify-between w-full max-w-85 px-3 py-2 mx-auto bg-neutral-200 dark:bg-neutral-600 rounded-xl'>
         <span className='flex items-center font-bold'>{tableName}</span>
         <ClearIcon
-          className='h-7 w-9 rounded-xl p-1 hover:bg-neutral-400'
+          className='h-7 w-9 rounded-lg p-1 cursor-pointer bg-neutral-100 dark:bg-neutral-700 shadow hover:bg-white dark:hover:bg-neutral-800'
           onClick={() => resetTable()} />
       </div>
 
-      <table className='table w-full max-w-85 sm:w-85 mx-auto bg-neutral-600 rounded-xl'>
+      <table className='table w-full max-w-85 sm:w-85 mx-auto rounded-xl'>
         <thead>
-          <tr className='flex bg-neutral-300 dark:bg-neutral-600 px-3 py-1 rounded-t-xl'>
+          <tr className='flex bg-neutral-200 dark:bg-neutral-600 px-3 py-1 rounded-t-xl'>
             <th className='font-bold text-left w-6/20'>Unit</th>
             <th className='font-bold text-right w-6/20'>Quantity</th>
             <th className='font-bold text-right w-8/20'>Total C$</th>
@@ -154,7 +165,7 @@ function Table({ tableName, resetTable, data, handleData, totalQuantity, total }
           {data.map((bill, index) => 
             <tr
               key={bill.value}
-              className="flex border-b-1 border-neutral-300 dark:border-neutral-500 px-3 py-1 bg-neutral-200 dark:bg-neutral-700 gap-1"
+              className="flex border-b-1 border-neutral-300 dark:border-neutral-500 px-3 py-1 bg-neutral-100 dark:bg-neutral-700 gap-1"
             >
               <td className='flex items-center gap-3 text-right w-6/20'>
                 {bill.coin ?
@@ -180,7 +191,7 @@ function Table({ tableName, resetTable, data, handleData, totalQuantity, total }
           )}
         </tbody>
         <tfoot>
-          <tr className='flex py-1 px-3 bg-neutral-300 dark:bg-neutral-600 rounded-b-xl'>
+          <tr className='flex py-1 px-3 bg-neutral-200 dark:bg-neutral-600 rounded-b-xl'>
             <th className='font-bold text-right w-2/20'>Total</th>
             <th className='font-bold text-right w-9/20'>$ {totalQuantity === 0 ? '-' : totalQuantity.toFixed(2)}</th>
             <th className='font-bold text-right w-9/20'>C$ {total === 0 ? '-' : total.toFixed(2)}</th>
@@ -194,16 +205,16 @@ function Table({ tableName, resetTable, data, handleData, totalQuantity, total }
 function TableTotal({ dollarsTotal, cordobasTotal }) {
   return (
     <section className='flex flex-col w-full max-w-85 gap-1 mx-auto'>
-      <div className='flex justify-center w-full px-3 py-2.5 mx-auto bg-neutral-300 dark:bg-neutral-600 rounded-xl'>
+      <div className='flex justify-center w-full px-3 py-2.5 mx-auto bg-neutral-200 dark:bg-neutral-600 rounded-xl'>
         <span className='flex items-center font-bold'>General total</span>
       </div>
 
       <div className='flex flex-col w-full'>
-        <div className='flex justify-around w-full bg-neutral-300 dark:bg-neutral-600 py-1 rounded-t-xl'>
+        <div className='flex justify-around w-full bg-neutral-200 dark:bg-neutral-600 py-1 rounded-t-xl'>
           <span className='text-center font-bold'>Dollars</span>
           <span className='text-center font-bold'>Córdobas</span>
         </div>
-        <div className='flex justify-around w-full bg-neutral-200 dark:bg-neutral-700 py-1 rounded-b-xl'>
+        <div className='flex justify-around w-full bg-neutral-100 dark:bg-neutral-700 py-1 rounded-b-xl shadow'>
           <span className='text-center font-bold'>$ {dollarsTotal === 0 ? '-' : dollarsTotal.toFixed(2)}</span>
           <span className='text-center font-bold'>C$ {cordobasTotal === 0 ? '-' : cordobasTotal.toFixed(2)}</span>
         </div>
