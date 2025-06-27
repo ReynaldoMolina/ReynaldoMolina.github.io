@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import ClearIcon from '../icons/clear.svg?react';
 import BillIcon from '../icons/money-bill.svg?react';
 import CoinIcon from '../icons/coin.svg?react';
@@ -52,6 +52,36 @@ export function MoneyCounter() {
     setCordobas(() => cordobas.map(bill => ({...bill, quantity: '', subtotal: 0})));
   }
 
+  function saveToLocalStorage() {
+    try {
+      const payload = { dollars, cordobas, exchangeRate, toCount };
+      localStorage.setItem("MONEY_DATA", JSON.stringify(payload));
+      alert('Saved!');
+    } catch (error) {
+      console.error("Failed to write to localStorage:", error);
+    }
+  }
+
+  function handleLoad() {
+    try {
+      const raw = localStorage.getItem("MONEY_DATA");
+      if (!raw) return;
+
+      const { dollars, cordobas, exchangeRate, toCount } = JSON.parse(raw);
+
+      setDollars(dollars);
+      setCordobas(cordobas);
+      setExchangeRate(exchangeRate);
+      setToCount(toCount);
+    } catch (err) {
+      console.error("Failed to read from localStorage:", err);
+    }
+  };
+
+  useEffect(() => {
+    handleLoad();
+  }, []);
+
   const dollarsQuantity = dollars.reduce((sum, bill) => sum + ((isNaN(bill.quantity) ? 0 : bill.quantity) * bill.value), 0);
   const dollarsTotal = dollars.reduce((sum, bill) => sum + (isNaN(bill.quantity) ? 0 : bill.subtotal), 0);
   const cordobasTotal = cordobas.reduce((sum, bill) => sum + (isNaN(bill.quantity) ? 0 : bill.subtotal), 0);
@@ -67,7 +97,8 @@ export function MoneyCounter() {
         handleExchange={handleExchange}
         toCount={toCount}
         setToCount={setToCount}
-        difference={difference} />
+        difference={difference}
+        action={saveToLocalStorage} />
 
       <section className='flex flex-col mx-auto w-full gap-10'>
         <div className='flex flex-col mx-auto w-full max-w-85 sm:max-w-full gap-10 md:flex-row justify-center'>
@@ -96,7 +127,7 @@ export function MoneyCounter() {
   );
 }
 
-function ExchangeRate({ exchangeRate, handleExchange, toCount, setToCount, difference }) {
+function ExchangeRate({ exchangeRate, handleExchange, toCount, setToCount, difference, action }) {
   return (
     <section className='flex flex-col items-center bg-neutral-100 dark:bg-neutral-700 rounded-xl gap-3 p-5 w-full max-w-85 mx-auto shadow-md'>
       <div className='flex w-full justify-between'>
@@ -127,6 +158,8 @@ function ExchangeRate({ exchangeRate, handleExchange, toCount, setToCount, diffe
           {(isNaN(toCount) || toCount === '') ? '-' : difference.toFixed(2)}
         </span>
       </div>
+
+      <SaveMoneyLocal action={action} />
     </section>
   );
 }
@@ -220,5 +253,15 @@ function TableTotal({ dollarsTotal, cordobasTotal }) {
         </div>
       </div>
     </section>
+  );
+}
+
+function SaveMoneyLocal({ action }) {
+  return (
+    <button
+      className='bg-blue-600 font-semibold p-2 w-full max-w-85 mx-auto rounded-xl cursor-pointer transition hover:bg-blue-700 text-white'
+      onClick={action}>
+      Save
+    </button>
   );
 }
