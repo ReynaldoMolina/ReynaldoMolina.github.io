@@ -1,11 +1,8 @@
 import { useState } from "react";
 import { headerLinks, contacts } from "../assets/data";
+import { type StateBool, type StateSet, type Children } from "../types/types";
 import MenuSvg from "../icons/menu.svg?react";
 import CloseSvg from "../icons/close.svg?react";
-
-type OpenMenu = boolean;
-type SetOpenMenu = React.Dispatch<React.SetStateAction<boolean>>;
-type Children = React.ReactNode;
 
 export function Header() {
   const [openMenu, setOpenMenu] = useState(false);
@@ -35,8 +32,8 @@ function HeaderToggle({
   openMenu,
   setOpenMenu,
 }: {
-  openMenu: OpenMenu;
-  setOpenMenu: SetOpenMenu;
+  openMenu: StateBool;
+  setOpenMenu: StateSet;
 }) {
   return (
     <button
@@ -52,7 +49,7 @@ function HeaderToggle({
   );
 }
 
-function HeaderNavDesktop({ setOpenMenu }: { setOpenMenu: SetOpenMenu }) {
+function HeaderNavDesktop({ setOpenMenu }: { setOpenMenu: StateSet }) {
   return (
     <nav className="hidden md:flex items-center gap-10">
       <HeaderItems setOpenMenu={setOpenMenu} />
@@ -65,7 +62,7 @@ function HeaderNav({
   setOpenMenu,
 }: {
   children: Children;
-  setOpenMenu: SetOpenMenu;
+  setOpenMenu: StateSet;
 }) {
   return (
     <>
@@ -85,7 +82,7 @@ function HeaderNav({
   );
 }
 
-function HeaderItems({ setOpenMenu }: { setOpenMenu: SetOpenMenu }) {
+function HeaderItems({ setOpenMenu }: { setOpenMenu: StateSet }) {
   return (
     <>
       <div className="flex flex-col md:flex-row gap-5">

@@ -5,6 +5,7 @@ import urlshortener from "/src/assets/images/url-shortener.png";
 import EmailIcon from "../icons/email.svg?react";
 import LinkedInIcon from "../icons/linkedin.svg?react";
 import GitHubIcon from "../icons/github-circle.svg?react";
+import { type Skill } from "../types/types";
 
 export const headerLinks = [
   {
@@ -155,7 +156,7 @@ export const contacts = [
   },
 ];
 
-export const skillsFront = [
+export const skillsFront: Skill[] = [
   {
     name: "Next.js",
     icon: "nextjs",
@@ -174,7 +175,7 @@ export const skillsFront = [
   },
 ];
 
-export const skillsBack = [
+export const skillsBack: Skill[] = [
   {
     name: "Node.js",
     icon: "nodejs",
