@@ -1,0 +1,109 @@
+---
+import { skillsFront, skillsBack } from '@/assets/data/skills';
+import { Code, Database } from '@lucide/astro';
+import { Icon } from 'astro-icon/components';
+---
+
+<section
+  class="flex flex-col items-center w-full max-w-5xl gap-10 px-7"
+  id="skills"
+>
+  <h2
+    class="text-4xl font-bold bg-blue-600 w-full text-center text-white p-12 rounded-xl mt-20"
+  >
+    Skills
+  </h2>
+
+  <div class="flex flex-col md:flex-row w-full gap-10">
+    <div
+      class="flex flex-col items-center border border-neutral-200 dark:border-neutral-500 shadow-xl p-10 md:p-12 rounded-xl gap-7 bg-white dark:bg-neutral-700/70 w-full"
+    >
+      <Code class="size-9 text-blue-600 dark:text-blue-300" />
+      <h3
+        class="text-center text-2xl font-bold text-neutral-700 dark:text-neutral-100"
+      >
+        Front End
+      </h3>
+
+      <p class="text-center text-xl text-neutral-500 dark:text-neutral-300">
+        Bring ideas to life and to the browser, paying maximal attention to your
+        vision of the product.
+      </p>
+      <p
+        class="text-center text-xl text-blue-600 dark:text-blue-300 font-semibold"
+      >
+        Languages:
+      </p>
+
+      <p class="text-center text-lg text-neutral-500 dark:text-neutral-300">
+        HTML, TypeScript, CSS
+      </p>
+
+      <a
+        href="https://reynaldomolina.github.io/todoapp/"
+        target="_blank"
+        class="cursor-text text-center text-xl text-blue-600 dark:text-blue-300 font-semibold"
+        >My tools:</a
+      >
+
+      {
+        skillsFront.map((skill) => (
+          <div class="flex justify-center items-center gap-5">
+            <Icon name={skill.icon} class="size-5" />
+            <p class="text-center text-lg text-neutral-500 dark:text-neutral-300">
+              {skill.name}
+            </p>
+          </div>
+        ))
+      }
+    </div>
+
+    <div
+      class="flex flex-col items-center border border-neutral-200 dark:border-neutral-500 shadow-xl p-10 md:p-12 rounded-xl gap-7 bg-white dark:bg-neutral-700/70 w-full"
+    >
+      <Database class="size-9 text-blue-600 dark:text-blue-300" />
+      <h3
+        class="text-center text-2xl font-bold text-neutral-700 dark:text-neutral-100"
+      >
+        Backend
+      </h3>
+      <p class="text-center text-xl text-neutral-500 dark:text-neutral-300">
+        Develop business logic and back-end system to support the product,
+        create API, experience with version control systems.
+      </p>
+      <p
+        class="text-center text-xl text-blue-600 dark:text-blue-300 font-semibold"
+      >
+        Languages:
+      </p>
+
+      <p class="text-center text-lg text-neutral-500 dark:text-neutral-300">
+        TypeScript
+      </p>
+
+      <p
+        class="text-center text-xl text-blue-600 dark:text-blue-300 font-semibold"
+      >
+        My tools:
+      </p>
+
+      {
+        skillsBack.map((skill) => (
+          <div class="flex justify-center items-center gap-5">
+            <Icon name={skill.icon} class="size-5" />
+            <p class="text-center text-lg text-neutral-500 dark:text-neutral-300">
+              {skill.name}
+            </p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+
+  <a
+    href="/Reynaldo Molina CV.pdf"
+    download
+    class="bg-blue-600 py-5 px-7 rounded-xl text-white font-bold hover:scale-105 transition text-center text-xl"
+    >Download my CV</a
+  >
+</section>

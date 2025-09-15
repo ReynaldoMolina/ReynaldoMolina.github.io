@@ -1,8 +1,8 @@
-import { useState } from "react";
-import { headerLinks, contacts } from "../assets/data";
-import { type StateBool, type StateSet, type Children } from "../types/types";
-import MenuSvg from "../icons/menu.svg?react";
-import CloseSvg from "../icons/close.svg?react";
+import { useState } from 'react';
+import { X, Menu } from 'lucide-react';
+import { headerLinks } from '@/assets/data/headerLinks';
+import ContactLinks from './about/ContactLinks';
+import type { SetStateBoolean } from '@/types/types';
 
 export function Header() {
   const [openMenu, setOpenMenu] = useState(false);
@@ -16,53 +16,43 @@ export function Header() {
         >
           RM
         </a>
-        <HeaderNavDesktop setOpenMenu={setOpenMenu} />
-        <HeaderToggle openMenu={openMenu} setOpenMenu={setOpenMenu} />
+        <nav className="hidden md:flex items-center gap-10">
+          <NavItems setOpenMenu={setOpenMenu} />
+        </nav>
+        <MenuToggle openMenu={openMenu} setOpenMenu={setOpenMenu} />
       </div>
       {openMenu && (
-        <HeaderNav setOpenMenu={setOpenMenu}>
-          <HeaderToggle openMenu={openMenu} setOpenMenu={setOpenMenu} />
-        </HeaderNav>
+        <NavMenu setOpenMenu={setOpenMenu}>
+          <MenuToggle openMenu={openMenu} setOpenMenu={setOpenMenu} />
+        </NavMenu>
       )}
     </header>
   );
 }
 
-function HeaderToggle({
+function MenuToggle({
   openMenu,
   setOpenMenu,
 }: {
-  openMenu: StateBool;
-  setOpenMenu: StateSet;
+  openMenu: boolean;
+  setOpenMenu: SetStateBoolean;
 }) {
   return (
     <button
       className="flex md:hidden cursor-pointer"
       onClick={() => setOpenMenu((state) => !state)}
     >
-      {openMenu ? (
-        <CloseSvg className="size-9" />
-      ) : (
-        <MenuSvg className="size-9" />
-      )}
+      {openMenu ? <X className="size-9" /> : <Menu className="size-9" />}
     </button>
   );
 }
 
-function HeaderNavDesktop({ setOpenMenu }: { setOpenMenu: StateSet }) {
-  return (
-    <nav className="hidden md:flex items-center gap-10">
-      <HeaderItems setOpenMenu={setOpenMenu} />
-    </nav>
-  );
-}
-
-function HeaderNav({
+function NavMenu({
   children,
   setOpenMenu,
 }: {
-  children: Children;
-  setOpenMenu: StateSet;
+  children: React.ReactNode;
+  setOpenMenu: SetStateBoolean;
 }) {
   return (
     <>
@@ -76,13 +66,13 @@ function HeaderNav({
           </a>
           {children}
         </div>
-        <HeaderItems setOpenMenu={setOpenMenu} />
+        <NavItems setOpenMenu={setOpenMenu} />
       </nav>
     </>
   );
 }
 
-function HeaderItems({ setOpenMenu }: { setOpenMenu: StateSet }) {
+function NavItems({ setOpenMenu }: { setOpenMenu: SetStateBoolean }) {
   return (
     <>
       <div className="flex flex-col md:flex-row gap-5">
@@ -97,13 +87,7 @@ function HeaderItems({ setOpenMenu }: { setOpenMenu: StateSet }) {
           </a>
         ))}
       </div>
-      <div className="flex gap-5">
-        {contacts.map(({ name, link, Icon }) => (
-          <a key={name} href={link} target="_blank" rel="noopener noreferrer">
-            <Icon className="size-9 opacity-80 hover:scale-110 cursor-pointer transition duration-150" />
-          </a>
-        ))}
-      </div>
+      <ContactLinks />
     </>
   );
 }

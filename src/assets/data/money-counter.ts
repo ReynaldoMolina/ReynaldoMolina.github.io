@@ -1,4 +1,4 @@
-import { type Bill } from "../types/types";
+import { type Bill } from "../../types/types";
 
 export const dollarsObj: Bill[] = [
   { value: 100, quantity: "", subtotal: 0, coin: false },

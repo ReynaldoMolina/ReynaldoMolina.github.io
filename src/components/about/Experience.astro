@@ -1,0 +1,27 @@
+---
+import { experience } from '@/assets/data/experience';
+---
+
+<section class="flex w-full flex-col max-w-3xl gap-20 p-7" id="experience">
+  <h2 class="text-4xl font-bold w-full text-center mt-20">Experience</h2>
+
+  <div class="flex flex-col gap-15 items-center w-full">
+    {
+      experience.map((element) => (
+        <div class="flex w-full gap-7 items-center">
+          <p class="text-2xl text-neutral-600 dark:text-neutral-300 font-bold">
+            {element.year}
+          </p>
+          <div class="flex flex-col">
+            <p class="text-xl text-blue-600 dark:text-blue-300 font-semibold">
+              {element.place}
+            </p>
+            <p class="text-neutral-600 dark:text-neutral-300">
+              {element.title}
+            </p>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</section>

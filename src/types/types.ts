@@ -1,6 +1,4 @@
-export type StateBool = boolean;
-export type StateSet = React.Dispatch<React.SetStateAction<boolean>>;
-export type Children = React.ReactNode;
+export type SetStateBoolean = React.Dispatch<React.SetStateAction<boolean>>
 
 export interface Skill {
   name: string;
@@ -39,9 +37,11 @@ export interface ExchangeInputProps {
   placeholder: string;
 }
 
+export type ResetQuantities = (moneyType: MoneyType) => void;
+
 export interface TableProps {
   moneyType: MoneyType;
-  resetQuantities: (moneyType: MoneyType) => void;
+  resetQuantities: ResetQuantities;
   money: Bill[];
   updateQuantity: ({ index, quantity, moneyType }: QuantityProps) => void;
   totalQuantity: number;
