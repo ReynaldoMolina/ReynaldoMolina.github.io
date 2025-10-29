@@ -1,25 +1,33 @@
 ---
-import '../styles/global.css';
+import { ToasterProvider } from "@/components/toaster-provider";
+import "@/global.css";
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" class="scroll-smooth">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-  <meta property="og:title" content="Reynaldo Molina | Front End Dev">
-  <meta property="og:description" content="Front-End Dev specializing in React, JavaScript, and modern web technologies.">
-  <meta name="description" content="Front-End Dev specializing in React, JavaScript, and modern web technologies.">
-  <!-- <meta property="og:image" content="https://reynaldomolina.github.io/_astro/profile-pic.IGFf9P05.jpg"> -->
-  <meta property="og:image" content="/profile-pic.jpg">
-  <meta property="og:type" content="website">
-  <meta name="generator" content={Astro.generator} />
-  <title>Reynaldo Molina | Front End Dev</title>
-</head>
-<body class="bg-white bg-radial dark:from-neutral-700 dark:bg-neutral-800">
-  <slot />
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <meta property="og:title" content="Reynaldo Molina | Front End Dev" />
+    <meta
+      property="og:description"
+      content="Front-End Dev specializing in React, TypeScript, and modern web technologies."
+    />
+    <meta
+      name="description"
+      content="Front-End Dev specializing in React, TypeScript, and modern web technologies."
+    />
+    <!-- <meta property="og:image" content="https://reynaldomolina.github.io/_astro/profile-pic.IGFf9P05.jpg"> -->
+    <meta property="og:image" content="/profile-pic.jpg" />
+    <meta property="og:type" content="website" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Reynaldo Molina | Front End Dev</title>
+  </head>
+  <body class="bg-background">
+    <slot />
+    <ToasterProvider client:load />
+  </body>
 </html>
 
 <style is:global>

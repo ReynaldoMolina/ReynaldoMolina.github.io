@@ -1,119 +1,203 @@
 ---
-import '../styles/global.css';
-import { Icon } from 'astro-icon/components';
-import { projects, skillsBack, skillsFront, experience } from '../assets/data';
-import profilepic from '/src/assets/images/profile-pic.jpg';
-import ContactForm from './ContactForm';
+import "@/global.css";
+import { Icon } from "astro-icon/components";
+import { projects, skillsBack, skillsFront, experience } from "../data/data";
+import profilepic from "/src/images/profile-pic.jpg";
+import { ContactForm } from "./contact-form";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "./ui/card";
+import { Button } from "./ui/button";
 ---
 
 <main class="flex flex-col items-center gap-10">
-  <section class="flex flex-col w-full max-w-4xl items-center gap-15 px-7" id="aboutme">
-    <h1 class="text-6xl font-bold mt-30 text-center bg-clip-text text-transparent bg-gradient-to-br from-blue-600 dark:from-blue-100 to-blue-800 dark:to-blue-300">Reynaldo Molina</h1>
-    <p class="text-center text-xl text-neutral-600 dark:text-neutral-300">I'm a front-end engineer who's passionate about clean code and simple, effective interfaces. I get genuinely excited about challenging, high-traffic projects—and I enjoy diving into them headfirst. I'm easy to work with, blend well into any team, and I work remotely, which helps keep things cost-efficient. If you've got something tricky on your hands, you're in good company.</p>
-    <img class="flex justify-center border-6 w-55 border-blue-600 rounded-full aspect-square sm:w-60" src={profilepic.src} alt="Profile picture">
-  </section>
-
-  <section class="flex flex-col items-center w-full max-w-5xl gap-10 px-7" id="skills">
-    <h2 class="text-4xl font-bold bg-blue-600 w-full text-center text-white p-12 rounded-xl mt-20">Skills</h2>
-
-    <div class="flex flex-col md:flex-row w-full gap-10">
-      <div class="flex flex-col items-center border border-neutral-200 dark:border-neutral-500 shadow-xl p-10 md:p-12 rounded-xl gap-7 bg-white dark:bg-neutral-700/70 w-full">
-        <Icon name="frontend" class="size-9 text-blue-600 dark:text-blue-300" />
-        <h3 class="text-center text-2xl font-bold text-neutral-700 dark:text-neutral-100">Front End</h3>
-  
-        <p class="text-center text-xl text-neutral-500 dark:text-neutral-300">Bring ideas to life and to the browser, paying maximal attention to your vision of the product.</p>
-        <p class="text-center text-xl text-blue-600 dark:text-blue-300 font-semibold">Languages:</p>
-  
-        <p class="text-center text-lg text-neutral-500 dark:text-neutral-300">HTML, JavaScript, CSS</p>
-  
-        <a href="https://reynaldomolina.github.io/todoapp/" target="_blank" class="cursor-text text-center text-xl text-blue-600 dark:text-blue-300 font-semibold">My tools:</a>
-  
-        {skillsFront.map(skill =>
-          <div class="flex justify-center items-center gap-5">
-            <Icon name={skill.icon} class="size-5" />
-            <p class="text-center text-lg text-neutral-500 dark:text-neutral-300">{skill.name}</p>
-          </div>
-        )}
-      </div>
-  
-      <div class="flex flex-col items-center border border-neutral-200 dark:border-neutral-500 shadow-xl p-10 md:p-12 rounded-xl gap-7 bg-white dark:bg-neutral-700/70 w-full">
-        <Icon name="backend" class="size-9 text-blue-600 dark:text-blue-300" />
-        <h3 class="text-center text-2xl font-bold text-neutral-700 dark:text-neutral-100">Backend</h3>
-        <p class="text-center text-xl text-neutral-500 dark:text-neutral-300">Develop business logic and back-end system to support the product, create API, experience with version control systems.</p>
-        <p class="text-center text-xl text-blue-600 dark:text-blue-300 font-semibold">Languages:</p>
-  
-        <p class="text-center text-lg text-neutral-500 dark:text-neutral-300">JavaScript</p>
-  
-        <p class="text-center text-xl text-blue-600 dark:text-blue-300 font-semibold">My tools:</p>
-  
-        {skillsBack.map(skill =>
-          <div class="flex justify-center items-center gap-5">
-            <Icon name={skill.icon} class="size-5" />
-            <p class="text-center text-lg text-neutral-500 dark:text-neutral-300">{skill.name}</p>
-          </div>
-        )}
-      </div>
-    </div>
-
-    <a href="/Reynaldo Molina CV.pdf" download class="bg-blue-600 py-5 px-7 rounded-xl text-white font-bold hover:scale-105 transition text-center text-xl">Download my CV</a>
+  <section
+    class="flex flex-col w-full max-w-4xl items-center gap-5 px-7 scroll-mt-20"
+    id="aboutme"
+  >
+    <h1 class="text-4xl md:text-5xl font-semibold mt-10 text-center">
+      Reynaldo Molina
+    </h1>
+    <p class="text-center text-sm md:text-lg text-muted-foreground">
+      Frontend developer who likes clean code and simple, effective interfaces.
+      Excited about challenging projects and enjoy diving into them headfirst.
+      Easy to work with and blend well into any team. If you've got something
+      tricky, you're in good company.
+    </p>
+    <img
+      class="flex justify-center border-5 w-45 rounded-full aspect-square"
+      src={profilepic.src}
+      alt="Profile picture"
+    />
   </section>
 
   <section class="flex flex-col max-w-5xl gap-5 px-7" id="projects">
-    <h2 class="text-4xl font-bold w-full text-center mt-20">Projects</h2>
-    <p class="text-center text-xl text-neutral-600 dark:text-neutral-300">Have a look at some of the projects I'm proud of:</p>
+    <h2 class="text-3xl md:text-4xl font-semibold w-full text-center mt-20">
+      Projects
+    </h2>
+    <p class="text-center text-sm md:text-lg text-muted-foreground">
+      Have a look at some of the projects I'm proud of:
+    </p>
 
-    <div class="flex flex-col gap-15 w-full mt-10">
-
-      {projects.map(project =>
-        <div class="flex flex-col md:flex-row gap-4 w-full">
-          <div class={`flex flex-col justify-center gap-4 rounded-xl shadow-lg p-7 ${project.bgColor} md:w-[50%]`}>
-            <img class="object-contain aspect-[5/4]" src={project.thumbnail} alt="Project image">
-          </div>
-
-          <div class={`flex bg-white dark:bg-neutral-700/70 flex-col items-center justify-center gap-8 md:gap-10 px-7 py-10 border border-neutral-300 dark:border-neutral-500 border-b-3 ${project.borderColor} rounded-xl md:w-[50%]`}>
-            <p class={`font-semibold text-3xl ${project.titleColor}`}>{project.name}</p>
-            
-            <p class="text-neutral-500 dark:text-neutral-300 text-center">{project.description}</p>
-
-            <a href={project.previewlink} target="_blank" class={`flex items-center gap-3 ${project.bgColor} p-3 rounded-xl hover:scale-105 transition`}>
-              <Icon name="link" class="size-4 stroke-3 stroke-black" />
-              <p class="text-black">View project</p>
-            </a>
-          </div>
-        </div>
-      )}
-    </div>
-  </section>
-
-  <section class="flex w-full flex-col gap-5 mt-20">
-    <div class="flex flex-col gap-10 px-10 py-20 items-center w-full bg-gradient-to-br bg-blue-600 from-blue-800">
-      <p class="text-center text-white text-4xl md:text-5xl font-semibold max-w-3xl">Interested in working together?</p>
-      <p class="text-center text-white text-xl max-w-3xl">You can trust your project in my hands. I'm always eager to do something nice and complicated. Let's discuss all the features in a private conversation.</p>
-      <a class="text-center text-blue-800 font-bold bg-white rounded-xl px-10 py-4 hover:scale-105 transition" href="/#contact">Contact me</a>
+    <div class="grid grid-cols-1 gap-5 w-full mt-10">
+      {
+        projects.map((project) => (
+          <a href={project.previewlink} target="_blank" class="cursor-pointer">
+            <Card>
+              <CardHeader>
+                <CardTitle>{project.name}</CardTitle>
+                <CardDescription>{project.description}</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <img
+                  class="object-contain aspect-[5/4] max-h-100 mx-auto hover:scale-102 transition drop-shadow-lg"
+                  src={project.thumbnail}
+                  alt="Project image"
+                />
+              </CardContent>
+            </Card>
+          </a>
+        ))
+      }
     </div>
   </section>
 
   <section class="flex w-full flex-col max-w-3xl gap-20 p-7" id="experience">
-    <h2 class="text-4xl font-bold w-full text-center mt-20">Experience</h2>
+    <div class="flex flex-col gap-5">
+      <h2 class="text-3xl md:text-4xl font-semibold w-full text-center mt-20">
+        Experience
+      </h2>
+      <p class="text-center text-sm md:text-lg text-muted-foreground">
+        Take a look at what I've done:
+      </p>
+    </div>
 
-    <div class="flex flex-col gap-15 items-center w-full">
-      {experience.map(element =>
-        <div class="flex w-full gap-7 items-center">
-          <p class="text-2xl text-neutral-600 dark:text-neutral-300 font-bold">{element.year}</p>
-          <div class="flex flex-col">
-            <p class="text-xl text-blue-600 dark:text-blue-300 font-semibold">{element.place}</p>
-            <p class="text-neutral-600 dark:text-neutral-300">{element.title}</p>
+    <div class="flex flex-col gap-15 w-full">
+      {
+        experience.map((element) => (
+          <div class="flex w-full gap-7">
+            <p class="text-xl">{element.year}</p>
+            <div class="flex flex-col">
+              <p class="text-xl">{element.place}</p>
+              <p class="text-sm text-muted-foreground">{element.title}</p>
+            </div>
           </div>
-        </div>
-      )}
+        ))
+      }
     </div>
   </section>
 
-  <section class="flex w-full flex-col md:flex-row max-w-5xl gap-5 p-7" id="contact">
-    <div class="flex md:w-[50%] flex-col gap-5 bg-white dark:bg-neutral-700/90 border border-neutral-200 dark:border-neutral-600 rounded-xl p-10 shadow-xl justify-center items-center">
-      <h2 class="text-4xl font-bold w-full text-center">Any propositions?</h2>
-      <p class="text-center text-xl text-neutral-600 dark:text-neutral-300">Complete the form and let's have a talk on your project!</p>
+  <section
+    class="flex flex-col items-center w-full max-w-5xl gap-10 px-7"
+    id="skills"
+  >
+    <div class="flex flex-col gap-5">
+      <h2 class="text-3xl md:text-4xl font-semibold w-full text-center mt-20">
+        Skills
+      </h2>
+      <p class="text-center text-sm md:text-lg text-muted-foreground">
+        What I can bring to the table:
+      </p>
     </div>
+
+    <div class="flex flex-col w-full gap-5">
+      <div class="grid grid-cols-1 md:grid-cols-2 w-full gap-5">
+        <Card>
+          <CardContent className="flex flex-col gap-5">
+            <h3
+              class="inline-flex gap-2 items-center text-center text-xl md:text-2xl font-semibold mx-auto"
+            >
+              Frontend
+            </h3>
+
+            <p class="text-center text-muted-foreground text-sm">
+              Bring ideas to life and to the browser, paying maximal attention
+              to your vision of the product.
+            </p>
+            <p class="text-center text-lg">Languages</p>
+
+            <p class="text-center text-sm text-muted-foreground">
+              TypeScript, HTML, CSS
+            </p>
+
+            <a
+              href="https://reynaldomolina.github.io/todoapp/"
+              target="_blank"
+              class="text-center text-lg">My tools:</a
+            >
+
+            {
+              skillsFront.map((skill) => (
+                <div class="flex justify-center items-center gap-3">
+                  <Icon name={skill.icon} class="size-5" />
+                  <p class="text-center text-sm text-muted-foreground">
+                    {skill.name}
+                  </p>
+                </div>
+              ))
+            }
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardContent className="flex flex-col gap-5">
+            <h3
+              class="inline-flex gap-2 items-center text-center text-xl md:text-2xl font-semibold mx-auto"
+            >
+              Backend
+            </h3>
+            <p class="text-center text-muted-foreground text-sm">
+              Develop business logic and back-end system to support the product,
+              create API, experience with version control systems.
+            </p>
+            <p class="text-center text-lg">Languages</p>
+
+            <p class="text-center text-sm text-muted-foreground">
+              TypeScript, SQL
+            </p>
+
+            <p class="text-center text-lg">My tools:</p>
+
+            {
+              skillsBack.map((skill) => (
+                <div class="flex justify-center items-center gap-3">
+                  <Icon name={skill.icon} class="size-5" />
+                  <p class="text-center text-sm text-muted-foreground">
+                    {skill.name}
+                  </p>
+                </div>
+              ))
+            }
+          </CardContent>
+        </Card>
+      </div>
+
+      <a href="/Reynaldo Molina CV.pdf" download class="mx-auto">
+        <Button className="w-full md:w-100 mx-auto"> Download my CV </Button>
+      </a>
+    </div>
+  </section>
+
+  <section
+    class="grid grid-cols-1 md:grid-cols-2 w-full max-w-5xl gap-5 p-7"
+    id="contact"
+  >
+    <Card className="flex w-full bg-linear-to-br bg-blue-600 from-blue-800">
+      <CardContent
+        className="flex flex-col gap-3 justify-center h-full text-white"
+      >
+        <h2 class="text-xl font-semibold w-full text-center">
+          Interested in working together?
+        </h2>
+        <p class="text-center">
+          Complete the form and let's have a talk on your project!
+        </p>
+      </CardContent>
+    </Card>
     <ContactForm client:visible />
   </section>
 </main>

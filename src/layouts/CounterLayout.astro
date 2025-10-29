@@ -1,25 +1,33 @@
 ---
-import '../styles/global.css';
+import { ToasterProvider } from "@/components/toaster-provider";
+import "@/global.css";
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" class="scroll-smooth">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-  <meta property="og:title" content="Contador de dinero">
-  <meta property="og:description" content="Una herramienta sencilla pero práctica para contar dinero, compatible con Córdobas nicaragüenses y con Dólares estadounidenses. Ayuda a calcular rápidamente los totales.">
-  <meta name="description" content="Una herramienta sencilla pero práctica para contar dinero, compatible con Córdobas nicaragüenses y con Dólares estadounidenses. Ayuda a calcular rápidamente los totales.">
-  <!-- <meta property="og:image" content="https://reynaldomolina.github.io/_astro/moneycounter.DPeCPEpo.png"> -->
-  <meta property="og:image" content="/moneycounter.png">
-  <meta property="og:type" content="website">
-  <meta name="generator" content={Astro.generator} />
-  <title>Money Counter</title>
-</head>
-<body class="bg-white bg-radial dark:from-neutral-700 dark:bg-neutral-800">
-  <slot />
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <meta property="og:title" content="Contador de dinero" />
+    <meta
+      property="og:description"
+      content="Una herramienta sencilla pero práctica para contar dinero, compatible con Córdobas nicaragüenses y con Dólares estadounidenses. Ayuda a calcular rápidamente los totales."
+    />
+    <meta
+      name="description"
+      content="Una herramienta sencilla pero práctica para contar dinero, compatible con Córdobas nicaragüenses y con Dólares estadounidenses. Ayuda a calcular rápidamente los totales."
+    />
+    <!-- <meta property="og:image" content="https://reynaldomolina.github.io/_astro/moneycounter.DPeCPEpo.png"> -->
+    <meta property="og:image" content="/moneycounter.png" />
+    <meta property="og:type" content="website" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Money Counter</title>
+  </head>
+  <body class="bg-background">
+    <slot />
+    <ToasterProvider client:load />
+  </body>
 </html>
 
 <style is:global>

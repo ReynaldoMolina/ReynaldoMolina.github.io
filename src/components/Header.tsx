@@ -1,112 +1,70 @@
-import { useState } from "react";
-import { headerLinks, contacts } from "../assets/data";
-import MenuSvg from "../icons/menu.svg?react";
-import CloseSvg from "../icons/close.svg?react";
-
-type OpenMenu = boolean;
-type SetOpenMenu = React.Dispatch<React.SetStateAction<boolean>>;
-type Children = React.ReactNode;
+import { useIsMobile } from "@/hooks/use-mobile";
+import { headerLinks, contacts } from "../data/data";
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from "./ui/navigation-menu";
 
 export function Header() {
-  const [openMenu, setOpenMenu] = useState(false);
+  const isMobile = useIsMobile();
 
   return (
-    <header className="flex flex-col max-w-7xl p-7 mx-auto">
-      <div className="flex w-full justify-between items-center">
-        <a
-          href="/"
-          className="flex items-center text-5xl text-blue-600 dark:text-blue-300 font-semibold"
-        >
-          RM
-        </a>
-        <HeaderNavDesktop setOpenMenu={setOpenMenu} />
-        <HeaderToggle openMenu={openMenu} setOpenMenu={setOpenMenu} />
+    <header className="flex w-full items-center sticky top-0 bg-background z-10">
+      <div className="inline-flex w-full max-w-7xl px-7 py-3 mx-auto">
+        <NavigationMenu>
+          <NavigationMenuList>
+            {/* mobile */}
+            <NavigationMenuItem className="md:hidden">
+              <NavigationMenuTrigger className="font-semibold border">
+                Menu
+              </NavigationMenuTrigger>
+              <NavigationMenuContent>
+                <ul className="grid gap-2 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
+                  <ListItem href="/#aboutme">About me</ListItem>
+                  <ListItem href="/#projects">Projects</ListItem>
+                  <ListItem href="/#experience">Experience</ListItem>
+                  <ListItem href="/#skills">Skills</ListItem>
+                </ul>
+              </NavigationMenuContent>
+            </NavigationMenuItem>
+            {/* desktop */}
+            {headerLinks.map(({ link, name }) => (
+              <NavigationMenuItem key={name} className="hidden md:block">
+                <NavigationMenuLink asChild className="font-semibold">
+                  <a href={link}>{name}</a>
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+            ))}
+          </NavigationMenuList>
+        </NavigationMenu>
+        <div className="inline-flex items-center gap-3 md:gap-5 ml-auto">
+          {contacts.map(({ name, link, Icon }) => (
+            <a key={name} href={link} target="_blank" rel="noopener noreferrer">
+              <Icon className="size-8 hover:scale-110 cursor-pointer transition" />
+            </a>
+          ))}
+        </div>
       </div>
-      {openMenu && (
-        <HeaderNav setOpenMenu={setOpenMenu}>
-          <HeaderToggle openMenu={openMenu} setOpenMenu={setOpenMenu} />
-        </HeaderNav>
-      )}
     </header>
   );
 }
 
-function HeaderToggle({
-  openMenu,
-  setOpenMenu,
-}: {
-  openMenu: OpenMenu;
-  setOpenMenu: SetOpenMenu;
-}) {
-  return (
-    <button
-      className="flex md:hidden cursor-pointer"
-      onClick={() => setOpenMenu((state) => !state)}
-    >
-      {openMenu ? (
-        <CloseSvg className="size-9" />
-      ) : (
-        <MenuSvg className="size-9" />
-      )}
-    </button>
-  );
-}
-
-function HeaderNavDesktop({ setOpenMenu }: { setOpenMenu: SetOpenMenu }) {
-  return (
-    <nav className="hidden md:flex items-center gap-10">
-      <HeaderItems setOpenMenu={setOpenMenu} />
-    </nav>
-  );
-}
-
-function HeaderNav({
+function ListItem({
   children,
-  setOpenMenu,
-}: {
-  children: Children;
-  setOpenMenu: SetOpenMenu;
-}) {
+  href,
+  ...props
+}: React.ComponentPropsWithoutRef<"li"> & { href: string }) {
   return (
-    <>
-      <nav className="flex md:hidden fixed top-0 left-0 flex-col h-full w-full p-7 items-center gap-10 bg-white/90 dark:bg-neutral-800/90 backdrop-blur-2xl z-10">
-        <div className="flex w-full justify-between items-center">
-          <a
-            href="/"
-            className="flex items-center text-5xl text-blue-600 dark:text-blue-300 font-semibold"
-          >
-            RM
-          </a>
+    <li {...props}>
+      <NavigationMenuLink asChild>
+        <a href={href} className="text-sm leading-none font-medium">
           {children}
-        </div>
-        <HeaderItems setOpenMenu={setOpenMenu} />
-      </nav>
-    </>
-  );
-}
-
-function HeaderItems({ setOpenMenu }: { setOpenMenu: SetOpenMenu }) {
-  return (
-    <>
-      <div className="flex flex-col md:flex-row gap-5">
-        {headerLinks.map(({ link, name }) => (
-          <a
-            href={link}
-            className="font-semibold text-center transition text-xl duration-150 text-neutral-600 dark:text-neutral-300 hover:text-indigo-600 dark:hover:text-indigo-300"
-            onClick={() => setOpenMenu(false)}
-            key={name}
-          >
-            {name}
-          </a>
-        ))}
-      </div>
-      <div className="flex gap-5">
-        {contacts.map(({ name, link, Icon }) => (
-          <a key={name} href={link} target="_blank" rel="noopener noreferrer">
-            <Icon className="size-9 opacity-80 hover:scale-110 cursor-pointer transition duration-150" />
-          </a>
-        ))}
-      </div>
-    </>
+        </a>
+      </NavigationMenuLink>
+    </li>
   );
 }

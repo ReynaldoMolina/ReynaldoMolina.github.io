@@ -1,7 +1,7 @@
-import jahairastore from "/src/assets/images/store.png";
-import supraural from "/src/assets/images/supraural.png";
-import moneycounter from "/src/assets/images/moneycounter.png";
-import urlshortener from "/src/assets/images/url-shortener.png";
+import jahairastore from "/src/images/store.png";
+import supraural from "/src/images/supraural.png";
+import moneycounter from "/src/images/moneycounter.png";
+import urlshortener from "/src/images/url-shortener.png";
 import EmailIcon from "../icons/email.svg?react";
 import LinkedInIcon from "../icons/linkedin.svg?react";
 import GitHubIcon from "../icons/github-circle.svg?react";
@@ -12,16 +12,16 @@ export const headerLinks = [
     link: "/#aboutme",
   },
   {
-    name: "Skills",
-    link: "/#skills",
-  },
-  {
     name: "Projects",
     link: "/#projects",
   },
   {
     name: "Experience",
     link: "/#experience",
+  },
+  {
+    name: "Skills",
+    link: "/#skills",
   },
 ];
 
@@ -180,8 +180,8 @@ export const skillsBack = [
     icon: "nodejs",
   },
   {
-    name: "Express.js",
-    icon: "express",
+    name: "Drizzle ORM",
+    icon: "drizzle",
   },
   {
     name: "PostgreSQL",
@@ -196,9 +196,15 @@ export const skillsBack = [
 export const experience = [
   {
     year: "2025",
+    place: "Instituto Politécnico La Salle | Internship",
+    title:
+      "Fullstack Developer, built a web application to manage the purchases process. Made with Next.js, PostgreSQL and Shadcn UI.",
+  },
+  {
+    year: "2025",
     place: "Freelance",
     title:
-      "Frontend Developer, built responsive web applications and user interfaces with React, HTML, JavaScript and CSS.",
+      "Frontend Developer, built responsive web applications and user interfaces with React, HTML, TypeScript and CSS.",
   },
   {
     year: "2024",
@@ -211,9 +217,9 @@ export const experience = [
     place: "Radio El Centinela",
     title: "Radio Announcer",
   },
-  {
-    year: "2018",
-    place: "SeaJoy™",
-    title: "Aquaculture Professional Internship",
-  },
+  // {
+  //   year: "2018",
+  //   place: "SeaJoy™ | Internship",
+  //   title: "Aquaculture Professional Internship",
+  // },
 ];

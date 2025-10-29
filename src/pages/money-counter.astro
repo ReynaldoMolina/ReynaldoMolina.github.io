@@ -1,0 +1,13 @@
+---
+import { Header } from "@/components/header";
+import CounterLayout from "../layouts/CounterLayout.astro";
+import { MoneyCounter } from "@/components/money-counter";
+import "@/global.css";
+---
+
+<CounterLayout>
+  <Header client:load />
+  <main class="flex flex-col gap-10 px-7 mt-10">
+    <MoneyCounter client:load />
+  </main>
+</CounterLayout>

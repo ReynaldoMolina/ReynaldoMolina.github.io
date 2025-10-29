@@ -1,13 +1,11 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import { Header } from '../components/Header';
-import Info from '../components/Info.astro';
-import Footer from '../components/Footer.astro';
-import '../styles/global.css';
+import Layout from "../layouts/Layout.astro";
+import { Header } from "../components/header";
+import Info from "../components/Info.astro";
+import "@/global.css";
 ---
 
 <Layout>
   <Header client:load />
   <Info />
-  <Footer />
 </Layout>
