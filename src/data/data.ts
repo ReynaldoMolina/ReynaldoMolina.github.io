@@ -130,7 +130,7 @@ export const projects = [
       "A simple yet practical tool for counting money, supporting both Nicaraguan Córdobas and US Dollars. It helps users quickly calculate totals in mixed currencies.",
     codelink:
       "https://github.com/ReynaldoMolina/ReynaldoMolina.github.io/tree/main/src/moneycounter",
-    previewlink: "/moneycounter",
+    previewlink: "/money-counter",
   },
 ];
 
