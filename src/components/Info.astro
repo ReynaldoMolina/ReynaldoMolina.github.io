@@ -46,15 +46,15 @@ import { Button } from "./ui/button";
     <div class="grid grid-cols-1 gap-5 w-full mt-10">
       {
         projects.map((project) => (
-          <a href={project.previewlink} target="_blank" class="cursor-pointer">
-            <Card>
+          <a href={project.previewlink} target="_blank">
+            <Card className="hover:bg-secondary transition">
               <CardHeader>
                 <CardTitle>{project.name}</CardTitle>
                 <CardDescription>{project.description}</CardDescription>
               </CardHeader>
               <CardContent>
                 <img
-                  class="object-contain aspect-5/4 max-h-100 mx-auto hover:scale-102 transition drop-shadow-lg"
+                  class="object-contain aspect-5/4 max-h-100 mx-auto drop-shadow-lg"
                   src={project.thumbnail}
                   alt="Project image"
                 />
@@ -186,10 +186,8 @@ import { Button } from "./ui/button";
     class="grid grid-cols-1 md:grid-cols-2 w-full max-w-5xl gap-5 p-7"
     id="contact"
   >
-    <Card className="flex w-full bg-linear-to-br bg-blue-600 from-blue-800">
-      <CardContent
-        className="flex flex-col gap-3 justify-center h-full text-white"
-      >
+    <Card className="flex w-full bg-secondary">
+      <CardContent className="flex flex-col gap-3 justify-center h-full">
         <h2 class="text-xl font-semibold w-full text-center">
           Interested in working together?
         </h2>
