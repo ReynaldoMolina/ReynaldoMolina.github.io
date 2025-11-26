@@ -8,19 +8,21 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "./ui/navigation-menu";
+import { ThemeToggle } from "./theme-toggle";
+import { Menu } from "lucide-react";
 
 export function Header() {
   const isMobile = useIsMobile();
 
   return (
     <header className="flex w-full items-center sticky top-0 bg-background z-10">
-      <div className="inline-flex w-full max-w-7xl px-7 py-3 mx-auto">
+      <div className="inline-flex w-full gap-2 max-w-7xl px-7 py-3 mx-auto">
         <NavigationMenu>
           <NavigationMenuList>
             {/* mobile */}
             <NavigationMenuItem className="md:hidden">
-              <NavigationMenuTrigger className="font-semibold border">
-                Menu
+              <NavigationMenuTrigger className="font-semibold border px-2">
+                <Menu />
               </NavigationMenuTrigger>
               <NavigationMenuContent>
                 <ul className="grid gap-2 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
@@ -41,7 +43,8 @@ export function Header() {
             ))}
           </NavigationMenuList>
         </NavigationMenu>
-        <div className="inline-flex items-center gap-3 md:gap-5 ml-auto">
+        <div className="inline-flex items-center gap-2 md:gap-5 ml-auto">
+          <ThemeToggle />
           {contacts.map(({ name, link, Icon }) => (
             <a key={name} href={link} target="_blank" rel="noopener noreferrer">
               <Icon className="size-8 hover:scale-110 cursor-pointer transition" />

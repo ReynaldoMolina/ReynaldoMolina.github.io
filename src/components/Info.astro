@@ -54,7 +54,7 @@ import { Button } from "./ui/button";
               </CardHeader>
               <CardContent>
                 <img
-                  class="object-contain aspect-5/4 max-h-100 mx-auto drop-shadow-lg"
+                  class="object-contain aspect-5/4 max-h-100 mx-auto drop-shadow-lg rounded"
                   src={project.thumbnail}
                   alt="Project image"
                 />
@@ -176,8 +176,12 @@ import { Button } from "./ui/button";
         </Card>
       </div>
 
-      <a href="/Reynaldo Molina CV.pdf" download class="mx-auto">
-        <Button className="w-full md:w-100 mx-auto"> Download my CV </Button>
+      <a
+        href="/Reynaldo Molina CV.pdf"
+        download
+        class="mx-auto w-full md:w-auto sm:min-w-100"
+      >
+        <Button className="w-full">Download my CV</Button>
       </a>
     </div>
   </section>
