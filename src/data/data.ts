@@ -1,6 +1,8 @@
 import jahairastore from "/src/images/store.png";
+// import jahairastoredark from "/src/images/store-dark.png";
 import supraural from "/src/images/supraural.png";
-import moneycounter from "/src/images/moneycounter.png";
+import moneycounter from "/src/images/money-counter.png";
+// import moneycounterdark from "/src/images/money-counter-dark.png";
 import urlshortener from "/src/images/url-shortener.png";
 import EmailIcon from "../icons/email.svg?react";
 import LinkedInIcon from "../icons/linkedin.svg?react";
@@ -75,6 +77,7 @@ export const projects = [
     titleColor: "text-blue-400 dark:text-blue-300",
     borderColor: "border-b-blue-300 dark:border-b-blue-300",
     thumbnail: jahairastore.src,
+    // thumbnailDark: jahairastoredark.src,
     techs: [techs.nextjs, techs.react, techs.tailwind, techs.postgresql],
     description:
       "Handles clients, products, categories, providers, orders, payments and invoices. Powered by Next.js and PostgreSQL.",
@@ -118,6 +121,7 @@ export const projects = [
     titleColor: "text-amber-400 dark:text-amber-300",
     borderColor: "border-b-amber-300 dark:border-b-amber-300",
     thumbnail: moneycounter.src,
+    // thumbnailDark: moneycounterdark.src,
     techs: [
       techs.astro,
       techs.react,
